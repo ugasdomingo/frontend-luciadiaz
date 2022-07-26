@@ -7,8 +7,8 @@ import { useUserStore } from "../stores/user-store";
 const $q = useQuasar();
 const userStore = useUserStore();
 const router = useRouter();
-const email = ref("ugasdomingo@gmail.com");
-const password = ref("Dios esfiel");
+const email = ref("");
+const password = ref("");
 const handleSubmit = async () => {
   try {
     console.log("pasó las validaciones");
