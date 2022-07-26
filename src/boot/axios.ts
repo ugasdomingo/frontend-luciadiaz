@@ -8,7 +8,7 @@ declare module '@vue/runtime-core' {
 }
 
 const api = axios.create({
-  baseURL: 'https://backend-luciadiaz-production.up.railway.app/',
+  baseURL: 'https://backend-luciadiaz-production.up.railway.app/api',
   withCredentials: true,
 });
 
