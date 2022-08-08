@@ -42,13 +42,18 @@
   font-size: medium;
 }
 .servicios-cards {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
   place-content: center;
   margin: 24px 0;
 }
 
 .my-card {
-  width: 100%;
-  max-width: 250px;
   margin: 0 8px;
+}
+
+@media screen and (max-width: 760px) {
+  .my-card {
+    margin: 8px 8px;
+  }
 }
