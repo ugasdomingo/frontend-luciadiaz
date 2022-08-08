@@ -55,7 +55,7 @@
           class="buttom"
           color="primary"
           target="blank"
-          href="https://walink.co/ebe287"
+          href="https://wa.me/584245933845?text=Hola%2C%20me%20gustar%C3%ADa%20una%20consulta%20online"
           >Consulta Online
         </q-btn>
       </q-lis>
@@ -64,7 +64,12 @@
     <q-page-container>
       <router-view />
       <q-page-sticky position="bottom-right" :offset="[18, 18]">
-        <q-btn fab icon="whatsapp" color="accent" target="Blank" href="https://walink.co/4666cd" />
+        <q-btn
+          fab icon="whatsapp"
+          color="accent"
+          target="Blank"
+          href="https://wa.me/584245933845?text=Hola%2C%20me%20gustar%C3%ADa%20una%20consulta%20online"
+        />
       </q-page-sticky>
     </q-page-container>
 
@@ -90,8 +95,8 @@ import EssentialLink from '../components/EssentialLink.vue';
 
 
 const userStores = useUserStore();
-const router = useRouter()
-const leftDrawerOpen = ref(false)
+const router = useRouter();
+const leftDrawerOpen = ref(false);
 
 const essentialLinks = [
   {
