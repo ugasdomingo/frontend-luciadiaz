@@ -91,7 +91,7 @@ import EssentialLink from '../components/EssentialLink.vue';
 
 const userStores = useUserStore();
 const router = useRouter()
-const leftDrawerOpen = ref(true)
+const leftDrawerOpen = ref(false)
 
 const essentialLinks = [
   {
