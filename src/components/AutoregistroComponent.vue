@@ -14,7 +14,7 @@ defineProps({
 
 <template>
   <q-card class="my-card">
-    <q-card-section v-model="info">
+    <q-card-section>
       <div class="text-subtitle2 text-primary">{{ registro?.pensamiento }}</div>
       <div class="text-subtitle2 text-primary">
         {{ registro?.emocion }}

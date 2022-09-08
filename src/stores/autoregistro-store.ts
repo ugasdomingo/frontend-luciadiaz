@@ -8,7 +8,7 @@ import { useQuasar } from 'quasar';
 export const useAutoregisterStore = defineStore('registro', () => {
   const userStore = useUserStore();
 
-  const registros = ref('');
+  const registro = ref('');
   const allRegister = ref('');
   const $q = useQuasar();
 
@@ -22,6 +22,7 @@ export const useAutoregisterStore = defineStore('registro', () => {
         },
       });
       allRegister.value = res.data.arte;
+      console.log(allRegister.value);
     } catch (error: any) {
       throw error.response?.data || error;
     }
@@ -48,8 +49,8 @@ export const useAutoregisterStore = defineStore('registro', () => {
         },
       });
 
-      registros.value = res.data.register;
-      console.log(registros.value);
+      registro.value = res.data.register;
+      console.log(registro.value);
     } catch (error: any) {
       throw error.response?.data || error;
     }
