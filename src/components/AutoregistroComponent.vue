@@ -14,13 +14,16 @@ defineProps({
         Pensamiento:
         <span class="text-subtitle1">{{ registro?.pensamiento }}</span>
       </div>
+      <q-separator inset dark />
       <div class="text-subtitle2 text-primary">
         Emoción:
         <span class="text-subtitle1">{{ registro?.emocion }}</span>
       </div>
+      <q-separator inset dark />
       <div class="text-subtitle2 text-primary">
         Acción: <span class="text-subtitle1">{{ registro?.accion }}</span>
       </div>
+      <q-separator inset dark />
       <div class="text-subtitle2 text-primary">
         Detonante:
         <span class="text-subtitle1"> {{ registro?.detonante }}</span>
