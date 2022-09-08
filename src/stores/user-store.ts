@@ -6,6 +6,7 @@ import { ref } from 'vue';
 export const useUserStore = defineStore('user', () => {
   const token = ref(null);
   const expiresIn = ref(0);
+  const allUsers = ref('');
 
   const access = async (email: any, password: any) => {
     try {
@@ -89,11 +90,36 @@ export const useUserStore = defineStore('user', () => {
     expiresIn.value = 0;
   };
 
+  const getAllUsers = async () => {
+    try {
+      const res = await api({
+        url: '/',
+        method: 'GET',
+        headers: {
+          Authorization: 'Bearer ' + token.value,
+        },
+      });
+
+      allUsers.value = res.data.user;
+    } catch (error: any) {
+      if (error.response) {
+        throw error.response.data;
+      } else if (error.request) {
+        console.log(error.request);
+      } else {
+        console.log('Error', error.message);
+      }
+    }
+  };
+
   const getUser = async (id: any) => {
     try {
       const res = await api({
         url: '/' + id,
         method: 'GET',
+        headers: {
+          Authorization: 'Bearer ' + token.value,
+        },
       });
       return res.data.name;
     } catch (error: any) {
@@ -115,5 +141,7 @@ export const useUserStore = defineStore('user', () => {
     logout,
     register,
     getUser,
+    getAllUsers,
+    allUsers,
   };
 });

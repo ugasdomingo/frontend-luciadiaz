@@ -2,11 +2,8 @@
   <q-page class="column">
     <h3 class="text-primary text-center">Todos los Registros</h3>
     <div class="row justify-center">
-      <template
-        v-for="registro of autoregistroStore.allRegister"
-        :key="registro.id"
-      >
-        <AllSelfRegisters :registro="registro" class="q-ma-sm" />
+      <template v-for="users of userStore.allUsers" :key="users.id">
+        <UserList :users="users" class="q-ma-lg" />
       </template>
     </div>
   </q-page>
@@ -14,10 +11,14 @@
 
 <script lang="ts" setup>
 import { useAutoregisterStore } from 'src/stores/autoregistro-store';
+import { useUserStore } from 'src/stores/user-store';
+
 //Component
-import AllSelfRegisters from 'src/components/AutoregistroComponent.vue';
-const autoregistroStore = useAutoregisterStore();
-autoregistroStore.getAllAutoregistro();
+import UserList from 'src/components/UserListComponent.vue';
+
+const userStore = useUserStore();
+
+userStore.getAllUsers();
 </script>
 
 <style scoped></style>

@@ -1,33 +1,30 @@
 <script lang="ts" setup>
-import { useUserStore } from 'src/stores/user-store';
-/* import { ref } from 'vue';
-  const artStore = useArtStore();
-  const deleteArt = async (_id: any) => {
-  await artStore.deleteArt(_id);
-  console.log('Art Deleted');
-  artStore.getAllUserArt();
-}; */
 defineProps({
   registro: Object,
 });
-const userStores = useUserStore();
 </script>
 
 <template>
   <q-card class="my-card">
-    <q-card-section class="flex">
-      <div class="text-subtitle2 text-primary">{{ registro?.date }}</div>
-      <div class="text-subtitle2 q-ml-sm text-primary">
-        {{ userStores.getUser(registro?.uid) }}
-      </div>
+    <q-card-section>
+      <div class="text-subtitle2 text-primary">Fecha: {{ registro?.date }}</div>
     </q-card-section>
     <q-card-section>
-      <div class="text-subtitle2 text-primary">{{ registro?.pensamiento }}</div>
       <div class="text-subtitle2 text-primary">
-        {{ registro?.emocion }}
+        Pensamiento:
+        <span class="text-subtitle1">{{ registro?.pensamiento }}</span>
       </div>
-      <div class="text-subtitle2 text-primary">{{ registro?.accion }}</div>
-      <div class="text-subtitle2 text-primary">{{ registro?.detonante }}</div>
+      <div class="text-subtitle2 text-primary">
+        Emoción:
+        <span class="text-subtitle1">{{ registro?.emocion }}</span>
+      </div>
+      <div class="text-subtitle2 text-primary">
+        Acción: <span class="text-subtitle1">{{ registro?.accion }}</span>
+      </div>
+      <div class="text-subtitle2 text-primary">
+        Detonante:
+        <span class="text-subtitle1"> {{ registro?.detonante }}</span>
+      </div>
     </q-card-section>
   </q-card>
 </template>

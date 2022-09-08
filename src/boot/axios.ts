@@ -8,7 +8,7 @@ declare module '@vue/runtime-core' {
 }
 
 const api = axios.create({
-  baseURL: 'https://backend-luciadiaz.vercel.app/api',
+  baseURL: 'http://localhost:3000/api',
   withCredentials: true,
 });
 

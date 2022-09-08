@@ -12,10 +12,10 @@ export const useAutoregisterStore = defineStore('registro', () => {
   const allRegister = ref('');
   const $q = useQuasar();
 
-  const getAllAutoregistro = async () => {
+  const getAllAutoregistro = async (uid: any) => {
     try {
       const res = await api({
-        url: '/self-register/register',
+        url: '/self-register/register/' + uid,
         method: 'GET',
         headers: {
           Authorization: 'Bearer ' + userStore.token,
@@ -23,7 +23,7 @@ export const useAutoregisterStore = defineStore('registro', () => {
       });
       allRegister.value = res.data.register.map((item: any) => {
         return {
-          date: Date.parse(item.date),
+          date: new Date(item.date),
           pensamiento: item.pensamiento,
           emocion: item.emocion,
           accion: item.accion,
