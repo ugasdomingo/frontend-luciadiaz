@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-/* import { useArtStore } from 'src/stores/art-store';
-import { ref } from 'vue';
+import { useUserStore } from 'src/stores/user-store';
+/* import { ref } from 'vue';
   const artStore = useArtStore();
   const deleteArt = async (_id: any) => {
   await artStore.deleteArt(_id);
@@ -10,13 +10,16 @@ import { ref } from 'vue';
 defineProps({
   registro: Object,
 });
+const userStores = useUserStore();
 </script>
 
 <template>
   <q-card class="my-card">
     <q-card-section class="flex">
       <div class="text-subtitle2 text-primary">{{ registro?.date }}</div>
-      <div class="text-subtitle2 q-ml-sm text-primary">{{ registro?.uid }}</div>
+      <div class="text-subtitle2 q-ml-sm text-primary">
+        {{ userStores.getUser(registro?.uid) }}
+      </div>
     </q-card-section>
     <q-card-section>
       <div class="text-subtitle2 text-primary">{{ registro?.pensamiento }}</div>
