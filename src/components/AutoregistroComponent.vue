@@ -14,6 +14,10 @@ defineProps({
 
 <template>
   <q-card class="my-card">
+    <q-card-section class="flex">
+      <div class="text-subtitle2 text-primary">{{ registro?.date }}</div>
+      <div class="text-subtitle2 q-ml-sm text-primary">{{ registro?.uid }}</div>
+    </q-card-section>
     <q-card-section>
       <div class="text-subtitle2 text-primary">{{ registro?.pensamiento }}</div>
       <div class="text-subtitle2 text-primary">

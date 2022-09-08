@@ -21,8 +21,16 @@ export const useAutoregisterStore = defineStore('registro', () => {
           Authorization: 'Bearer ' + userStore.token,
         },
       });
-      allRegister.value = res.data.register;
-      console.log(allRegister.value);
+      allRegister.value = res.data.register.map((item: any) => {
+        return {
+          date: Date.parse(item.title),
+          pensamiento: item.pensamiento,
+          emocion: item.emocion,
+          accion: item.accion,
+          detonante: item.detonante,
+          uid: userStore.getUser(item.uid),
+        };
+      });
     } catch (error: any) {
       throw error.response?.data || error;
     }
