@@ -21,7 +21,7 @@ export const useAutoregisterStore = defineStore('registro', () => {
           Authorization: 'Bearer ' + userStore.token,
         },
       });
-      allRegister.value = res.data.arte;
+      allRegister.value = res.data.register;
       console.log(allRegister.value);
     } catch (error: any) {
       throw error.response?.data || error;
