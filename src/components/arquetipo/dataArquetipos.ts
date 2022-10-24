@@ -1,5 +1,6 @@
 export const dataArquetipos = [
     {
+        key: 'r1',
         pregunta: '1. Con cuál de estas palabras te identificas más...',
         a: 'Independiente',
         b: 'Pacífico',
@@ -7,6 +8,7 @@ export const dataArquetipos = [
         d: 'Independiente',
     },
     {
+        key: 'r2',
         pregunta:
             '2. Los contenidos más comunes en tus temas de conversación son:',
         a: 'De poder, influencia, control',
@@ -15,6 +17,7 @@ export const dataArquetipos = [
         d: 'De ocio, actividades amenas, lo que serás en el futuro, las cosas que sabes hacer',
     },
     {
+        key: 'r3',
         pregunta:
             '3. Cuando entablas una relación interpersonal tu comunicación tiene un estilo:',
         a: 'Directo, concreto y orientado hacia el control. Las cosas son blancas o negras',
@@ -23,6 +26,7 @@ export const dataArquetipos = [
         d: 'A veces vago, original, ocurrente. Orientado a ser el centro de atención',
     },
     {
+        key: 'r4',
         pregunta: '4. Te caracterizas por ser una persona:',
         a: 'Erguida, rápida y tensa, a veces rígida corporalmente',
         b: 'Movimientos lentos y poca gesticulación, el cuerpo protege a la persona',
@@ -30,6 +34,7 @@ export const dataArquetipos = [
         d: 'Mucho movimiento, gesticulaciones y expresión facial abundante',
     },
     {
+        key: 'r5',
         pregunta: '5. Con cuál de estas descripciones te identificas más:',
         a: 'Osado-Osada, tomas riesgos basado en instintos, impulsividad',
         b: 'Comprensivo-Comprensiva, entiendes los problemas de los demás',
@@ -37,6 +42,7 @@ export const dataArquetipos = [
         d: 'Simpático-Sipática, te invitan a fiestas y reuniones',
     },
     {
+        key: 'r6',
         pregunta: '6. En actividades cotidianas te caraterizas por:',
         a: 'Ser ansioso, muy rápido, poco ordenado y te aburres con facilidad',
         b: 'Tranquilo, te gustan los momentos de contemplación o conversación con amigos',
@@ -44,6 +50,7 @@ export const dataArquetipos = [
         d: 'Querer todo a la vez',
     },
     {
+        key: 'r7',
         pregunta: '7. Qué actitud asumes frente a los errores de los otros?',
         a: 'Poco tolerante,acusas inmediatamente, los hechos son los hechos',
         b: 'Corriges evitando hacerlo sentir mal, te involucras, aunque tengas que hacer sacrificios',
@@ -51,6 +58,7 @@ export const dataArquetipos = [
         d: 'Haces frecuentemente caso omiso y tomas en cuenta a la persona y su esfuerzo personal',
     },
     {
+        key: 'r8',
         pregunta:
             '8. De tu participación en un grupo, por lo general te interesa obtener:',
         a: 'Influencias, contactos importantes. Hay objetivos detrás de las cosas que haces',
@@ -59,6 +67,7 @@ export const dataArquetipos = [
         d: 'Ser conocido, reconocimiento a tus méritos',
     },
     {
+        key: 'r9',
         pregunta: '9. En tu casa o en la oficina eres:',
         a: 'Organizado, rápido, no te gusta perder el tiempo',
         b: 'Poco ordenado, creativo, te gusta pasar de un tema a otro cuando deja de ser novedoso',
@@ -66,6 +75,7 @@ export const dataArquetipos = [
         d: 'Poco ordenado, aunque puedes mejorarlo, siempre serás despreocupado',
     },
     {
+        key: 'r10',
         pregunta: '10. Tu energía la orientas fundamentalmente en la vida a...',
         a: 'Lograr tus metas, lo que te has propuesto, alcanzar el poder',
         b: 'En ser feliz, aceptado y querido',
