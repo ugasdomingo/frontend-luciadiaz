@@ -202,1055 +202,1055 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     >
                         {{ dataTemperamento[1].d }}
                     </q-radio>
-                    <!-- Respuesta Siguiente -->
+                    <!-- Respuesta Siguiente 3 -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r3"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[2].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r3"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[2].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r3"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[2].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r3"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
-                    </q-radio>
-                    <!-- Respuesta Siguiente -->
-                </div>
-                <div class="question">
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="a"
-                    >
-                        {{ dataTemperamento[0].a }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="b"
-                    >
-                        {{ dataTemperamento[0].b }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="c"
-                    >
-                        {{ dataTemperamento[0].c }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="d"
-                    >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[2].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r4"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[3].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r4"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[3].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r4"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[3].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r4"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[3].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r5"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[4].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r5"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[4].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r5"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[4].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r5"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[4].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r6"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[5].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r6"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[5].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r6"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[5].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r6"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[5].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r7"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[6].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r7"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[6].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r7"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[6].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r7"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[6].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r8"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[7].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r8"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[7].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r8"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[7].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r8"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[7].d }}
+                    </q-radio>
+                    <!-- Respuesta Siguiente 9-->
+                </div>
+                <div class="question">
+                    <q-radio
+                        v-model="r9"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="a"
+                    >
+                        {{ dataTemperamento[8].a }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r9"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="b"
+                    >
+                        {{ dataTemperamento[8].b }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r9"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="c"
+                    >
+                        {{ dataTemperamento[8].c }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r9"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="d"
+                    >
+                        {{ dataTemperamento[8].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r10"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[9].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r10"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[9].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r10"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[9].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r10"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[9].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r11"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[10].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r11"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[10].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r11"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[10].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r11"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[10].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r12"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[11].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r12"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[11].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r12"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[11].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r12"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[11].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r13"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[12].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r13"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[12].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r13"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[12].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r13"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[12].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r14"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[13].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r14"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[13].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r14"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[13].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r14"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[13].d }}
+                    </q-radio>
+                    <!-- Respuesta Siguiente 15 -->
+                </div>
+                <div class="question">
+                    <q-radio
+                        v-model="r15"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="a"
+                    >
+                        {{ dataTemperamento[14].a }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r15"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="b"
+                    >
+                        {{ dataTemperamento[14].b }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r15"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="c"
+                    >
+                        {{ dataTemperamento[14].c }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r15"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="d"
+                    >
+                        {{ dataTemperamento[14].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r16"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[15].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r16"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[15].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r16"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[15].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r16"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[15].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r17"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[16].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r17"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[16].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r17"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[16].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r17"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[16].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r18"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[17].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r18"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[17].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r18"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[17].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r18"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[17].d }}
+                    </q-radio>
+                    <!-- Respuesta Siguiente 19 -->
+                </div>
+                <div class="question">
+                    <q-radio
+                        v-model="r19"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="a"
+                    >
+                        {{ dataTemperamento[18].a }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r19"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="b"
+                    >
+                        {{ dataTemperamento[18].b }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r19"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="c"
+                    >
+                        {{ dataTemperamento[18].c }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r19"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="d"
+                    >
+                        {{ dataTemperamento[18].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r20"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[19].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r20"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[19].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r20"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[19].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r20"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[19].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r21"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[20].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r21"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[20].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r21"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[20].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r21"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[20].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r22"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[21].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r22"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[21].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r22"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[21].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r22"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[21].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r23"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[22].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r23"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[22].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r23"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[22].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r23"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[22].d }}
+                    </q-radio>
+                    <!-- Respuesta Siguiente 24 -->
+                </div>
+                <div class="question">
+                    <q-radio
+                        v-model="r24"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="a"
+                    >
+                        {{ dataTemperamento[23].a }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r24"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="b"
+                    >
+                        {{ dataTemperamento[23].b }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r24"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="c"
+                    >
+                        {{ dataTemperamento[23].c }}
+                    </q-radio>
+                    <q-radio
+                        v-model="r24"
+                        checked-icon="task_alt"
+                        unchecked-icon="panorama_fish_eye"
+                        val="d"
+                    >
+                        {{ dataTemperamento[23].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r25"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[24].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r25"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[24].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r25"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[24].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r25"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[24].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r26"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[25].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r26"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[25].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r26"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[25].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r26"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[25].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r27"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[26].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r27"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[26].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r27"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[26].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r27"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[26].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r28"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[27].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r28"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[27].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r28"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[27].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r28"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[27].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r29"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[28].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r29"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[28].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r29"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[28].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r29"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[28].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r30"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[29].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r30"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[29].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r30"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[29].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r30"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[29].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r31"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[30].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r31"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[30].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r31"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[30].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r31"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[30].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
                 <div class="question">
                     <q-radio
-                        v-model="r1"
+                        v-model="r32"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="a"
                     >
-                        {{ dataTemperamento[0].a }}
+                        {{ dataTemperamento[31].a }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r32"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="b"
                     >
-                        {{ dataTemperamento[0].b }}
+                        {{ dataTemperamento[31].b }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r32"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="c"
                     >
-                        {{ dataTemperamento[0].c }}
+                        {{ dataTemperamento[31].c }}
                     </q-radio>
                     <q-radio
-                        v-model="r1"
+                        v-model="r32"
                         checked-icon="task_alt"
                         unchecked-icon="panorama_fish_eye"
                         val="d"
                     >
-                        {{ dataTemperamento[0].d }}
-                    </q-radio>
-                    <!-- Respuesta Siguiente -->
-                </div>
-                <div class="question">
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="a"
-                    >
-                        {{ dataTemperamento[0].a }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="b"
-                    >
-                        {{ dataTemperamento[0].b }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="c"
-                    >
-                        {{ dataTemperamento[0].c }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="d"
-                    >
-                        {{ dataTemperamento[0].d }}
-                    </q-radio>
-                    <!-- Respuesta Siguiente -->
-                </div>
-                <div class="question">
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="a"
-                    >
-                        {{ dataTemperamento[0].a }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="b"
-                    >
-                        {{ dataTemperamento[0].b }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="c"
-                    >
-                        {{ dataTemperamento[0].c }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="d"
-                    >
-                        {{ dataTemperamento[0].d }}
-                    </q-radio>
-                    <!-- Respuesta Siguiente -->
-                </div>
-                <div class="question">
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="a"
-                    >
-                        {{ dataTemperamento[0].a }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="b"
-                    >
-                        {{ dataTemperamento[0].b }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="c"
-                    >
-                        {{ dataTemperamento[0].c }}
-                    </q-radio>
-                    <q-radio
-                        v-model="r1"
-                        checked-icon="task_alt"
-                        unchecked-icon="panorama_fish_eye"
-                        val="d"
-                    >
-                        {{ dataTemperamento[0].d }}
+                        {{ dataTemperamento[31].d }}
                     </q-radio>
                     <!-- Respuesta Siguiente -->
                 </div>
