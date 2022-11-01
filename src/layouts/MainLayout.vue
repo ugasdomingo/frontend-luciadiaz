@@ -26,7 +26,7 @@
                 <q-btn
                     color="accent"
                     @click="userStores.access"
-                    v-if="userStores.token"
+                    v-if="role == 'Admin' || role == 'patient'"
                     to="autoregistro"
                 >
                     Autoregistro
@@ -37,18 +37,22 @@
         <q-drawer v-model="leftDrawerOpen" side="left" bordered>
             <q-lis>
                 <q-item-label header> ¿Que quieres hacer hoy? </q-item-label>
-                <EssentialLink
-                    v-for="link in essentialLinks"
-                    :key="link.title"
-                    v-bind="link"
-                />
-                <q-btn
-                    class="buttom"
-                    color="primary"
-                    target="blank"
-                    href="https://wa.me/584245933845?text=Hola%2C%20me%20gustar%C3%ADa%20una%20consulta%20online"
-                    >Consulta Online
-                </q-btn>
+                <div>
+                    <div v-if="role == 'Admin' || role == 'patient'">
+                        <EssentialLink
+                            v-for="link in patientLinks"
+                            :key="link.title"
+                            v-bind="link"
+                        />
+                    </div>
+                    <div v-else>
+                        <EssentialLink
+                            v-for="link in visitanteLinks"
+                            :key="link.title"
+                            v-bind="link"
+                        />
+                    </div>
+                </div>
             </q-lis>
         </q-drawer>
 
@@ -89,57 +93,25 @@ import { ref } from 'vue';
 import { useRouter } from 'vue-router';
 import { useUserStore } from '../stores/user-store';
 import EssentialLink from '../components/EssentialLink.vue';
+import { visitanteLinks, patientLinks } from 'layouts/essentialLinks';
 
 const userStores = useUserStore();
 const router = useRouter();
 const leftDrawerOpen = ref(false);
-
-const essentialLinks = [
-    {
-        title: 'Sobre mi - (pronto)',
-        caption: '¿Por qué deberías seguirme?',
-        icon: 'school',
-        link: '#',
-    },
-    {
-        title: 'Escritorio - (pronto)',
-        caption: 'Para aplicar en tu día a día',
-        icon: 'code',
-        link: 'escritorio',
-    },
-    {
-        title: 'Autoregistro',
-        caption: 'Herramienta terapeutica',
-        icon: 'chat',
-        link: 'autoregistro',
-    },
-    {
-        title: 'Test-Arquetipos',
-        caption: 'Herramienta terapeutica',
-        icon: 'chat',
-        link: 'arquetipos',
-    },
-    {
-        title: 'Test-Temperamento',
-        caption: 'Herramienta terapeutica',
-        icon: 'chat',
-        link: 'temperamento',
-    },
-    {
-        title: 'Consulta Presencial',
-        caption: 'Av. Lara, Barquisimeto',
-        icon: 'record_voice_over',
-        link: 'presencial',
-    },
-];
-
+const role = ref();
+const setRole = () => {
+    role.value = sessionStorage.getItem('user');
+};
+setRole();
 function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
+    setRole();
 }
 
 const logout = async () => {
     await userStores.logout();
     router.push('/');
+    setRole();
 };
 </script>
 

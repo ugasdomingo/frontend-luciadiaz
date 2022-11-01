@@ -17,7 +17,7 @@ export const useUserStore = defineStore('user', () => {
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', '🔥🔥');
+            sessionStorage.setItem('user', res.data.role);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -40,7 +40,7 @@ export const useUserStore = defineStore('user', () => {
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', '🔥🔥');
+            sessionStorage.setItem('user', res.data.role);
             setTime();
         } catch (error: any) {
             if (error.response) {
