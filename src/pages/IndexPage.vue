@@ -1,59 +1,84 @@
 <template>
-  <q-page>
-    <div class="hero">
-      <img src="img/banner-lucia.jpg" alt="banner-lucia" />
-    </div>
-    <div class="servicios-title">
-      <h3 class="text-primary">Bienvenidos(as) a mi web</h3>
-      <p class="text-grey">Mira todo lo que he preparado para ti</p>
-    </div>
-    <div class="servicios-cards">
-      <q-card class="my-card cursor-pointer">
-        <q-img src="img/psicologia-para-ti.jpg">
-          <div class="absolute-bottom text-h6">Psicología para ti</div>
-        </q-img>
-
-        <q-card-section>
-          Un espacio donde te comparto información valiosa para que la puedas
-          aplicar a tu día a día.
-          <span class="text-grey">(Próximamente)</span>
-        </q-card-section>
-      </q-card>
-      <q-card class="my-card cursor-pointer" @click="autoregistro">
-        <q-img src="img/tools.jpg">
-          <div class="absolute-bottom text-h6">Herramientas Terapeuticas</div>
-        </q-img>
-
-        <q-card-section>
-          Donde pongo la tecnología a jugar en tu favor, para que obtengas la
-          mejor experiencia en tus terapias.
-        </q-card-section>
-      </q-card>
-      <q-card class="my-card cursor-pointer" @click="presencial">
-        <q-img src="img/terapia.jpg">
-          <div class="absolute-bottom text-h6">Consultas psicológicas</div>
-        </q-img>
-
-        <q-card-section>
-          Presenciales y online, individuales, para parejas, para niños y
-          orientación para padres.
-        </q-card-section>
-      </q-card>
-    </div>
-  </q-page>
+    <q-page style="width: 100%">
+        <!-- Homepage Hero -->
+        <img src="img/portada5.jpg" alt="portada" class="hero-img" />
+        <div class="row hero-container q-pa-xl">
+            <div class="col-12 col-md-8">
+                <HeroTextComponent />
+            </div>
+            <div class="img-container col-12 col-md-4">
+                <HeroImgComponent />
+            </div>
+        </div>
+        <!-- 6 razones test (First Section) -->
+        <div class="column first-section flex-center bg-principal">
+            <SixReasonsComponent />
+        </div>
+        <!-- Arquetipo and Tempeter test (Second Section) -->
+        <div class="column flex-center" style="width: 100%; min-height: 70vh">
+            <GiftTestComponent />
+        </div>
+        <!-- Arquetipo and Tempeter test (Third Section) -->
+        <div
+            class="row col-12 third-section bg-principal items-center justify-evenly"
+        >
+            <SheduleComponent />
+        </div>
+    </q-page>
 </template>
 
 <script setup lang="ts">
-import { useRouter } from 'vue-router';
+// Import Hero Components
+import HeroTextComponent from 'src/components/index/HeroTextComponent.vue';
+import HeroImgComponent from 'src/components/index/HeroImgComponent.vue';
 
-const router = useRouter();
+// Import 6 Reasons / First Section
+import SixReasonsComponent from 'src/components/index/SixReasonsComponent.vue';
 
-const presencial = () => {
-  router.push('presencial');
-};
-const autoregistro = () => {
-  router.push('autoregistro');
-};
+// Import Gift Test / Second Section
+import GiftTestComponent from 'src/components/index/GiftTestComponent.vue';
+
+// Import Shedule Therapy / Third Section
+import SheduleComponent from 'src/components/index/SheduleComponent.vue';
 </script>
 
-<style lang="sass" scoped></style>
+<style scoped>
+.hero-img {
+    width: 100%;
+    height: 100%;
+    min-height: 300px;
+    z-index: -1;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    opacity: 0.5;
+}
+.first-section {
+    width: 100%;
+    height: 70vh;
+}
+.third-section {
+    width: 100%;
+    height: 70vh;
+}
+
+@media screen and (max-width: 1080px) {
+    .hero-img {
+        background-color: none;
+    }
+    .hero-container {
+        padding: 0px 4px 16px;
+    }
+    .img-container {
+        padding: 0px;
+        display: none;
+    }
+    .first-section {
+        height: 40vh;
+    }
+    .third-section {
+        height: 40vh;
+        padding: 16px;
+    }
+}
+</style>

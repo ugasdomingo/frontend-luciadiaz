@@ -1,59 +1,19 @@
 // app global css in SCSS form
 
-.alternarLogin {
-  padding: 10vh 0 0 0;
-  display: grid;
-  width: fit-content;
+body {
+    border: 0px;
+    background-color: white;
 }
 
-.alternarLogin p {
-  margin: 0 12px 0 0;
-  color: gray;
+//Vars for Background
+.bg-principal {
+    background-color: $secondary;
 }
 
-.registro-buttom {
-  margin: 20px 0 48px;
-}
-
-.hero {
-  margin: 0;
-  padding: 0;
-}
-
-.hero img {
-  max-width: 100%;
-  max-height: 100vh;
-  object-fit: contain;
-}
-
-.servicios-title {
-  display: grid;
-  place-content: center;
-  margin: 48px 0;
-}
-.servicios-title h3{
-  padding: 0;
-  margin: 0;
-}
-.servicios-title p {
-  padding: 0;
-  margin: 8px 0;
-  text-align: center;
-  font-size: medium;
-}
-.servicios-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 250px));
-  place-content: center;
-  margin: 24px 0;
-}
-
-.my-card {
-  margin: 0 8px;
+//Vars for Typography
+.titles {
+    font-weight: 200;
 }
 
 @media screen and (max-width: 760px) {
-  .my-card {
-    margin: 8px 8px;
-  }
 }

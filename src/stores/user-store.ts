@@ -9,7 +9,7 @@ export const useUserStore = defineStore('user', () => {
     const allUsers = ref('');
     const selfUid = ref('');
 
-    const access = async (email: any, password: any) => {
+    const access = async (email: string, password: string) => {
         try {
             const res = await api.post('/login', {
                 email: email,
@@ -31,7 +31,7 @@ export const useUserStore = defineStore('user', () => {
         }
     };
 
-    const register = async (name: any, email: any, password: any) => {
+    const register = async (name: string, email: string, password: string) => {
         try {
             const res = await api.post('/register', {
                 name: name,
@@ -76,7 +76,6 @@ export const useUserStore = defineStore('user', () => {
             });
             if (resp) {
                 selfUid.value = resp.data.uid;
-                console.log('Self did it');
             }
         } catch (error: any) {
             console.log(error);

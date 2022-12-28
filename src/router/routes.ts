@@ -22,6 +22,13 @@ const routes: RouteRecordRaw[] = [
                 },
             },
             {
+                path: 'seis-razones',
+                component: () => import('pages/test/SixReasonsTestPage.vue'),
+                meta: {
+                    auth: true,
+                },
+            },
+            {
                 path: 'arquetipos',
                 component: () => import('pages/test/ArchetypeTestPage.vue'),
                 meta: {
@@ -58,8 +65,8 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/auth/RegistroPage.vue'),
             },
             {
-                path: 'presencial',
-                component: () => import('pages/PresencialPage.vue'),
+                path: 'citas',
+                component: () => import('src/pages/CitasPage.vue'),
             },
         ],
     },

@@ -1,6 +1,6 @@
 <template>
-    <q-layout view="hHh lpR fFf">
-        <q-header reveal elevated class="bg-secondary text-primary">
+    <q-layout view="hHh LpR fFf">
+        <q-header reveal bordered class="bg-secondary text-primary">
             <q-toolbar>
                 <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
 
@@ -62,16 +62,16 @@
                 <q-btn
                     fab
                     icon="whatsapp"
-                    color="accent"
+                    color="green"
                     target="Blank"
-                    href="https://wa.me/584245933845?text=Hola%2C%20me%20gustar%C3%ADa%20una%20consulta%20online"
+                    href="https://walink.co/26e016"
                 />
             </q-page-sticky>
         </q-page-container>
 
-        <q-footer elevated class="bg-primary text-accent">
+        <q-footer reveal elevated class="bg-primary text-accent">
             <q-toolbar>
-                <q-toolbar-title>
+                <q-toolbar-title class="row col-12 items-center">
                     <q-avatar>
                         <q-btn
                             dense
@@ -79,9 +79,15 @@
                             round
                             icon="menu"
                             @click="toggleLeftDrawer"
+                            class="col-2"
                         />
                         <!-- <div>Title</div> -->
                     </q-avatar>
+                    <p
+                        class="col-11 text-white text-caption text-center q-ma-none"
+                    >
+                        Todo los Derechos Reservados ® 2025
+                    </p>
                 </q-toolbar-title>
             </q-toolbar>
         </q-footer>

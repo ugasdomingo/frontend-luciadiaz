@@ -13,7 +13,6 @@ const password = ref('');
 const repassword = ref('');
 const handleSubmit = async () => {
     try {
-        console.log('pasó las validaciones');
         await userStore.register(name.value, email.value, password.value);
         router.push('/');
         email.value = '';
@@ -89,7 +88,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     ></q-btn>
                 </div>
             </q-form>
-            <div class="alternarLogin">
+            <div class="q-mt-xl">
                 <p>¿Ya tienes una cuenta?</p>
                 <q-btn to="login" color="primary">Iniciar Sesión</q-btn>
             </div>

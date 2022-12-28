@@ -12,6 +12,12 @@ export const visitanteLinks = [
         link: 'escritorio',
     },
     {
+        title: 'Test-6 Razones',
+        caption: 'Herramienta terapeutica',
+        icon: 'chat',
+        link: 'seis-razones',
+    },
+    {
         title: 'Test-Arquetipos',
         caption: 'Herramienta terapeutica',
         icon: 'chat',
@@ -24,10 +30,10 @@ export const visitanteLinks = [
         link: 'temperamento',
     },
     {
-        title: 'Consulta Online',
-        caption: 'Av. Lara, Barquisimeto',
+        title: 'Consultas Online y Presenciales',
+        caption: 'C. de Siena 9, Madrid',
         icon: 'record_voice_over',
-        link: 'presencial',
+        link: 'citas',
     },
 ];
 
@@ -51,6 +57,12 @@ export const patientLinks = [
         link: 'autoregistro',
     },
     {
+        title: 'Test-6 Razones',
+        caption: 'Herramienta terapeutica',
+        icon: 'chat',
+        link: 'seis-razones',
+    },
+    {
         title: 'Test-Arquetipos',
         caption: 'Herramienta terapeutica',
         icon: 'chat',
@@ -66,6 +78,6 @@ export const patientLinks = [
         title: 'Consulta Online',
         caption: 'Av. Lara, Barquisimeto',
         icon: 'record_voice_over',
-        link: 'presencial',
+        link: 'citas',
     },
 ];

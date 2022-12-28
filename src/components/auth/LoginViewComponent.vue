@@ -11,7 +11,6 @@ const email = ref('');
 const password = ref('');
 const handleSubmit = async () => {
     try {
-        console.log('pasó las validaciones');
         await userStore.access(email.value, password.value);
         router.push('/');
         email.value = '';
@@ -39,6 +38,10 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     <q-page class="row justify-center">
         <div class="col-12 col-sm-6 col-md-5">
             <h3 class="text-primary">Me alegra verte</h3>
+            <p>
+                <span class="text-weight-bold">Recuerda :</span> Todos los test
+                son gratuitos, solo tienes que registrarte para hacerlos
+            </p>
             <q-form @submit.prevent="handleSubmit">
                 <q-input
                     v-model="email"
@@ -70,7 +73,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     ></q-btn>
                 </div>
             </q-form>
-            <div class="alternarLogin">
+            <div class="q-mt-xl">
                 <p>¿Primera vez?</p>
                 <q-btn to="signup" color="primary">Crear una cuenta</q-btn>
             </div>

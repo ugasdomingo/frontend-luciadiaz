@@ -127,11 +127,17 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 
 <template>
     <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-5">
-            <h3>Bienvenido(a) al Test de Arquetipos</h3>
-            <p>
-                Por favor selecciona la opción con la que más te identifique en
-                cada caso
+        <div class="col-12 col-sm-6 col-md-5 q-pb-xl">
+            <h3>Bienvenido(a) al Test de Temperamento</h3>
+            <p style="font-size: 1em">
+                Este test tiene la finalidad de identificiar tus modelos y
+                patornes de comportamiento, permitiendo trabajar de manera
+                personalizada en tu plan de desarrollo personal. Llevándote a
+                conocer más tus fortalezas y las áreas a potenciar en tu vida
+            </p>
+            <p style="font-size: 1.5em; padding-top: 24px">
+                Comencemos: <br />Por favor selecciona la opción con la que más
+                te identifique en cada caso
             </p>
             <q-form @submit.prevent="handleSubmit">
                 <div class="question">
@@ -1262,66 +1268,19 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     ></q-btn>
                 </div>
             </q-form>
-            <div class="answers">
-                <p :class="{ active: r1 != '' }">1: {{ r1 }}</p>
-                <p :class="{ active: r2 != '' }">2: {{ r2 }}</p>
-                <p :class="{ active: r3 != '' }">3: {{ r3 }}</p>
-                <p :class="{ active: r4 != '' }">4: {{ r4 }}</p>
-                <p :class="{ active: r5 != '' }">5: {{ r5 }}</p>
-                <p :class="{ active: r6 != '' }">6: {{ r6 }}</p>
-                <p :class="{ active: r7 != '' }">7: {{ r7 }}</p>
-                <p :class="{ active: r8 != '' }">8: {{ r8 }}</p>
-                <p :class="{ active: r9 != '' }">9: {{ r9 }}</p>
-                <p :class="{ active: r10 != '' }">10: {{ r10 }}</p>
-                <p :class="{ active: r11 != '' }">11: {{ r11 }}</p>
-                <p :class="{ active: r12 != '' }">12: {{ r12 }}</p>
-                <p :class="{ active: r13 != '' }">13: {{ r13 }}</p>
-                <p :class="{ active: r14 != '' }">14: {{ r14 }}</p>
-                <p :class="{ active: r15 != '' }">15: {{ r15 }}</p>
-                <p :class="{ active: r16 != '' }">16: {{ r16 }}</p>
-                <p :class="{ active: r17 != '' }">17: {{ r17 }}</p>
-                <p :class="{ active: r18 != '' }">18: {{ r18 }}</p>
-                <p :class="{ active: r19 != '' }">19: {{ r19 }}</p>
-                <p :class="{ active: r20 != '' }">20: {{ r20 }}</p>
-                <p :class="{ active: r21 != '' }">21: {{ r21 }}</p>
-                <p :class="{ active: r22 != '' }">22: {{ r22 }}</p>
-                <p :class="{ active: r23 != '' }">23: {{ r23 }}</p>
-                <p :class="{ active: r24 != '' }">24: {{ r24 }}</p>
-                <p :class="{ active: r25 != '' }">25: {{ r25 }}</p>
-                <p :class="{ active: r26 != '' }">26: {{ r26 }}</p>
-                <p :class="{ active: r27 != '' }">27: {{ r27 }}</p>
-                <p :class="{ active: r28 != '' }">28: {{ r28 }}</p>
-                <p :class="{ active: r29 != '' }">29: {{ r29 }}</p>
-                <p :class="{ active: r30 != '' }">30: {{ r30 }}</p>
-                <p :class="{ active: r31 != '' }">31: {{ r31 }}</p>
-                <p :class="{ active: r32 != '' }">32: {{ r32 }}</p>
-            </div>
         </div>
     </q-page>
 </template>
 
 <style lang="sass" scoped>
 .question
+    padding: 16px
     margin-bottom: 16px
     display: grid
     background: $positive
-    padding: 8px
     border-radius: 24px
+    border: 1px solid #2e2c6d
 
 .question p
     font-weight: 500
-
-.answers
-    display: grid
-    position: absolute
-    top: 20vh
-    right: 24px
-    background: $primary
-    color: $accent
-    padding: 12px
-    border-radius: 8px
-
-.active
-    color: white
-    font-weight: 600
 </style>

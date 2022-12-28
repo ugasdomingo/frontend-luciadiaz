@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 // Import Tools
 import { useQuasar } from 'quasar';
-import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { useArquetipoStore } from 'stores/arquetipo-store';
 import { dataArquetipos } from './dataArquetipos';
@@ -9,7 +8,6 @@ import { dataArquetipos } from './dataArquetipos';
 // Setup Tools
 const q$ = useQuasar();
 const arquetipoStore = useArquetipoStore();
-const router = useRouter();
 
 // Catch answers
 const r1 = ref('');
@@ -79,9 +77,15 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 
 <template>
     <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-5">
+        <div class="col-12 col-sm-6 col-md-5 q-pb-xl">
             <h3>Bienvenido(a) al Test de Arquetipos</h3>
-            <p>
+            <p style="font-size: 1em">
+                Este test tiene la finalidad de identificiar tus modelos y
+                patornes de comportamiento, permitiendo trabajar de manera
+                personalizada en tu plan de desarrollo personal. Llevándote a
+                conocer más tus fortalezas y las áreas a potenciar en tu vida.
+            </p>
+            <p style="font-size: 1.2em">
                 Por favor selecciona la opción con la que más te identifique en
                 cada caso
             </p>
@@ -447,7 +451,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 </div>
                 <div class="registro-buttom">
                     <q-btn
-                        label="Guardar Test"
+                        label="Procesar Test"
                         color="primary"
                         type="submit"
                     ></q-btn>
@@ -474,7 +478,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     margin-bottom: 16px
     display: grid
     background: $positive
-    padding: 8px
+    padding: 16px
     border-radius: 24px
 
 .question p
