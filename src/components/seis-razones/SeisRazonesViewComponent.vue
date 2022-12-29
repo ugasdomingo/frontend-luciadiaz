@@ -55,7 +55,7 @@ const handleSubmit = async () => {
             const username = fullname.value;
 
             await sixReasonsStore.createSixReasons(reasons, objetive, username);
-            sixReasonsStore.findSxReasonsTest();
+            sixReasonsStore.findSixReasonsTest();
         }
     } catch (error: any) {
         console.log('error', error);
