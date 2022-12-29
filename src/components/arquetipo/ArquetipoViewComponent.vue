@@ -485,14 +485,18 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     font-weight: 500
 
 .answers
-    display: grid
+    display: flex
     position: fixed
-    top: 20vh
-    right: 24px
+    bottom: 5vh
+    left: 24px
     background: $primary
     color: $accent
     padding: 12px
     border-radius: 8px
+
+.answers p
+    padding: 0px 4px
+    margin: 0px
 
 .active
     color: white

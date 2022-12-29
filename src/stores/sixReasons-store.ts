@@ -10,6 +10,34 @@ export const useSixReasonsStore = defineStore('sixReasons', () => {
     const sixReasons = ref('');
     const oneSixReasonsTest = ref();
     const isSixReasonsTest = ref('');
+    const allSixReasonsTest = ref();
+
+    const getAllSixReasonsTest = async () => {
+        try {
+            const res = await api({
+                url: '/six-reasons-test/sixReasons/',
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + userStore.token,
+                },
+            });
+            allSixReasonsTest.value = res.data.sixReasonsTest.map(
+                (item: any) => {
+                    return {
+                        date: new Date(item.date),
+                        username: item.username,
+                        objetive: item.objetive,
+                        reason1: item.reasons[0],
+                        reason3: item.reasons[2],
+                        reason4: item.reasons[3],
+                        reason6: item.reasons[5],
+                    };
+                }
+            );
+        } catch (error: any) {
+            throw error.response?.data || error;
+        }
+    };
 
     const getOneSixReasonsTest = async (uid: any) => {
         try {
@@ -66,7 +94,7 @@ export const useSixReasonsStore = defineStore('sixReasons', () => {
         }
     };
 
-    const findSxReasonsTest = async () => {
+    const findSixReasonsTest = async () => {
         await userStore.self();
         await getOneSixReasonsTest(userStore.selfUid);
         if (oneSixReasonsTest.value != '') {
@@ -77,11 +105,13 @@ export const useSixReasonsStore = defineStore('sixReasons', () => {
     };
 
     return {
+        getAllSixReasonsTest,
         getOneSixReasonsTest,
         createSixReasons,
-        findSxReasonsTest,
+        findSixReasonsTest,
         oneSixReasonsTest,
         isSixReasonsTest,
         sixReasons,
+        allSixReasonsTest,
     };
 });

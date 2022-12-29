@@ -24,34 +24,34 @@ const arquetipoStore = useArquetipoStore();
                     <h6 class="q-ma-xs">Sabio Rey</h6>
                     <p>
                         Principalmente quiere
-                        <span class="text-bold">tener razón</span>. Y sus
-                        cualidades son
+                        <span class="text-bold">tener razón</span>. Además:
                     </p>
                     <ul>
-                        <li>Estudioso</li>
-                        <li>Metódico</li>
-                        <li>Estructurado</li>
-                        <li>Poco expresivo</li>
-                        <li>Trabaja solo</li>
-                        <li>Motivado por la lógica</li>
-                        <li>Preciso</li>
+                        <li>Su máxima necesidad: la IMPORTANCIA.</li>
+                        <li>
+                            Es capaz de contemplar pasado, presente y futuro.
+                        </li>
+                        <li>Toma decisiones según la ÉTICA.</li>
+                        <li>
+                            Le gusta la precisión, piensa antes de actuar y
+                            fundamenta sus decisiones.
+                        </li>
                     </ul>
                 </div>
                 <div class="col explicacion">
                     <h6 class="q-ma-xs">Guerrero</h6>
                     <p>
                         Principalmente quiere
-                        <span class="text-bold">tener control</span>. Y sus
-                        cualidades son
+                        <span class="text-bold">tener control</span>. Además:
                     </p>
                     <ul>
-                        <li>Estudioso</li>
-                        <li>Metódico</li>
-                        <li>Estructurado</li>
-                        <li>Poco expresivo</li>
-                        <li>Trabaja solo</li>
-                        <li>Motivado por la lógica</li>
-                        <li>Preciso</li>
+                        <li>Su máxima necesidad: el CONTROL.</li>
+                        <li>Enfocado en el presente.</li>
+                        <li>Toma decisiones según lo PRÁCTICO.</li>
+                        <li>
+                            Le gusta el control, la rapidez, la efectividad y la
+                            impulsividad.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -64,13 +64,13 @@ const arquetipoStore = useArquetipoStore();
                         cualidades son
                     </p>
                     <ul>
-                        <li>Estudioso</li>
-                        <li>Metódico</li>
-                        <li>Estructurado</li>
-                        <li>Poco expresivo</li>
-                        <li>Trabaja solo</li>
-                        <li>Motivado por la lógica</li>
-                        <li>Preciso</li>
+                        <li>Su máxima necesidad: el AMOR.</li>
+                        <li>Enfocado en el pasado.</li>
+                        <li>Toma decisiones según las RELACIONES.</li>
+                        <li>
+                            Le gusta compartir, buen negociador, evitar
+                            conflictos, es sensible y buen escuchador
+                        </li>
                     </ul>
                 </div>
                 <div class="col explicacion">
@@ -81,13 +81,13 @@ const arquetipoStore = useArquetipoStore();
                         cualidades son
                     </p>
                     <ul>
-                        <li>Estudioso</li>
-                        <li>Metódico</li>
-                        <li>Estructurado</li>
-                        <li>Poco expresivo</li>
-                        <li>Trabaja solo</li>
-                        <li>Motivado por la lógica</li>
-                        <li>Preciso</li>
+                        <li>Su máxima necesidad: la VARIEDAD.</li>
+                        <li>Enfocado en el futuro.</li>
+                        <li>Toma decisiones según lo EMOCIONAL.</li>
+                        <li>
+                            Le gusta visualizar oportunidades, vender, soñar,
+                            las aventuras y la rapidez
+                        </li>
                     </ul>
                 </div>
             </div>

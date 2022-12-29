@@ -30,7 +30,6 @@ export const useArquetipoStore = defineStore('arquetipo', () => {
                     uid: item.uid,
                 };
             });
-            console.log('AllArquetipos done');
         } catch (error: any) {
             throw error.response?.data || error;
         }
@@ -66,7 +65,6 @@ export const useArquetipoStore = defineStore('arquetipo', () => {
     const findArchetypeTest = async () => {
         await userStore.self();
         await getAllArquetipos(userStore.selfUid);
-        console.log(userStore.selfUid);
         if (allArquetipos.value != '') {
             isArqueTypeTest.value = '1';
         } else {

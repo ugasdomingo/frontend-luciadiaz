@@ -16,7 +16,7 @@
                 <q-btn
                     color="primary"
                     glossy
-                    label="Hacer test sin costo"
+                    label="Hacer test gratuito"
                     to="temperamento"
                 />
             </div>
@@ -37,7 +37,7 @@
                 <q-btn
                     color="primary"
                     glossy
-                    label="Hacer test sin costo"
+                    label="Hacer test gratuito"
                     to="arquetipos"
                 />
             </div>

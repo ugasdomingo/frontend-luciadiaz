@@ -38,12 +38,12 @@ export const dataTemperamento = [
         key: 'r6',
         a: 'Soso',
         b: 'Decidido',
-        c: 'Impresible',
+        c: 'Imprevisible',
         d: 'Sin afecto',
     },
     {
         key: 'r7',
-        a: 'Entuciasta',
+        a: 'Entusiasta',
         b: 'Autosuficiente',
         c: 'Díficil de Complacer',
         d: 'Vacilante',
@@ -164,7 +164,7 @@ export const dataTemperamento = [
         key: 'r24',
         a: 'Reticente',
         b: 'Temperamental',
-        c: 'Sin entuciasmo',
+        c: 'Sin entusiasmo',
         d: 'Escucha',
     },
     {
@@ -179,7 +179,7 @@ export const dataTemperamento = [
         a: 'Sin ambición',
         b: 'Suspicaz',
         c: 'Indeciso',
-        d: 'Presipitado',
+        d: 'Precipitado',
     },
     {
         key: 'r27',
@@ -204,7 +204,7 @@ export const dataTemperamento = [
     },
     {
         key: 'r30',
-        a: 'Inscipído',
+        a: 'Insipído',
         b: 'Descuidado',
         c: 'Culto',
         d: 'Inofensivo',

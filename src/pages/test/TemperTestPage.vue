@@ -2,7 +2,7 @@
     <div v-if="temperamentoStore.isTemperamentoTest == ''">
         <h2>Cargando...</h2>
     </div>
-    <div v-else>
+    <div class="temper-container" v-else>
         <div v-if="temperamentoStore.isTemperamentoTest == '1'">
             <TemperamentoDoneComponent />
         </div>
@@ -24,3 +24,11 @@ import TemperamentoDoneComponent from 'components/temperamento/TemperamentoDoneC
 const temperamentoStore = useTemperamentoStore();
 temperamentoStore.findTemperamentoTest();
 </script>
+
+<style lang="scss" scoped>
+@media screen and (max-width: 1080px) {
+    .temper-container {
+        padding: 8px;
+    }
+}
+</style>

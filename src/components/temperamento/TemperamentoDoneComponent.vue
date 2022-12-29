@@ -9,7 +9,7 @@ const temperamentoStore = useTemperamentoStore();
 
 <template>
     <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-5">
+        <div class="col-12 col-sm-6 col-md-5 q-pb-md">
             <h3>Hola, tus resultados son</h3>
             <div class="results">
                 <h4>
@@ -29,6 +29,11 @@ const temperamentoStore = useTemperamentoStore();
                     {{ temperamentoStore.allTemperamentos[0].melancholic }}
                 </h4>
             </div>
+            <h6 class="q-pt-xl">
+                Si tienes dudas sobre este test, puedes escribirme por WhatsApp
+                o agendar una cita para que tratemos el tema en profundidad:
+            </h6>
+            <q-btn label="Agendar Cita" color="primary" to="citas" />
         </div>
     </q-page>
 </template>

@@ -22,5 +22,5 @@ import SixReasonsDoneComponent from 'src/components/seis-razones/SeisRazonesDone
 
 // Setup Tools
 const sixReasonsStore = useSixReasonsStore();
-sixReasonsStore.findSxReasonsTest();
+sixReasonsStore.findSixReasonsTest();
 </script>
