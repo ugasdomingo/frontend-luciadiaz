@@ -24,6 +24,9 @@
         >
             <SheduleComponent />
         </div>
+        <div class="row col-12 fourth-section items-center justify-evenly">
+            <MotivosComponent />
+        </div>
     </q-page>
 </template>
 
@@ -40,6 +43,9 @@ import GiftTestComponent from 'src/components/index/GiftTestComponent.vue';
 
 // Import Shedule Therapy / Third Section
 import SheduleComponent from 'src/components/index/SheduleComponent.vue';
+
+// Import Motivo de consulta / Fourth Section
+import MotivosComponent from 'src/components/index/MotivosComponent.vue';
 </script>
 
 <style scoped>
@@ -61,6 +67,10 @@ import SheduleComponent from 'src/components/index/SheduleComponent.vue';
     width: 100%;
     height: 70vh;
 }
+.fourth-section {
+    width: 100%;
+    height: 70vh;
+}
 
 @media screen and (max-width: 1080px) {
     .hero-img {
@@ -78,6 +88,10 @@ import SheduleComponent from 'src/components/index/SheduleComponent.vue';
     }
     .third-section {
         height: 40vh;
+        padding: 16px;
+    }
+    .fourth-section {
+        height: 60vh;
         padding: 16px;
     }
 }

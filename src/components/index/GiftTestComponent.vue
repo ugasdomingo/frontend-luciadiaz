@@ -21,6 +21,10 @@
                 />
             </div>
         </div>
+        <div
+            style="border: 1px solid black; width: 70%"
+            class="separator q-my-md"
+        ></div>
         <div class="row flex-center">
             <img
                 src="img/roles.jpg"
@@ -40,3 +44,15 @@
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+.separator {
+    display: none;
+}
+
+@media screen and (max-width: 1080px) {
+    .separator {
+        display: grid;
+    }
+}
+</style>

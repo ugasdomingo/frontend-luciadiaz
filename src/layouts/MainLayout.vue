@@ -68,29 +68,6 @@
                 />
             </q-page-sticky>
         </q-page-container>
-
-        <q-footer reveal elevated class="bg-primary text-accent">
-            <q-toolbar>
-                <q-toolbar-title class="row col-12 items-center">
-                    <q-avatar>
-                        <q-btn
-                            dense
-                            flat
-                            round
-                            icon="menu"
-                            @click="toggleLeftDrawer"
-                            class="col-2"
-                        />
-                        <!-- <div>Title</div> -->
-                    </q-avatar>
-                    <p
-                        class="col-11 text-white text-caption text-center q-ma-none"
-                    >
-                        Todo los Derechos Reservados ® 2025
-                    </p>
-                </q-toolbar-title>
-            </q-toolbar>
-        </q-footer>
     </q-layout>
 </template>
 
