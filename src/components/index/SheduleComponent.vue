@@ -11,7 +11,7 @@
             color="primary"
             glossy
             label="Programar Online o Presencial"
-            to="presencial"
+            to="citas"
         />
     </div>
 </template>

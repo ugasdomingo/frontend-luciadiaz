@@ -12,7 +12,7 @@
                 color="primary"
                 glossy
                 label="Descúbrelo sin costo alguno"
-                to="presencial"
+                to="seis-razones"
                 style="width: 40%; margin-top: 16px"
                 class="text-center"
             />
