@@ -35,10 +35,10 @@ export const useAutoregisterStore = defineStore('registro', () => {
     };
 
     const createAutoregistro = async (
-        pensamiento: any,
-        emocion: any,
-        accion: any,
-        detonante: any
+        pensamiento: string,
+        emocion: string,
+        accion: string,
+        detonante: string
     ) => {
         try {
             const res = await api({

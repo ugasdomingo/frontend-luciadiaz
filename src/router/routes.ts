@@ -68,6 +68,19 @@ const routes: RouteRecordRaw[] = [
                 path: 'citas',
                 component: () => import('src/pages/CitasPage.vue'),
             },
+            {
+                path: 'crianza-asertiva',
+                component: () =>
+                    import('src/pages/courses/CrianzaAsertivaPage.vue'),
+            },
+            {
+                path: 'gracias',
+                component: () => import('src/pages/GraciasPage.vue'),
+            },
+            {
+                path: 'pruebas',
+                component: () => import('src/pages/PruebasPage.vue'),
+            },
         ],
     },
 

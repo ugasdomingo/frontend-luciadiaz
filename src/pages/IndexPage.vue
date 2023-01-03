@@ -10,13 +10,17 @@
                 <HeroImgComponent />
             </div>
         </div>
-        <!-- 6 razones test (First Section) -->
-        <div class="column first-section flex-center bg-principal">
-            <SixReasonsComponent />
+        <!-- Cooming soon (Zero Section) -->
+        <div>
+            <NextCourseComponent />
         </div>
-        <!-- Arquetipo and Tempeter test (Second Section) -->
+        <!-- 6 razones test (First Section) -->
         <div class="column flex-center" style="width: 100%; min-height: 70vh">
             <GiftTestComponent />
+        </div>
+        <!-- Arquetipo and Tempeter test (Second Section) -->
+        <div class="column first-section flex-center bg-principal">
+            <SixReasonsComponent />
         </div>
         <!-- Arquetipo and Tempeter test (Third Section) -->
         <div
@@ -34,6 +38,9 @@
 // Import Hero Components
 import HeroTextComponent from 'src/components/index/HeroTextComponent.vue';
 import HeroImgComponent from 'src/components/index/HeroImgComponent.vue';
+
+// Import Courses coming soon / Zero Section
+import NextCourseComponent from 'src/components/index/NextCourseComponent.vue';
 
 // Import 6 Reasons / First Section
 import SixReasonsComponent from 'src/components/index/SixReasonsComponent.vue';
@@ -59,6 +66,10 @@ import MotivosComponent from 'src/components/index/MotivosComponent.vue';
     top: 0;
     opacity: 0.5;
 }
+.zero-section {
+    width: 100%;
+    height: 90vh;
+}
 .first-section {
     width: 100%;
     height: 70vh;
@@ -82,6 +93,9 @@ import MotivosComponent from 'src/components/index/MotivosComponent.vue';
     .img-container {
         padding: 0px;
         display: none;
+    }
+    .zero-section {
+        height: 100vh;
     }
     .first-section {
         height: 40vh;

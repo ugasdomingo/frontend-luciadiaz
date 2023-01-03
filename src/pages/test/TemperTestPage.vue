@@ -1,6 +1,10 @@
 <template>
-    <div v-if="temperamentoStore.isTemperamentoTest == ''">
-        <h2>Cargando...</h2>
+    <div
+        class="column flex-center"
+        style="width: 100%; height: 100vh"
+        v-if="temperamentoStore.isTemperamentoTest == ''"
+    >
+        <q-spinner-pie color="primary" size="10em" />
     </div>
     <div class="temper-container" v-else>
         <div v-if="temperamentoStore.isTemperamentoTest == '1'">

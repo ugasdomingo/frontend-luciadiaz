@@ -1,6 +1,10 @@
 <template>
-    <div v-if="sixReasonsStore.isSixReasonsTest == ''">
-        <h2>Cargando...</h2>
+    <div
+        class="column flex-center"
+        style="width: 100%; height: 100vh"
+        v-if="sixReasonsStore.isSixReasonsTest == ''"
+    >
+        <q-spinner-pie color="primary" size="10em" />
     </div>
     <div v-else>
         <div v-if="sixReasonsStore.isSixReasonsTest == '1'">
