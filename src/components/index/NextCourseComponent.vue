@@ -39,7 +39,7 @@
     border-radius: 32px;
 }
 .background-container {
-    background-image: url('img/fondo.jpg');
+    background-image: url('../../../public/img/fondo.jpg');
     background-size: cover;
 }
 
