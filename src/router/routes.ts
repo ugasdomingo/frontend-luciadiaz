@@ -15,6 +15,18 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/PsicologiaPage.vue'),
             },
             {
+                path: 'escritorio',
+                component: () => import('pages/private/DeskPage.vue'),
+                meta: {
+                    auth: true,
+                },
+            },
+            {
+                path: 'citas',
+                component: () => import('src/pages/CitasPage.vue'),
+            },
+            /* ********PSICOTEST ROUTES******** */
+            {
                 path: 'autoregistro',
                 component: () => import('pages/test/AutoregistroPage.vue'),
                 meta: {
@@ -49,13 +61,7 @@ const routes: RouteRecordRaw[] = [
                     auth: true,
                 },
             },
-            {
-                path: 'escritorio',
-                component: () => import('pages/private/DeskPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
+            /* ********AUTH ROUTES******** */
             {
                 path: 'login',
                 component: () => import('pages/auth/LoginPage.vue'),
@@ -64,22 +70,33 @@ const routes: RouteRecordRaw[] = [
                 path: 'signup',
                 component: () => import('pages/auth/RegistroPage.vue'),
             },
-            {
-                path: 'citas',
-                component: () => import('src/pages/CitasPage.vue'),
-            },
+            /* ********COURSES ROUTES******** */
             {
                 path: 'crianza-asertiva',
                 component: () =>
-                    import('src/pages/courses/CrianzaAsertivaPage.vue'),
+                    import('pages/courses/CrianzaAsertivaPage.vue'),
             },
             {
                 path: 'gracias',
-                component: () => import('src/pages/GraciasPage.vue'),
+                component: () => import('pages/GraciasPage.vue'),
+            },
+            /* ********LEGAL ROUTES******** */
+            {
+                path: 'aviso-legal',
+                component: () => import('pages/legal/AvisoLegalPage.vue'),
+            },
+            {
+                path: 'politica-cookies',
+                component: () => import('pages/legal/CookiesLegalPage.vue'),
+            },
+            {
+                path: 'politica-privacidad',
+                component: () =>
+                    import('pages/legal/PoliticaPrivacidadPage.vue'),
             },
             {
                 path: 'pruebas',
-                component: () => import('src/pages/PruebasPage.vue'),
+                component: () => import('pages/PruebasPage.vue'),
             },
         ],
     },

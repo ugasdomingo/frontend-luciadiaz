@@ -9,8 +9,11 @@ const userStore = useUserStore();
 const router = useRouter();
 const email = ref('');
 const password = ref('');
+const loadding = ref(false);
+
 const handleSubmit = async () => {
     try {
+        loadding.value = !loadding.value;
         await userStore.access(email.value, password.value);
         router.push('/');
         email.value = '';
@@ -71,6 +74,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                         color="primary"
                         type="submit"
                     ></q-btn>
+                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
                 </div>
             </q-form>
             <div class="q-mt-xl">

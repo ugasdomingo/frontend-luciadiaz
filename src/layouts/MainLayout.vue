@@ -32,6 +32,27 @@
                     Autoregistro
                 </q-btn>
             </q-toolbar>
+            <q-dialog v-model="dialog" persistent>
+                <q-card class="my-card bg-primary text-white">
+                    <q-card-section>
+                        <div class="text-h6">Política de Cookies</div>
+                    </q-card-section>
+
+                    <q-card-section>
+                        <p>
+                            Usamos Cookies para mejorar tu experiencia de
+                            usuario
+                        </p>
+                    </q-card-section>
+
+                    <q-separator dark />
+
+                    <q-card-actions>
+                        <q-btn @click="cookies" flat>Aceptar</q-btn>
+                        <q-btn @click="cookies" flat>Rechazar</q-btn>
+                    </q-card-actions>
+                </q-card>
+            </q-dialog>
         </q-header>
 
         <q-drawer v-model="leftDrawerOpen" side="left" bordered>
@@ -82,10 +103,16 @@ const userStores = useUserStore();
 const router = useRouter();
 const leftDrawerOpen = ref(false);
 const role = ref();
+const dialog = ref(true);
+const cookies = () => {
+    dialog.value = !dialog.value;
+};
+
 const setRole = () => {
     role.value = sessionStorage.getItem('user');
 };
 setRole();
+
 function toggleLeftDrawer() {
     leftDrawerOpen.value = !leftDrawerOpen.value;
     setRole();

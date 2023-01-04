@@ -11,9 +11,18 @@ const name = ref('');
 const email = ref('');
 const password = ref('');
 const repassword = ref('');
+const loadding = ref(false);
+const politiquesAccepted = ref(false);
+
 const handleSubmit = async () => {
     try {
-        await userStore.register(name.value, email.value, password.value);
+        loadding.value = !loadding.value;
+        await userStore.register(
+            name.value,
+            email.value,
+            password.value,
+            politiquesAccepted.value
+        );
         router.push('/');
         email.value = '';
         password.value = '';
@@ -80,12 +89,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     ]"
                 ></q-input>
 
+                <q-checkbox
+                    v-model="politiquesAccepted"
+                    label="Acepto las politicas de privacidad"
+                />
+                <q-btn
+                    label="Ver Politicas de Privacidad"
+                    to="politica-privacidad"
+                    style="font-size: 8px; margin-left: 8px"
+                ></q-btn>
+
                 <div>
-                    <q-btn
-                        label="Registrarme"
-                        color="primary"
-                        type="submit"
-                    ></q-btn>
+                    <div v-if="politiquesAccepted == true">
+                        <q-btn
+                            label="Registrarme"
+                            color="primary"
+                            type="submit"
+                        ></q-btn>
+                        <q-spinner-pie
+                            color="primary"
+                            size="2em"
+                            v-if="loadding"
+                        />
+                    </div>
+                    <q-btn v-else label="Registrarme"></q-btn>
                 </div>
             </q-form>
             <div class="q-mt-xl">

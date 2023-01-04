@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { useQuasar } from 'quasar';
 import { useRouter } from 'vue-router';
 import { ref } from 'vue';
@@ -10,12 +10,24 @@ const enrollmentStore = useEnrollmentStore();
 const userStore = useUserStore();
 const router = useRouter();
 
+const scrollDown = () => {
+    window.scroll({
+        top: 10000,
+        left: 100,
+        behavior: 'smooth',
+    });
+};
+
+window.setTimeout(scrollDown, 500);
+
 const paymentMethod = ref('');
 const numberProof = ref('');
 const formationID = ref('Crianza Asertiva');
 const name = ref('');
 const email = ref('');
 const password = ref('');
+const politiquesAccepted = ref(false);
+const loadding = ref(false);
 
 const optionsPaymentMethod = [
     'Paypal',
@@ -23,14 +35,31 @@ const optionsPaymentMethod = [
     'Transferencia Europa',
 ];
 
-const handleSubmit = async () => {
+const handleSubmit = async (mail: any) => {
     try {
-        await userStore.register(name.value, email.value, password.value);
-        await enrollmentStore.createEnrollments(
-            formationID.value,
-            paymentMethod.value,
-            numberProof.value
-        );
+        loadding.value = !loadding.value;
+        const findUser = await userStore.getUserByEmail(mail);
+
+        if (findUser) {
+            await userStore.access(email.value, password.value);
+            await enrollmentStore.createEnrollments(
+                formationID.value,
+                paymentMethod.value,
+                numberProof.value
+            );
+        } else {
+            await userStore.register(
+                name.value,
+                email.value,
+                password.value,
+                politiquesAccepted.value
+            );
+            await enrollmentStore.createEnrollments(
+                formationID.value,
+                paymentMethod.value,
+                numberProof.value
+            );
+        }
         router.push('/gracias');
         email.value = '';
         password.value = '';
@@ -64,7 +93,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
         <q-form
             class="self-center"
             style="min-width: 500px"
-            @submit.prevent="handleSubmit()"
+            @submit.prevent="handleSubmit(email)"
         >
             <q-input
                 v-model="name"
@@ -84,7 +113,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             ></q-input>
             <q-input
                 v-model="password"
-                label="Ingrese contraseña"
+                label="Ingrese contraseña (Si ya tienes una cuenta, usa tu contraseña)"
                 type="password"
                 :rules="[
                     (val) =>
@@ -104,12 +133,25 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 type="text"
                 :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
             ></q-input>
+            <q-checkbox
+                v-model="politiquesAccepted"
+                label="Acepto las politicas de privacidad"
+            />
+            <q-btn
+                label="Ver Politicas de Privacidad"
+                to="politica-privacidad"
+                style="font-size: 8px; margin-left: 8px"
+            ></q-btn>
             <div class="registro-buttom">
-                <q-btn
-                    label="Inscribirme"
-                    color="primary"
-                    type="submit"
-                ></q-btn>
+                <div v-if="politiquesAccepted">
+                    <q-btn
+                        label="Inscribirme"
+                        color="primary"
+                        type="submit"
+                    ></q-btn>
+                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
+                </div>
+                <q-btn v-else label="Inscribirme"></q-btn>
             </div>
         </q-form>
     </div>

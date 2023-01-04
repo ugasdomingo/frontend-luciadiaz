@@ -3,6 +3,15 @@ import { useEnrollmentStore } from 'src/stores/enrollment-store';
 import ReportComponent from './ReportComponent.vue';
 
 const enrollmentStore = useEnrollmentStore();
+const scrollDown = () => {
+    window.scroll({
+        top: 10000,
+        left: 100,
+        behavior: 'smooth',
+    });
+};
+
+window.setTimeout(scrollDown, 500);
 
 const handleSubmit = () => {
     enrollmentStore.showReport = !enrollmentStore.showReport;

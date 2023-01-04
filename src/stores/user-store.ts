@@ -31,12 +31,18 @@ export const useUserStore = defineStore('user', () => {
         }
     };
 
-    const register = async (name: string, email: string, password: string) => {
+    const register = async (
+        name: string,
+        email: string,
+        password: string,
+        politiquesAccepted: boolean
+    ) => {
         try {
             const res = await api.post('/register', {
-                name: name,
-                email: email,
-                password: password,
+                name,
+                email,
+                password,
+                politiquesAccepted,
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
@@ -135,11 +141,27 @@ export const useUserStore = defineStore('user', () => {
             const res = await api({
                 url: '/' + id,
                 method: 'GET',
-                headers: {
-                    Authorization: 'Bearer ' + token.value,
-                },
             });
             return res.data.name;
+        } catch (error: any) {
+            if (error.response) {
+                throw error.response.data;
+            } else if (error.request) {
+                console.log(error.request);
+            } else {
+                console.log('Error', error.message);
+            }
+        }
+    };
+
+    const getUserByEmail = async (email: any) => {
+        try {
+            const res = await api({
+                url: '/user/' + email,
+                method: 'GET',
+            });
+            return res.data.name;
+            console.log('user by email');
         } catch (error: any) {
             if (error.response) {
                 throw error.response.data;
@@ -159,6 +181,7 @@ export const useUserStore = defineStore('user', () => {
         logout,
         register,
         getUser,
+        getUserByEmail,
         getAllUsers,
         allUsers,
         self,
