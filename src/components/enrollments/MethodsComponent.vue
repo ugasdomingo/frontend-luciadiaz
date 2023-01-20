@@ -45,9 +45,10 @@ const handleSubmit = () => {
                     <p>
                         ACH and Wire routing number: <span>084009519</span>
                         <br />
-                        Número de cuenta: <span>9600010355866173</span> <br />
+                        Número de cuenta: <span>9600011166715743</span> <br />
                         Tipo de cuenta: <span>Corriente</span> <br />
-                        Titular: <span>Domingo José Ugas Báez</span> <br />
+                        Titular: <span>Lucia Antonella Diaz Gimenez</span>
+                        <br />
                     </p>
                 </q-card-section>
             </q-card>
@@ -57,8 +58,9 @@ const handleSubmit = () => {
                 <q-card-section>
                     <p>
                         BIC: <span>TRWIBEB1XXX</span> <br />
-                        IBAN: <span>BE12 9674 9041 5592</span> <br />
-                        Titular: <span>Domingo José Ugas Báez</span> <br />
+                        IBAN: <span>BE58 9675 2118 2679</span> <br />
+                        Titular: <span>Lucia Antonella Diaz Gimenez</span>
+                        <br />
                     </p>
                 </q-card-section>
             </q-card>

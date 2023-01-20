@@ -23,6 +23,10 @@
             <SixReasonsComponent />
         </div>
         <!-- Arquetipo and Tempeter test (Third Section) -->
+        <!-- Historia Emocional (Last Section) -->
+        <div>
+            <HistoriaEmocionalComponent />
+        </div>
         <div
             class="row col-12 third-section bg-principal items-center justify-evenly"
         >
@@ -41,6 +45,9 @@ import HeroImgComponent from 'src/components/index/HeroImgComponent.vue';
 
 // Import Courses coming soon / Zero Section
 import NextCourseComponent from 'src/components/index/NextCourseComponent.vue';
+
+// Import Historia emocional / last Section
+import HistoriaEmocionalComponent from 'src/components/index/HistoriaEmocionalComponent.vue';
 
 // Import 6 Reasons / First Section
 import SixReasonsComponent from 'src/components/index/SixReasonsComponent.vue';
