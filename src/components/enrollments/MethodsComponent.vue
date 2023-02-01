@@ -19,7 +19,7 @@ const handleSubmit = () => {
 </script>
 
 <template>
-    <div class="methods-container column">
+    <div class="column">
         <h4 class="text-center q-mb-md">Cuentas Autorizadas</h4>
         <p class="text-center">
             Para inscribirte, por favor realiza el pago en cualquiera de estos
@@ -73,8 +73,10 @@ const handleSubmit = () => {
             class="q-my-md self-center"
             style="width: 30%"
         ></q-btn>
+        <div v-if="enrollmentStore.showReport">
+            <ReportComponent />
+        </div>
     </div>
-    <ReportComponent v-if="enrollmentStore.showReport" />
 </template>
 
 <style lang="scss" scoped>

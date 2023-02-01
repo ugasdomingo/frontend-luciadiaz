@@ -85,8 +85,9 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     });
 };
 </script>
+
 <template>
-    <div class="column col-12 q-ma-xl">
+    <div class="column q-ma-xs">
         <h6 class="text-center q-mt-none">
             Completa el formulario para reportar el pago
         </h6>
@@ -138,7 +139,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 label="Acepto las politicas de privacidad"
             />
             <q-btn
-                label="Ver Politicas de Privacidad"
+                label="Ver Politicas "
                 to="politica-privacidad"
                 style="font-size: 8px; margin-left: 8px"
             ></q-btn>

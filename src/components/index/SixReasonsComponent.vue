@@ -46,7 +46,7 @@
     }
     .text-container {
         height: 40vh;
-        padding: 4px;
+        padding: 0px 4px 0px 0px;
     }
 }
 </style>

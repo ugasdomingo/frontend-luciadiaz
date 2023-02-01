@@ -2,13 +2,13 @@
     <!-- Calendly inline widget begin -->
     <div
         class="calendly-inline-widget"
-        data-url="https://calendly.com/luciadiaz/citas"
+        data-url="https://calendly.com/luciadiaz/orientacion-madres-padres"
         style="min-width: 320px; height: 630px"
     ></div>
     <!-- Calendly inline widget end -->
 </template>
 
-<script>
+<script lang="ts">
 export default {
     mounted() {
         const recaptchaScript = document.createElement('script');

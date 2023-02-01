@@ -77,6 +77,11 @@ const routes: RouteRecordRaw[] = [
                     import('pages/courses/CrianzaAsertivaPage.vue'),
             },
             {
+                path: 'orientacion-padres',
+                component: () =>
+                    import('pages/courses/OrientacionPadresPage.vue'),
+            },
+            {
                 path: 'historia-emocional',
                 component: () =>
                     import('pages/courses/HistoriaEmocionalPage.vue'),
