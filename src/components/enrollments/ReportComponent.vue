@@ -38,7 +38,7 @@ const optionsPaymentMethod = [
 const handleSubmit = async (mail: any) => {
     try {
         loadding.value = !loadding.value;
-        const findUser = await userStore.getUserByEmail(mail);
+        const findUser = await userStore.getUserByEmail(email);
 
         if (findUser) {
             await userStore.access(email.value, password.value);

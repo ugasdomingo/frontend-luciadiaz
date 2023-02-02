@@ -27,6 +27,10 @@ const routes: RouteRecordRaw[] = [
             },
             /* ********PSICOTEST ROUTES******** */
             {
+                path: 'anamnesis',
+                component: () => import('pages/test/AnamnesisTestPage.vue'),
+            },
+            {
                 path: 'autoregistro',
                 component: () => import('pages/test/AutoregistroPage.vue'),
                 meta: {
