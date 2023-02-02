@@ -42,57 +42,46 @@ const politiquesAccepted = ref(false);
 
 const handleSubmit = async () => {
     try {
-        const allResponses = [
-            name.value,
-            edad.value,
-            pregunta1.value,
-            pregunta2.value,
-            pregunta3.value,
-            pregunta4.value,
-            pregunta5.value,
-            pregunta6.value,
-            pregunta7.value,
-            pregunta8.value,
-            pregunta9.value,
-            pregunta10.value,
-            pregunta11.value,
-            pregunta12.value,
-            pregunta13.value,
-            pregunta14.value,
-            pregunta15.value,
-            pregunta16.value,
-            pregunta17.value,
-            pregunta18.value,
-            pregunta19.value,
-            pregunta20.value,
-            pregunta21.value,
-        ];
-        // Funtion to count responses
-        const setResults = (resp: string) => {
-            return allResponses.filter((el) => el == resp).length;
+        const allResponses = {
+            name: name.value,
+            edad: edad.value,
+            pregunta1: pregunta1.value,
+            pregunta2: pregunta2.value,
+            pregunta3: pregunta3.value,
+            pregunta4: pregunta4.value,
+            pregunta5: pregunta5.value,
+            pregunta6: pregunta6.value,
+            pregunta7: pregunta7.value,
+            pregunta8: pregunta8.value,
+            pregunta9: pregunta9.value,
+            pregunta10: pregunta10.value,
+            pregunta11: pregunta11.value,
+            pregunta12: pregunta12.value,
+            pregunta13: pregunta13.value,
+            pregunta14: pregunta14.value,
+            pregunta15: pregunta15.value,
+            pregunta16: pregunta16.value,
+            pregunta17: pregunta17.value,
+            pregunta18: pregunta18.value,
+            pregunta19: pregunta19.value,
+            pregunta20: pregunta20.value,
+            pregunta21: pregunta21.value,
         };
+        console.log(allResponses);
 
-        // Find not answered questions
-        const blanksQuestions = setResults('');
+        const findUser = await userStore.getUserByEmail(email.value);
 
-        // Operations
-        if (blanksQuestions > 0) {
-            q$.notify('Upps te quedaron preguntas sin responder');
+        if (findUser) {
+            await userStore.access(email.value, password.value);
+            await enrollmentStore.createAnamnesis(allResponses);
         } else {
-            const findUser = await userStore.getUserByEmail(email);
-
-            if (findUser) {
-                await userStore.access(email.value, password.value);
-                await enrollmentStore.createAnamnesis(allResponses);
-            } else {
-                await userStore.register(
-                    name.value,
-                    email.value,
-                    password.value,
-                    politiquesAccepted.value
-                );
-                await enrollmentStore.createAnamnesis(allResponses);
-            }
+            await userStore.register(
+                name.value,
+                email.value,
+                password.value,
+                politiquesAccepted.value
+            );
+            await enrollmentStore.createAnamnesis(allResponses);
         }
 
         router.push('/gracias');

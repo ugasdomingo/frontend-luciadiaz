@@ -6,18 +6,24 @@
                 <AutoregistroList :users="users" class="q-ma-lg" />
             </template>
         </div>
+        <p>{{ enrollmentStore.anamnesis }}</p>
+        <p>{{ enrollmentStore.enrollements }}</p>
     </q-page>
 </template>
 
 <script lang="ts" setup>
 import { useUserStore } from 'src/stores/user-store';
+import { useEnrollmentStore } from 'src/stores/enrollment-store';
 
 //Component
 import AutoregistroList from 'components/autoregistro/AutoregistroListComponent.vue';
 
 const userStore = useUserStore();
+const enrollmentStore = useEnrollmentStore();
 
 userStore.getAllUsers();
+enrollmentStore.getAllAnamnesis();
+enrollmentStore.getAllEnrollments();
 </script>
 
 <style scoped></style>

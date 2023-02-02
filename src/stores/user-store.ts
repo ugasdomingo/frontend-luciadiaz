@@ -154,14 +154,13 @@ export const useUserStore = defineStore('user', () => {
         }
     };
 
-    const getUserByEmail = async (email: any) => {
+    const getUserByEmail = async (email: string) => {
         try {
             const res = await api({
                 url: '/user/' + email,
                 method: 'GET',
             });
             return res.data.name;
-            console.log('user by email');
         } catch (error: any) {
             if (error.response) {
                 throw error.response.data;

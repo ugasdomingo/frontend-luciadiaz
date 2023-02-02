@@ -61,7 +61,23 @@ export const useEnrollmentStore = defineStore('arquetipo', () => {
         }
     };
 
-    const createAnamnesis = async (respuestas: string[]) => {
+    const getAllAnamnesis = async () => {
+        try {
+            const res = await api({
+                url: '/anamnesis',
+                method: 'GET',
+                headers: {
+                    Authorization: 'Bearer ' + userStore.token,
+                },
+            });
+            anamnesis.value = res.data.anamnesis;
+            console.log(res.data);
+        } catch (error: any) {
+            throw error.response?.data || error;
+        }
+    };
+
+    const createAnamnesis = async (respuestas: object) => {
         try {
             const res = await api({
                 url: '/anamnesis',
@@ -81,10 +97,12 @@ export const useEnrollmentStore = defineStore('arquetipo', () => {
 
     return {
         enrollements,
+        anamnesis,
         allEnrollments,
         showReport,
         getAllEnrollments,
         createEnrollments,
+        getAllAnamnesis,
         createAnamnesis,
     };
 });
