@@ -39,11 +39,11 @@
                             sus habilidades y las tuyas. ¿Cómo funciona esta
                             formación?<br /><br />Una vez agendado, te llegará
                             un correo con un formulario de preguntas sobre tu
-                            peque que deberás imprimir y llenar antes del día
-                            agendado. La información es confidencial y quedará
-                            en tus manos.<br /><br />Y listo, nos vemos el dia
-                            acordado para lograr cosas maravillosas con un café
-                            en la mano.
+                            peque que deberás llenar antes del día agendado. La
+                            información es confidencial y quedará en tus
+                            manos.<br /><br />Y listo, nos vemos el dia acordado
+                            para lograr cosas maravillosas con un café en la
+                            mano.
                         </p>
                     </q-card-section>
                     <q-separator inset />
