@@ -10,7 +10,7 @@
         "format": "prettier --write \"**/*.{js,ts,vue,scss,html,md,json}\" --ignore-path .gitignore",
         "test": "echo \"No test specified\" && exit 0",
         "build": "quasar build",
-        "start": "$ quasar serve --history",
+        "start": "quasar serve dist/spa",
         "dev": "quasar dev"
     },
     "dependencies": {
