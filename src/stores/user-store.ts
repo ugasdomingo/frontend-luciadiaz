@@ -101,11 +101,11 @@ export const useUserStore = defineStore('user', () => {
             const res = await api.get('/refresh');
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', 'usuario cualquiera');
+            sessionStorage.setItem('userT', 'usuario cualquiera');
             setTime();
         } catch (error: any) {
             console.log(error);
-            sessionStorage.removeItem('user');
+            sessionStorage.removeItem('userT');
         }
     };
 

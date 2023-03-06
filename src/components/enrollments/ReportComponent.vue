@@ -66,7 +66,7 @@ const handleSubmit = async (mail: any) => {
         name.value = '';
         paymentMethod.value = '';
         numberProof.value = '';
-    } catch (error) {
+    } catch (error: any) {
         console.log('error', error);
         if (error.error) {
             alertDialogBackend(error.error);

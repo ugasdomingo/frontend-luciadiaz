@@ -74,6 +74,19 @@ const routes: RouteRecordRaw[] = [
                 path: 'signup',
                 component: () => import('pages/auth/RegistroPage.vue'),
             },
+            /* ********Material ROUTES******** */
+            {
+                path: 'best-dad',
+                component: () => import('pages/material/BestDadPage.vue'),
+            },
+            {
+                path: 'best-dad-personalizar',
+                component: () => import('pages/material/BestDadFormPage.vue'),
+            },
+            {
+                path: 'gracias-generic-best-dad',
+                component: () => import('pages/material/BestDadThanksPage.vue'),
+            },
             /* ********COURSES ROUTES******** */
             {
                 path: 'crianza-asertiva',

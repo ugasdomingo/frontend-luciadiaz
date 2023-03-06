@@ -108,8 +108,8 @@ import MotivosComponent from 'src/components/index/MotivosComponent.vue';
         height: 40vh;
     }
     .third-section {
-        height: 40vh;
-        padding: 16px;
+        height: 50vh;
+        padding: 16px 0;
     }
     .fourth-section {
         height: 60vh;

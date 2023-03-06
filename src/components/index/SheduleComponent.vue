@@ -1,5 +1,5 @@
 <template>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-6">
         <h3 class="q-my-xs">Programar una consulta</h3>
     </div>
     <div class="col-12 col-md-6">
