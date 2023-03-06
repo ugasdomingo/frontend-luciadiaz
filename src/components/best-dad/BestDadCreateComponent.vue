@@ -21,6 +21,7 @@ const dadsName = ref('');
 const childsName = ref('');
 const backgroundColor = ref('#dedaf1');
 const image = ref('');
+const politiquesAccepted = ref(false);
 
 //Pinia States for logic
 const loadding = ref(false);
@@ -44,6 +45,18 @@ const handleSubmit = async (mail: string) => {
             //Logging user
             await userStore.access(email.value, password.value);
             //Create BestDad
+            await bestDadStore.createBestDad(formData);
+
+            $q.notify('Su solicitud ha sido enviada');
+
+            router.push('/gracias');
+        } else {
+            await userStore.register(
+                name.value,
+                email.value,
+                password.value,
+                politiquesAccepted.value
+            );
             await bestDadStore.createBestDad(formData);
 
             $q.notify('Su solicitud ha sido enviada');
@@ -141,7 +154,22 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     </q-icon>
                 </template>
             </q-input>
-            <q-btn label="Personalizar" color="primary" type="submit"></q-btn>
+            <q-checkbox
+                v-model="politiquesAccepted"
+                label="Acepto las politicas de privacidad"
+                class="q-mt-md"
+            />
+            <div class="q-my-md">
+                <div v-if="politiquesAccepted">
+                    <q-btn
+                        label="Personalizar"
+                        color="primary"
+                        type="submit"
+                    ></q-btn>
+                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
+                </div>
+                <q-btn v-else label="Personalizar"></q-btn>
+            </div>
         </q-form>
     </div>
 </template>

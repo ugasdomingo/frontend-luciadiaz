@@ -7,7 +7,7 @@
                     <q-card-section>
                         <p>
                             Hola papá, mi querido lector. Quiero darte la
-                            bienvenida este recorrido en las etapas evolutivas
+                            bienvenida a este recorrido en las etapas evolutivas
                             de tu hijo/a.<br /><br />
                             En estás siguientes páginas podrás entender desde la
                             mirada de tu peque cuáles son sus necesidades
