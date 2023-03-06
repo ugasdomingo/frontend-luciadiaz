@@ -4,6 +4,25 @@
             <div class="row col-12 justify-evenly best-container">
                 <q-card class="col-12 col-md-6 q-my-xl q-pa-xl img-container">
                     <q-img src="img/best-dad-portada.png" class="img-1"></q-img>
+                    <q-card-section>
+                        <p>
+                            Hola papá, mi querido lector. Quiero darte la
+                            bienvenida este recorrido en las etapas evolutivas
+                            de tu hijo/a.<br /><br />
+                            En estás siguientes páginas podrás entender desde la
+                            mirada de tu peque cuáles son sus necesidades
+                            cognitivas y socioemocionales según su edad en la
+                            primera y segunda infancia. <br /><br />
+                            Entendiendo desde la teoría de Jean Piaget,
+                            psicólogo, cual es el acompañamiento más eficaz que
+                            podrás darle a tu hij@. Cómo resultado, podrás
+                            convertirte en el mejor papá del mundo. Puesto que,
+                            desde el amor, comprensión y conocimiento enseñarás
+                            a tu hijo el concepto del mundo, las personas y si
+                            mismo. Adelante, disfruta de este viaje. Con amor,
+                            Lucia Diaz.
+                        </p>
+                    </q-card-section>
                 </q-card>
                 <q-card class="col-12 col-md-4 q-my-xl">
                     <q-card-section>
