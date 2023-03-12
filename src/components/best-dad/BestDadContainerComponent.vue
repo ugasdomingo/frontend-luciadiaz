@@ -3,7 +3,7 @@
         <div class="column">
             <div class="row col-12 justify-evenly best-container">
                 <q-card class="col-12 col-md-6 q-my-xl q-pa-xl img-container">
-                    <q-img src="img/best-dad-portada.png" class="img-1"></q-img>
+                    <q-img src="img/generica-boy.png" class="img-1"></q-img>
                     <q-card-section>
                         <p>
                             Hola papá, mi querido lector. Quiero darte la
@@ -23,6 +23,7 @@
                             Lucia Diaz.
                         </p>
                     </q-card-section>
+                    <q-img src="img/generica-girl.png" class="img-1"></q-img>
                 </q-card>
                 <q-card class="col-12 col-md-4 q-my-xl">
                     <q-card-section>
@@ -70,6 +71,9 @@ span {
 }
 h6 {
     margin-bottom: 4px;
+}
+p {
+    font-size: large;
 }
 
 .img-2 {

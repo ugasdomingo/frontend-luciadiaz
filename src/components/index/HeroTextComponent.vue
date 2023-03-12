@@ -1,6 +1,6 @@
 <template>
     <div class="col-8 q-pr-xl">
-        <h3 class="text-weight-regular">Hola, bienvenidos(as) a mi web</h3>
+        <h3 class="text-weight-regular">Bienvenidos a mi web</h3>
         <p class="text-h5 q-mb-xl">
             Primero que todo
             <span class="text-bold"> ¿me permites darte un regalo?</span>.
