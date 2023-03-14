@@ -32,11 +32,21 @@
                     <q-separator inset />
                     <q-card-section>
                         <h6>Comprar versión Genérica</h6>
+                        <p class="text-grey">
+                            Entrega impreso en el centro de Madrid, otras
+                            ciudades y zonas es necesario agregar los gastos de
+                            envío
+                        </p>
                         <GenericBestDadPaypalComponent />
                     </q-card-section>
                     <q-separator inset />
                     <q-card-section>
                         <h6>Comprar versión Personalizada</h6>
+                        <p class="text-grey">
+                            Entrega impreso en el centro de Madrid, otras
+                            ciudades y zonas es necesario agregar los gastos de
+                            envío
+                        </p>
                         <PersonalizeBestDadPaypalComponent />
                     </q-card-section>
                     <q-separator inset />
@@ -56,13 +66,6 @@
 <script setup>
 import GenericBestDadPaypalComponent from './GenericBestDadPaypalComponent.vue';
 import PersonalizeBestDadPaypalComponent from './PersonalizeBestDadPaypalComponent.vue';
-import { ref } from 'vue';
-
-const toggle = ref(false);
-
-const handleClick = () => {
-    toggle.value = !toggle.value;
-};
 </script>
 
 <style lang="scss" scoped>
