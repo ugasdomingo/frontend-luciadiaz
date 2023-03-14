@@ -31,17 +31,7 @@
                     </q-card-section>
                     <q-separator inset />
                     <q-card-section>
-                        <h6>Comprar versión Genérica</h6>
-                        <p class="text-grey">
-                            Entrega impreso en el centro de Madrid, otras
-                            ciudades y zonas es necesario agregar los gastos de
-                            envío
-                        </p>
-                        <GenericBestDadPaypalComponent />
-                    </q-card-section>
-                    <q-separator inset />
-                    <q-card-section>
-                        <h6>Comprar versión Personalizada</h6>
+                        <h6>Comprar Ahora</h6>
                         <p class="text-grey">
                             Entrega impreso en el centro de Madrid, otras
                             ciudades y zonas es necesario agregar los gastos de
