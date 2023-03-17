@@ -16,7 +16,7 @@
                 <td>
                     <select name="os0">
                         <option value="Digital">Digital €20,00 EUR</option>
-                        <option value="Impreso">Impreso €30,00 EUR</option>
+                        <option value="Impreso">Impreso €43,00 EUR</option>
                     </select>
                 </td>
             </tr>

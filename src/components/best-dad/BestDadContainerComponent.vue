@@ -13,15 +13,15 @@
                             mirada de tu peque cuáles son sus necesidades
                             cognitivas y socioemocionales según su edad en la
                             primera y segunda infancia. <br /><br />
-                            Entendiendo desde la teoría de Jean Piaget,
+                            Entendiendo, desde la teoría de Jean Piaget,
                             psicólogo, cual es el acompañamiento más eficaz que
-                            podrás darle a tu hij@. Cómo resultado, podrás
+                            podrás darle a tu hijo/a. Cómo resultado, podrás
                             convertirte en el mejor papá del mundo. Puesto que,
                             desde el amor, comprensión y conocimiento enseñarás
                             a tu hijo el concepto del mundo, las personas y si
-                            mismo. Adelante, disfruta de este viaje. Con amor,
-                            Lucia Diaz.
+                            mismo/a. Adelante, disfruta de este viaje.
                         </p>
+                        <p>Con amor, Lucia Diaz.</p>
                     </q-card-section>
                     <q-img src="img/generica-girl.png" class="img-1"></q-img>
                 </q-card>
@@ -31,11 +31,35 @@
                     </q-card-section>
                     <q-separator inset />
                     <q-card-section>
-                        <h6>Comprar Ahora</h6>
+                        <h6>Proceso de Compra:</h6>
+                        <ul>
+                            <li>
+                                <strong>1- </strong>Selecciona digital o impreso
+                                y dale "Buy now".
+                            </li>
+                            <li>
+                                <strong>2- </strong>Usa él método de pago de tu
+                                preferencia.
+                            </li>
+                            <li>
+                                <strong>3- </strong>Al confirmar el pago, serás
+                                dirigido al formulario.
+                            </li>
+                            <li>
+                                <strong>4- </strong>Completa el formulario
+                                incluyendo una foto de papá con su hijo/a.
+                            </li>
+                            <li>
+                                <strong>5- </strong>La entraga digital se
+                                realizará en menos de 24 horas, para las
+                                entregas impresas nos pondremos en contacto
+                                contigo.
+                            </li>
+                        </ul>
                         <p class="text-grey">
                             Entrega impreso en el centro de Madrid, otras
                             ciudades y zonas es necesario agregar los gastos de
-                            envío
+                            envío.
                         </p>
                         <PersonalizeBestDadPaypalComponent />
                     </q-card-section>
