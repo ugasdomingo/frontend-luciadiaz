@@ -1,14 +1,12 @@
 <script lang="ts" setup>
 // Import Tools
 import { useQuasar } from 'quasar';
-import { useRouter } from 'vue-router';
 import { ref } from 'vue';
 import { useTemperamentoStore } from 'stores/temperamento-store';
 import { dataTemperamento } from 'components/temperamento/dataTemperamiento';
 // Setup Tools
 const q$ = useQuasar();
 const temperamentoStore = useTemperamentoStore();
-const router = useRouter();
 
 // Catch answers
 const r1 = ref('');
