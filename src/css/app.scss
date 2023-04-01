@@ -2,13 +2,16 @@
 
 body {
     border: 0px;
-    background-color: white;
+    background-image: linear-gradient(#45115b, $primary);
+}
+
+.background-img {
+    background-image: url('/public/img/brain.jpg');
+    background-position: center;
+    background-size: cover;
 }
 
 //Vars for Background
-.bg-principal {
-    background-color: $secondary;
-}
 
 //Vars for Typography
 .titles {

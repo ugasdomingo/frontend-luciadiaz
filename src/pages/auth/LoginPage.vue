@@ -4,5 +4,5 @@
 </template>
 
 <script setup>
-import LoginViewComponent from 'src/components/auth/LoginViewComponent.vue';
+import LoginViewComponent from 'src/components/authComponents/LoginViewComponent.vue';
 </script>

@@ -6,8 +6,16 @@ import { ref } from 'vue';
 export const useUserStore = defineStore('user', () => {
     const token = ref(null);
     const expiresIn = ref(0);
-    const allUsers = ref('');
+    const allUsers = ref();
     const selfUid = ref('');
+    const userRole = ref('');
+
+    //Global cath auth form
+    const name = ref('');
+    const email = ref('');
+    const phone = ref('');
+    const password = ref('');
+    const politiquesAccepted = ref(false);
 
     const access = async (email: string, password: string) => {
         try {
@@ -17,7 +25,7 @@ export const useUserStore = defineStore('user', () => {
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', res.data.role);
+            userRole.value = res.data.userRole;
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -35,18 +43,21 @@ export const useUserStore = defineStore('user', () => {
         name: string,
         email: string,
         password: string,
+        phone: string,
         politiquesAccepted: boolean
     ) => {
         try {
             const res = await api.post('/register', {
                 name,
                 email,
+                phone,
                 password,
                 politiquesAccepted,
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', res.data.role);
+            userRole.value = res.data.userRole;
+            console.log(userRole);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -68,6 +79,7 @@ export const useUserStore = defineStore('user', () => {
         } finally {
             resetStore();
             sessionStorage.removeItem('user');
+            sessionStorage.removeItem('cookies');
         }
     };
 
@@ -185,5 +197,11 @@ export const useUserStore = defineStore('user', () => {
         allUsers,
         self,
         selfUid,
+        name,
+        email,
+        phone,
+        password,
+        politiquesAccepted,
+        userRole,
     };
 });
