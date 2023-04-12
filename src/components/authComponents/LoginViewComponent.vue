@@ -15,7 +15,7 @@ const handleSubmit = async () => {
     try {
         loadding.value = !loadding.value;
         await userStore.access(email.value, password.value);
-        router.push('/');
+        router.push('/mi-escritorio');
         email.value = '';
         password.value = '';
     } catch (error) {
@@ -41,11 +41,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     <q-page class="row justify-center">
         <div class="col-12 col-sm-6 col-md-5">
             <h3 class="text-primary">Me alegra verte</h3>
-            <p>
-                <span class="text-weight-bold">Recuerda :</span> Todos los test
-                son gratuitos, solo tienes que registrarte para hacerlos
-            </p>
-            <q-form @submit.prevent="handleSubmit">
+            <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+            <q-form v-else @submit.prevent="handleSubmit">
                 <q-input
                     v-model="email"
                     label="Ingrese email"
@@ -74,7 +71,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                         color="primary"
                         type="submit"
                     ></q-btn>
-                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
                 </div>
             </q-form>
             <div class="q-mt-xl">

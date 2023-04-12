@@ -73,9 +73,10 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 </script>
 
 <template>
-    <q-page class="row justify-center">
+    <q-page class="column items-center form-container">
         <h3>Agregar Libro</h3>
-        <q-form dark @submit.prevent="handleSubmit">
+        <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+        <q-form v-else dark @submit.prevent="handleSubmit">
             <q-input
                 v-model="booksName"
                 type="text"
@@ -93,7 +94,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             />
             <q-input
                 v-model="description"
-                type="text"
+                type="textarea"
                 dark
                 label="Resumen del libro"
                 :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
@@ -146,7 +147,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 type="text"
                 dark
                 label="Author del Libro"
-                :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
             />
             <q-input
                 v-model="paypalButton"
@@ -157,9 +157,10 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             />
             <q-file v-model="coverImage" dark label="Adjuntar Portada" />
             <div class="q-my-md">
-                <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                <q-spinner-pie color="accent" size="2em" v-if="loadding" />
+                <q-btn label="Subir" color="primary" type="submit"></q-btn>
             </div>
         </q-form>
     </q-page>
 </template>
+
+<style lang="scss" scoped></style>

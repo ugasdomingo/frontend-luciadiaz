@@ -1,10 +1,9 @@
 <template>
     <div v-if="userStore.userRole === 'Admin'">
-        <h1>Desk Admin Page</h1>
-        <BooksFormComponet />
+        <AdminDeskComponent />
     </div>
     <div v-else>
-        <h1>Mi Escritorio</h1>
+        <UsersDeskComponent />
     </div>
 </template>
 
@@ -13,10 +12,12 @@
 import { useUserStore } from 'src/stores/user-store';
 
 //Import Components
-import BooksFormComponet from 'src/components/booksComponents/BooksFormComponet.vue';
+import AdminDeskComponent from 'src/components/deskComponents/AdminDeskComponent.vue';
+import UsersDeskComponent from 'src/components/deskComponents/UsersDeskComponent.vue';
 
 //Activate tools
 const userStore = useUserStore();
+userStore.getAllUsers();
 </script>
 
 <style scoped></style>

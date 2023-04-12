@@ -7,24 +7,24 @@ const userStores = useUserStore();
 </script>
 
 <template>
-    <q-btn-group>
-        <q-btn color="green" to="/" glossy label="Inicio" />
-        <q-btn color="green" to="/test" glossy label="Test Gratuitos" />
+    <q-btn-group class="group-menu">
+        <q-btn class="botton-group" to="/" glossy label="Inicio" />
+        <q-btn class="botton-group" to="/tests" glossy label="Test Gratuitos" />
         <q-btn
-            color="green"
+            class="botton-group"
             to="/psicologia"
             glossy
             label="Psicología para ti"
         />
         <q-btn
-            color="primary"
+            class="botton-final"
             v-if="!userStores.token"
             to="/login"
             glossy
             label="Iniciar Sesión"
         />
         <q-btn
-            color="accent"
+            class="botton-final"
             v-if="userStores.token"
             to="/mi-escritorio"
             glossy
@@ -33,4 +33,20 @@ const userStores = useUserStore();
     </q-btn-group>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.botton-group {
+    background-color: $azul;
+}
+.botton-final {
+    background-color: $green;
+}
+
+@media screen and (max-width: 760px) {
+    .group-menu {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        color: $white;
+    }
+}
+</style>

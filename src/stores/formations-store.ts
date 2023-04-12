@@ -31,17 +31,26 @@ export const useFormationsStore = defineStore('Formations', () => {
         }
     };
 
-    const getAllFormations = async () => {
+    const getAllFormations = async (nShow: number) => {
         try {
             const res = await api({
-                url: '/formations',
+                url: '/formations/all',
                 method: 'GET',
                 headers: {
                     Authorization: 'Bearer ' + userStore.token,
                 },
             });
 
-            allFormations.value = res.data.Formations;
+            if (nShow == 0) {
+                allFormations.value = res.data.formations;
+            } else {
+                //Get last 3 Formations
+                const finalArray = res.data.formations.reverse();
+
+                finalArray.length = nShow;
+
+                allFormations.value = finalArray;
+            }
         } catch (error: any) {
             throw error.response?.data || error;
         }

@@ -120,7 +120,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 cual sera vital para generar un panorama del comportamiento del
                 niño(a) y a partir de ahí poder crear un plan de acción.
             </p>
-            <q-form dark @submit.prevent="handleSubmit">
+            <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+            <q-form v-else dark @submit.prevent="handleSubmit">
                 <!-- USERS DATA -->
                 <div v-if="!userStore.token">
                     <q-input
@@ -386,7 +387,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 />
                 <div class="q-my-md" v-if="politiquesAccepted">
                     <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
                 </div>
             </q-form>
         </div>

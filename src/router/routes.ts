@@ -11,6 +11,7 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/AboutPage.vue'),
             },
             {
+                //Blogs Page
                 path: 'psicologia',
                 component: () => import('pages/PsicologiaPage.vue'),
             },
@@ -36,10 +37,24 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/auth/RegistroPage.vue'),
             },
             /* ********PSICOTEST ROUTES******** */
+            {
+                path: 'tests',
+                component: () => import('src/pages/psicoTest/AllTestPage.vue'),
+            },
+            {
+                path: 'personalidad',
+                component: () =>
+                    import('src/pages/psicoTest/ArchetypeTestPage.vue'),
+            },
+            {
+                path: 'temperamento',
+                component: () =>
+                    import('src/pages/psicoTest/TemperTestPage.vue'),
+            },
 
             /* ********BOOKS ROUTES******** */
 
-            /* ********COURSES ROUTES******** */
+            /* ********FORMATIONS ROUTES******** */
 
             {
                 path: 'gracias',

@@ -34,7 +34,7 @@ export const useBooksStore = defineStore('books', () => {
     const getAllBooks = async () => {
         try {
             const res = await api({
-                url: '/books',
+                url: '/books/all',
                 method: 'GET',
                 headers: {
                     Authorization: 'Bearer ' + userStore.token,

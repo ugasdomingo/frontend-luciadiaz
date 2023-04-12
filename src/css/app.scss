@@ -2,7 +2,12 @@
 
 body {
     border: 0px;
-    background-image: linear-gradient(#45115b, $primary);
+    background-color: $white;
+}
+
+@font-face {
+    font-family: nunito;
+    src: url(../../public/fonts/Nunito-Regular.ttf);
 }
 
 .background-img {
@@ -12,11 +17,39 @@ body {
 }
 
 //Vars for Background
+.form-container {
+    background-image: linear-gradient(
+        to top,
+        rgba(9, 20, 141, 0.1),
+        rgba(9, 30, 141, 0.9)
+    );
+    margin: 0 0 24px;
+}
 
 //Vars for Typography
 .titles {
-    font-weight: 200;
+    font-weight: 600;
+    color: $azul;
+    font-family: 'nunito';
+}
+.subs {
+    font-weight: 300;
+    color: $azul;
+}
+.portadas-home {
+    max-width: 250px;
+    border-radius: 16px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 760px) {
+    h2 {
+        font-size: 2em;
+        line-height: 1.5em;
+        text-align: center;
+    }
+    p {
+        font-size: 1em;
+        text-align: center;
+    }
 }

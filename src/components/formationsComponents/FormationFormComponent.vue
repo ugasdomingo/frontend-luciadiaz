@@ -16,10 +16,12 @@ const formationName = ref('');
 const formationType = ref([]);
 const description = ref('');
 const initialDate = ref('');
+const duration = ref('');
 const price = ref('');
 const location = ref('');
-const tags = ref();
-const paypalButton = ref();
+const tags = ref('');
+const paypalButton = ref('');
+const videoUrl = ref('');
 const coverImage = ref();
 
 // Books Types
@@ -41,10 +43,12 @@ const handleSubmit = async () => {
         formData.append('formationType', formationType.value.toString());
         formData.append('description', description.value);
         formData.append('initialDate', initialDate.value);
+        formData.append('duration', duration.value);
         formData.append('price', price.value);
         formData.append('location', location.value);
         formData.append('tags', tags.value);
         formData.append('paypalButton', paypalButton.value);
+        formData.append('videoUrl', videoUrl.value);
         formData.append('coverImage', coverImage.value);
 
         await formationsStore.createFormation(formData);
@@ -72,9 +76,10 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 </script>
 
 <template>
-    <q-page class="row justify-center">
+    <q-page class="row justify-center form-container">
         <h3>Agregar Formación</h3>
-        <q-form dark @submit.prevent="handleSubmit">
+        <q-spinner-pie color="accent" size="5em" v-if="loadding" />
+        <q-form v-else dark @submit.prevent="handleSubmit">
             <q-input
                 v-model="formationName"
                 type="text"
@@ -92,7 +97,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             />
             <q-input
                 v-model="description"
-                type="text"
+                type="textarea"
                 dark
                 label="Resumen de la formación"
                 :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
@@ -127,6 +132,13 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 </q-input>
             </div>
             <q-input
+                v-model="duration"
+                type="text"
+                dark
+                label="Horas de Formación"
+                :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
+            />
+            <q-input
                 v-model="price"
                 type="text"
                 dark
@@ -154,10 +166,16 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 label="Nombre boton de paypal"
                 :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
             />
+            <q-input
+                v-model="videoUrl"
+                type="text"
+                dark
+                label="Link video promocional"
+                :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
+            />
             <q-file v-model="coverImage" dark label="Adjuntar Portada" />
             <div class="q-my-md">
                 <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                <q-spinner-pie color="accent" size="2em" v-if="loadding" />
             </div>
         </q-form>
     </q-page>

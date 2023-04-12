@@ -9,6 +9,7 @@ export const useUserStore = defineStore('user', () => {
     const allUsers = ref();
     const selfUid = ref('');
     const userRole = ref('');
+    const userName = ref('');
 
     //Global cath auth form
     const name = ref('');
@@ -26,6 +27,8 @@ export const useUserStore = defineStore('user', () => {
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
             userRole.value = res.data.userRole;
+            userName.value = res.data.userName;
+            localStorage.setItem('user', res.data.userRole);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -57,7 +60,8 @@ export const useUserStore = defineStore('user', () => {
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
             userRole.value = res.data.userRole;
-            console.log(userRole);
+            userName.value = res.data.userName;
+            localStorage.setItem('user', res.data.userRole);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -74,11 +78,12 @@ export const useUserStore = defineStore('user', () => {
     const logout = async () => {
         try {
             await api.get('/logout');
+            cleanStoreData();
         } catch (error: any) {
             console.log(error);
         } finally {
             resetStore();
-            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
             sessionStorage.removeItem('cookies');
         }
     };
@@ -113,6 +118,8 @@ export const useUserStore = defineStore('user', () => {
             const res = await api.get('/refresh');
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
+            userRole.value = res.data.userRole;
+            userName.value = res.data.userName;
             sessionStorage.setItem('userT', 'usuario cualquiera');
             setTime();
         } catch (error: any) {
@@ -183,6 +190,12 @@ export const useUserStore = defineStore('user', () => {
             }
         }
     };
+    const cleanStoreData = () => {
+        allUsers.value = null;
+        selfUid.value = '';
+        userRole.value = '';
+        userName.value = '';
+    };
 
     return {
         token,
@@ -203,5 +216,6 @@ export const useUserStore = defineStore('user', () => {
         password,
         politiquesAccepted,
         userRole,
+        userName,
     };
 });

@@ -25,7 +25,7 @@ const handleSubmit = async () => {
             password.value,
             politiquesAccepted.value
         );
-        router.push('/');
+        router.push('/mi-escritorio');
         email.value = '';
         phone.value = '';
         password.value = '';

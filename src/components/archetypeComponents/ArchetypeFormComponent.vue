@@ -110,33 +110,28 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 </script>
 
 <template>
-    <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-5 q-pb-xl">
-            <h3>Bienvenido(a) al Test de Arquetipos</h3>
+    <q-page class="page-container">
+        <div class="q-pb-xl info-container">
+            <h3>Bienvenido(a) al Test de Personalidad</h3>
             <p style="font-size: 1em">
                 Este test tiene la finalidad de identificiar tus modelos y
-                patornes de comportamiento, permitiendo trabajar de manera
-                personalizada en tu plan de desarrollo personal. Llevándote a
-                conocer más tus fortalezas y las áreas a potenciar en tu vida.
+                patornes de comportamiento a través de arquetpos, permitiendo
+                trabajar de manera personalizada en tu plan de desarrollo
+                personal. Llevándote a conocer más tus fortalezas y las áreas a
+                potenciar en tu vida.
             </p>
             <p style="font-size: 1.2em">
                 Por favor selecciona la opción con la que más te identifique en
                 cada caso
             </p>
-            <p
-                class="text-white"
-                v-for="items in testStore.allTestResults"
-                :key="items.id"
-            >
-                {{ items.uid }}
-            </p>
         </div>
-        <q-form @submit.prevent="handleSubmit">
+        <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+        <q-form v-else @submit.prevent="handleSubmit">
             <!-- USERS DATA -->
-            <div v-if="!userStore.token">
+            <div v-if="!userStore.token" class="user-data-container">
                 <q-input
                     v-model="name"
-                    dark
+                    label-color="primary"
                     type="text"
                     label="Nombre Completo"
                     :rules="[
@@ -146,8 +141,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="email"
                     label="Email"
+                    label-color="primary"
                     type="text"
-                    dark
                     :rules="[
                         (val) =>
                             (val && /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(val)) ||
@@ -157,8 +152,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="phone"
                     type="text"
-                    dark
                     label="Teléfono"
+                    label-color="primary"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
                     ]"
@@ -166,8 +161,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="password"
                     label="Contraseña"
+                    label-color="primary"
                     type="password"
-                    dark
                     :rules="[
                         (val) =>
                             (val && val.length > 5) ||
@@ -185,26 +180,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[0].pregunta }}</p>
                 <q-radio
                     v-model="r1"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[0].a"
                 />
                 <q-radio
                     v-model="r1"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[0].b"
                 />
                 <q-radio
                     v-model="r1"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[0].c"
                 />
                 <q-radio
                     v-model="r1"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[0].d"
                 />
             </div>
@@ -213,26 +212,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[1].pregunta }}</p>
                 <q-radio
                     v-model="r2"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[1].a"
                 />
                 <q-radio
                     v-model="r2"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[1].b"
                 />
                 <q-radio
                     v-model="r2"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[1].c"
                 />
                 <q-radio
                     v-model="r2"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[1].d"
                 />
             </div>
@@ -241,26 +244,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[2].pregunta }}</p>
                 <q-radio
                     v-model="r3"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[2].a"
                 />
                 <q-radio
                     v-model="r3"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[2].b"
                 />
                 <q-radio
                     v-model="r3"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[2].c"
                 />
                 <q-radio
                     v-model="r3"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[2].d"
                 />
             </div>
@@ -269,26 +276,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[3].pregunta }}</p>
                 <q-radio
                     v-model="r4"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[3].a"
                 />
                 <q-radio
                     v-model="r4"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[3].b"
                 />
                 <q-radio
                     v-model="r4"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[3].c"
                 />
                 <q-radio
                     v-model="r4"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[3].d"
                 />
             </div>
@@ -297,26 +308,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[4].pregunta }}</p>
                 <q-radio
                     v-model="r5"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[4].a"
                 />
                 <q-radio
                     v-model="r5"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[4].b"
                 />
                 <q-radio
                     v-model="r5"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[4].c"
                 />
                 <q-radio
                     v-model="r5"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[4].d"
                 />
             </div>
@@ -325,26 +340,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[5].pregunta }}</p>
                 <q-radio
                     v-model="r6"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[5].a"
                 />
                 <q-radio
                     v-model="r6"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[5].b"
                 />
                 <q-radio
                     v-model="r6"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[5].c"
                 />
                 <q-radio
                     v-model="r6"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[5].d"
                 />
             </div>
@@ -353,26 +372,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[6].pregunta }}</p>
                 <q-radio
                     v-model="r7"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[6].a"
                 />
                 <q-radio
                     v-model="r7"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[6].b"
                 />
                 <q-radio
                     v-model="r7"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[6].c"
                 />
                 <q-radio
                     v-model="r7"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[6].d"
                 />
             </div>
@@ -381,26 +404,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[7].pregunta }}</p>
                 <q-radio
                     v-model="r8"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[7].a"
                 />
                 <q-radio
                     v-model="r8"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[7].b"
                 />
                 <q-radio
                     v-model="r8"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[7].c"
                 />
                 <q-radio
                     v-model="r8"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[7].d"
                 />
             </div>
@@ -409,26 +436,30 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[8].pregunta }}</p>
                 <q-radio
                     v-model="r9"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[8].a"
                 />
                 <q-radio
                     v-model="r9"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[8].b"
                 />
                 <q-radio
                     v-model="r9"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[8].c"
                 />
                 <q-radio
                     v-model="r9"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[8].d"
                 />
             </div>
@@ -437,78 +468,85 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <p>{{ archetypeQuestions[9].pregunta }}</p>
                 <q-radio
                     v-model="r10"
+                    keep-color
+                    color="white"
                     val="a"
-                    dark
                     :label="archetypeQuestions[9].a"
                 />
                 <q-radio
                     v-model="r10"
+                    keep-color
+                    color="white"
                     val="b"
-                    dark
                     :label="archetypeQuestions[9].b"
                 />
                 <q-radio
                     v-model="r10"
+                    keep-color
+                    color="white"
                     val="c"
-                    dark
                     :label="archetypeQuestions[9].c"
                 />
                 <q-radio
                     v-model="r10"
+                    keep-color
+                    color="white"
                     val="d"
-                    dark
                     :label="archetypeQuestions[9].d"
                 />
             </div>
             <q-checkbox
                 v-model="politiquesAccepted"
-                dark
                 label="Acepto las politicas de privacidad"
                 class="q-mt-md"
             />
             <div class="q-my-md" v-if="politiquesAccepted">
                 <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                <q-spinner-pie color="primary" size="2em" v-if="loadding" />
             </div>
         </q-form>
-        <div class="answers">
-            <p :class="{ active: r1 != '' }">1: {{ r1 }}</p>
-            <p :class="{ active: r2 != '' }">2: {{ r2 }}</p>
-            <p :class="{ active: r3 != '' }">3: {{ r3 }}</p>
-            <p :class="{ active: r4 != '' }">4: {{ r4 }}</p>
-            <p :class="{ active: r5 != '' }">5: {{ r5 }}</p>
-            <p :class="{ active: r6 != '' }">6: {{ r6 }}</p>
-            <p :class="{ active: r7 != '' }">7: {{ r7 }}</p>
-            <p :class="{ active: r8 != '' }">8: {{ r8 }}</p>
-            <p :class="{ active: r9 != '' }">9: {{ r9 }}</p>
-            <p :class="{ active: r10 != '' }">10: {{ r10 }}</p>
-        </div>
     </q-page>
 </template>
 
-<style lang="sass" scoped>
-.question
-    margin-bottom: 16px
-    display: grid
-    background: $positive
-    padding: 16px
-    border-radius: 24px
-.question p
-    font-weight: 500
-    color: white
-.answers
-    display: flex
-    position: fixed
-    bottom: 5vh
-    left: 24px
-    background: $primary
-    color: $accent
-    padding: 12px
-    border-radius: 8px
-.answers p
-    padding: 0px 4px
-    margin: 0px
-.active
-    color: white
-    font-weight: 600
+<style lang="scss" scoped>
+.page-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.info-container {
+    width: 60%;
+}
+.user-data-container {
+    padding-bottom: 3em;
+}
+
+.question {
+    font-family: 'nunito';
+    margin-bottom: 16px;
+    color: $white;
+    display: grid;
+    background: rgba(9, 31, 141, 0.9);
+    padding: 16px;
+    border-radius: 24px;
+}
+.question p {
+    font-weight: 400;
+    color: white;
+}
+
+//Responsive
+@media screen and (max-width: 760px) {
+    .page-container {
+        padding: 0 4px;
+    }
+    .info-container {
+        width: 95%;
+    }
+    .question {
+        padding: 8px 0;
+        margin: 1em 4px;
+        border-radius: 8px;
+    }
+}
 </style>

@@ -129,6 +129,9 @@ const handleSubmit = async () => {
                     'Temperamento',
                     finalResponse
                 );
+                await userStore.self();
+                await testStore.getAllUserTestResults(userStore.selfUid);
+                loadding.value = !loadding.value;
                 router.push('/mi-escritorio');
             } else {
                 await userStore.register(
@@ -142,6 +145,9 @@ const handleSubmit = async () => {
                     'Temperamento',
                     finalResponse
                 );
+                await userStore.self();
+                await testStore.getAllUserTestResults(userStore.selfUid);
+                loadding.value = !loadding.value;
                 router.push('/mi-escritorio');
             }
         }
@@ -179,15 +185,9 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 Comencemos: <br />Por favor selecciona la opción con la que más
                 te identifique en cada caso
             </p>
-            <p
-                class="text-white"
-                v-for="items in testStore.allTestResults"
-                :key="items.id"
-            >
-                {{ items.uid }}
-            </p>
         </div>
-        <q-form @submit.prevent="handleSubmit">
+        <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+        <q-form v-else @submit.prevent="handleSubmit">
             <!-- USERS DATA -->
             <div v-if="!userStore.token">
                 <q-input
@@ -436,7 +436,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             />
             <div class="q-my-md" v-if="politiquesAccepted">
                 <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                <q-spinner-pie color="primary" size="2em" v-if="loadding" />
             </div>
         </q-form>
     </q-page>

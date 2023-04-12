@@ -5,14 +5,18 @@ import { useUserStore } from 'src/stores/user-store';
 import { useTestStore } from 'src/stores/test-store';
 
 //Impot Components
+import AdminCreateDataComponent from './AdminCreateDataComponent.vue';
+import AnamnesisShowResultComponent from '../anamnesisComponents/AnamnesisShowResultComponent.vue';
+import ReasonsShowResultComponent from '../reasonsComponent/ReasonsShowResultComponent.vue';
 
 //Activate tools
-const showUsers = ref('');
-const textFilter = ref('');
 const userStore = useUserStore();
+const testStore = useTestStore();
 userStore.getAllUsers();
-
+const showUsers = ref(userStore.allUsers);
+const textFilter = ref('');
 const toggle = ref(false);
+const createItems = ref(false);
 
 // Funtion to camelcase the text input used for filter podcast
 const camelSentence = (str: string) => {
@@ -39,15 +43,21 @@ const filterUsers = (textFilter: any) => {
 //Funtion to get all users data
 const findData = async (id: string) => {
     try {
-        const testStore = useTestStore();
-
+        testStore.cleanData();
         await testStore.getAllUserTestResults(id);
     } catch (error: any) {}
 };
 </script>
 
 <template>
-    <q-page class="row justify-center">
+    <q-page class="column items-center">
+        <h1>Admin Page</h1>
+        <q-toggle
+            v-model="createItems"
+            label="Subir Contenido"
+            class="q-my-xl"
+        />
+        <AdminCreateDataComponent v-if="createItems" />
         <q-input
             outlined
             v-model="textFilter"
@@ -56,12 +66,64 @@ const findData = async (id: string) => {
             label="buscar paciente:"
             style="max-width: 450px"
         />
-        <div v-for="user in userStore.allUsers" :key="user._id">
+        <div
+            v-for="user in showUsers"
+            :key="user._id"
+            class="column my-card-container"
+        >
             <q-card
                 class="my-card"
                 @click="(toggle = !toggle), findData(user?._id)"
             >
+                <div class="text-subtitle2">
+                    <span class="text-subtitle1 q-ml-xl">{{ user?.name }}</span>
+                    <q-expansion-item>
+                        <q-card-section v-model="toggle">
+                            <p>
+                                Arquetipo: {{ testStore.userArchetype }} /
+                                Totales: {{ testStore.arquetipo[0]?.answers }}
+                            </p>
+                            <p>
+                                Temperamento: {{ testStore.userTemper }} /
+                                Totales:
+                                {{ testStore.temperamento[0]?.answers }}
+                            </p>
+                            <p>Metas:</p>
+                            <ReasonsShowResultComponent
+                                :name="user?.name"
+                                v-if="testStore.metas[0]?.answers"
+                            />
+                            <p>Anamnesis:</p>
+                            <AnamnesisShowResultComponent
+                                :respuestas="testStore.anamnesis[0]?.answers"
+                                v-if="testStore.anamnesis[0]?.answers"
+                            />
+                            <p>
+                                Autoregistro:
+                                {{ testStore.autoregistro[0]?.answers }}
+                            </p>
+                        </q-card-section>
+                    </q-expansion-item>
+                </div>
             </q-card>
         </div>
     </q-page>
 </template>
+
+<style lang="scss" scoped>
+.my-card-container {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    margin: 8px;
+}
+.my-card {
+    background-color: $azul;
+    color: $white;
+}
+@media (max-width: 900px) {
+    .my-card {
+        width: 100%;
+    }
+}
+</style>

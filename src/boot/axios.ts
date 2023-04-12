@@ -8,7 +8,7 @@ declare module '@vue/runtime-core' {
 }
 
 const api = axios.create({
-    baseURL: 'http://localhost:3001/api',
+    baseURL: 'https://whale-app-3spde.ondigitalocean.app/api',
     withCredentials: true,
 });
 

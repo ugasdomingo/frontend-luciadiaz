@@ -10,6 +10,17 @@ export const useTestStore = defineStore('test', () => {
     const createdTestResults = ref('');
     const allTestResults = ref();
     const userTestResults = ref();
+    const userArchetype = ref('');
+    const userTemper = ref('');
+
+    //Funtions to set archetype title
+
+    //Order User testResults
+    const anamnesis = ref([]);
+    const arquetipo = ref([]);
+    const autoregistro = ref([]);
+    const metas = ref([]);
+    const temperamento = ref([]);
 
     const createTestResults = async (testTitle: string, answers: object) => {
         try {
@@ -57,10 +68,62 @@ export const useTestStore = defineStore('test', () => {
                 },
             });
 
-            userTestResults.value = res.data.testsResults;
+            res.data.testsResults.map((item: any) => {
+                if (item.testTitle == 'Anamnesis') {
+                    anamnesis.value.push(item);
+                }
+                if (item.testTitle == 'Arquetipo') {
+                    arquetipo.value.push(item);
+                    const bigNumber = Object.values(item.answers).sort()[3];
+                    const { wise, warrior, wizard, lover } = item.answers;
+                    warrior == bigNumber
+                        ? (userArchetype.value = 'Guerrero')
+                        : wise == bigNumber
+                        ? (userArchetype.value = 'Sabio Rey')
+                        : wizard == bigNumber
+                        ? (userArchetype.value = 'Mago')
+                        : lover == bigNumber
+                        ? (userArchetype.value = 'Amante')
+                        : (userArchetype.value = '');
+                }
+                if (item.testTitle == 'Autoregistro') {
+                    autoregistro.value.push(item);
+                }
+                if (item.testTitle == 'Logro de Metas') {
+                    metas.value.push(item);
+                }
+                if (item.testTitle == 'Temperamento') {
+                    temperamento.value.push(item);
+                    const bigNumber = Object.values(item.answers).sort(
+                        (a, b) => a - b
+                    )[3];
+                    const { sanguine, choleric, melancholic, phlegmatic } =
+                        item.answers;
+                    sanguine == bigNumber
+                        ? (userTemper.value = 'Sanguineo')
+                        : choleric == bigNumber
+                        ? (userTemper.value = 'Colérico')
+                        : melancholic == bigNumber
+                        ? (userTemper.value = 'Melancólico')
+                        : phlegmatic == bigNumber
+                        ? (userTemper.value = 'Flemático')
+                        : (userTemper.value = '');
+                }
+            });
         } catch (error: any) {
             throw error.response?.data || error;
         }
+    };
+
+    //Utilitys
+    const cleanData = () => {
+        anamnesis.value = [];
+        temperamento.value = [];
+        metas.value = [];
+        autoregistro.value = [];
+        arquetipo.value = [];
+        userArchetype.value = '';
+        userTemper.value = '';
     };
 
     return {
@@ -70,5 +133,13 @@ export const useTestStore = defineStore('test', () => {
         allTestResults,
         getAllUserTestResults,
         userTestResults,
+        anamnesis,
+        arquetipo,
+        autoregistro,
+        metas,
+        temperamento,
+        userArchetype,
+        userTemper,
+        cleanData,
     };
 });
