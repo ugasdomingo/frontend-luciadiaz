@@ -3,7 +3,6 @@
 import { ref } from 'vue';
 import { useQuasar } from 'quasar';
 import { useBlogsStore } from 'src/stores/blog-store';
-import { toolbarString, fontsString } from './utilToWritePost';
 
 //Activate Tools
 const $q = useQuasar();
@@ -15,6 +14,7 @@ const loadding = ref(false);
 // Catch data
 const title = ref('');
 const body = ref('');
+const urlVideo = ref('');
 const category = ref([]);
 const img = ref();
 
@@ -24,6 +24,7 @@ const categorys = [
     { label: 'Psicología Crecimiento', value: 'psicologia-crecimiento' },
     { label: 'Psicología Parejas', value: 'psicologia-parejas' },
     { label: 'Primeros auxilios', value: 'psicologia-auxilios' },
+    { label: 'Casos de Éxito', value: 'casos-de-exito' },
 ];
 
 //Logics Funtions
@@ -37,6 +38,7 @@ const handleSubmit = async () => {
         formData.append('title', title.value);
         formData.append('category', category.value.toString());
         formData.append('body', body.value);
+        formData.append('urlVideo', urlVideo.value);
         formData.append('img', img.value);
 
         await blogsStore.createBlog(formData);
@@ -74,6 +76,13 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 type="text"
                 dark
                 label="Título del Post"
+                :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
+            />
+            <q-input
+                v-model="urlVideo"
+                type="text"
+                dark
+                label="Url del vídeo"
                 :rules="[(val) => (val && val.length > 0) || 'Campo Requerido']"
             />
             <q-editor

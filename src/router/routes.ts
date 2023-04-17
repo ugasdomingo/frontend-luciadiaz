@@ -16,6 +16,11 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/PsicologiaPage.vue'),
             },
             {
+                //Single blogs Page
+                path: 'psicologia/:id',
+                component: () => import('pages/SingleBlogPage.vue'),
+            },
+            {
                 path: 'mi-escritorio',
                 component: () => import('pages/private/DeskPage.vue'),
                 meta: {
@@ -40,6 +45,11 @@ const routes: RouteRecordRaw[] = [
             {
                 path: 'tests',
                 component: () => import('src/pages/psicoTest/AllTestPage.vue'),
+            },
+            {
+                path: 'alcanzar-metas',
+                component: () =>
+                    import('src/pages/psicoTest/ReasonsTestPage.vue'),
             },
             {
                 path: 'personalidad',

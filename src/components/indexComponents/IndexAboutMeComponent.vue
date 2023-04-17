@@ -18,7 +18,11 @@
                 básica. Pero eso es sólo mi experiencia te invito a dar click en
                 el botón para saber más de mi.
             </p>
-            <q-btn label="Saber más de Lucia" class="button-about-me" />
+            <q-btn
+                label="Saber más de Lucia"
+                class="button-about-me"
+                to="sobre-mi"
+            />
         </div>
     </div>
 </template>

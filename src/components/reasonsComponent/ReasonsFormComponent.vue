@@ -79,9 +79,9 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 
 <template>
     <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-5 q-pb-xl">
-            <h3>Bienvenido(a) al Test de Logro de Objetivos</h3>
-            <p style="font-size: 1em">
+        <div class="col-12 col-sm-6 col-md-5 q-pb-xl q-px-xs">
+            <h3>Test para lograr Objetivos</h3>
+            <p style="font-size: 1.5em">
                 En este test descubrirás los obstáculos que percibe tu mente
                 inconsciente para lograr el objetivo deseado.
             </p>
@@ -89,7 +89,8 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 Escribe el objetivo que deseas lograr y 6 razones por las que
                 quieres lograr ese objetivo.
             </p>
-            <q-form @submit.prevent="handleSubmit">
+            <q-spinner-pie color="primary" size="5em" v-if="loadding" />
+            <q-form v-else @submit.prevent="handleSubmit">
                 <div class="question" v-if="!userStore.token">
                     <GlobalAuthFormComponent />
                 </div>
@@ -162,26 +163,29 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 </div>
                 <q-checkbox
                     v-model="userStore.politiquesAccepted"
-                    dark
                     label="Acepto las politicas de privacidad"
-                    class="q-mt-md"
+                    class="q-mt-md checkbox"
                 />
                 <div class="q-my-md" v-if="userStore.politiquesAccepted">
                     <q-btn label="Enviar" color="primary" type="submit"></q-btn>
-                    <q-spinner-pie color="primary" size="2em" v-if="loadding" />
                 </div>
             </q-form>
         </div>
     </q-page>
 </template>
 
-<style lang="sass" scoped>
-.question
-    margin-bottom: 32px
-    padding: 24px
-    display: grid
-    background: $positive
-    border-radius: 24px
-.question p
-    font-weight: 500
+<style lang="scss" scoped>
+.question {
+    margin-bottom: 32px;
+    padding: 24px;
+    display: grid;
+    background: rgba(9, 31, 141, 0.9);
+    border-radius: 24px;
+}
+.question p {
+    font-weight: 500;
+}
+.checkbox {
+    color: $azul;
+}
 </style>

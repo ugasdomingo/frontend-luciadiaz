@@ -60,7 +60,7 @@ blogsStore.getAllBlogs(3);
 <style lang="scss" scoped>
 .hero-container {
     width: 100%;
-    height: 70vh;
+    height: 100vh;
     box-sizing: border-box;
 }
 .normal-container {
@@ -74,6 +74,9 @@ blogsStore.getAllBlogs(3);
     box-sizing: border-box;
 }
 @media screen and (max-width: 760px) {
+    .hero-container {
+        height: 70vh;
+    }
     .normal-container {
         height: auto;
     }

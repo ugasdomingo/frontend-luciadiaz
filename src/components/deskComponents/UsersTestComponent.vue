@@ -57,6 +57,8 @@ const toggle = ref(false);
                 </q-card-section>
             </q-expansion-item>
         </q-card>
+
+        <!-- REASONS TEST SECTION -->
         <q-card @click="toggle = !toggle" class="negative-cards">
             <q-icon
                 name="check"
@@ -74,12 +76,6 @@ const toggle = ref(false);
                     <ReasonsShowResultComponent
                         :name="userStore.userName.split(' ')[0]"
                     />
-                    <h6>
-                        Si tienes dudas sobre esta carta de tu inconsciente,
-                        puedes escribirme por WhatsApp o agendar una cita para
-                        que tratemos el tema en profundidad:
-                    </h6>
-                    <q-btn label="Agendar Cita" color="primary" to="citas" />
                 </q-card-section>
             </q-expansion-item>
 
@@ -89,6 +85,8 @@ const toggle = ref(false);
                 </q-card-section>
             </q-expansion-item>
         </q-card>
+
+        <!-- TEMPER TEST SECTION -->
         <q-card @click="toggle = !toggle" class="negative-cards">
             <q-icon
                 name="check"

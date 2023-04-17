@@ -66,7 +66,7 @@ export const useBlogsStore = defineStore('Blogs', () => {
                 },
             });
 
-            oneBlog.value = res.data.blog;
+            oneBlog.value = res.data.post;
         } catch (error: any) {
             throw error.response?.data || error;
         }

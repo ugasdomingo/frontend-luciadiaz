@@ -67,4 +67,10 @@ initialFuntions();
     margin: 3.5em 0;
     padding: 0 0 0 0.5em;
 }
+
+@media screen and (max-width: 760px) {
+    .citas-cards {
+        width: 95%;
+    }
+}
 </style>

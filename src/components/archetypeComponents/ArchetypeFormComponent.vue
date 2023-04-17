@@ -499,6 +499,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 v-model="politiquesAccepted"
                 label="Acepto las politicas de privacidad"
                 class="q-mt-md"
+                style="color: $azul"
             />
             <div class="q-my-md" v-if="politiquesAccepted">
                 <q-btn label="Enviar" color="primary" type="submit"></q-btn>

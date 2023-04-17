@@ -8,7 +8,7 @@
                 Online o Presencial en Madrid
             </h6>
         </div>
-        <q-btn label="Agendar Ahora" class="button-citas" />
+        <q-btn label="Agendar Ahora" class="button-citas" to="citas" />
     </div>
 </template>
 

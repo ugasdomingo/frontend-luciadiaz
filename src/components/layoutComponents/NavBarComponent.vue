@@ -28,7 +28,7 @@ const userStores = useUserStore();
             v-if="userStores.token"
             to="/mi-escritorio"
             glossy
-            label="Escritorio"
+            label="Mi Escritorio"
         />
     </q-btn-group>
 </template>

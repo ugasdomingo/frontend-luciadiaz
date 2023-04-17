@@ -8,11 +8,7 @@ defineProps({
     <div class="column formations-container">
         <h2 class="titles q-mb-md text-center">Últimos Posts</h2>
         <div class="row justify-around cards-container">
-            <q-card
-                v-for="post in posts"
-                :key="post?.id"
-                class="my-card cursor-pointer"
-            >
+            <q-card v-for="post in posts" :key="post?.id" class="my-card">
                 <img
                     class="portadas-home2"
                     :src="
@@ -28,7 +24,7 @@ defineProps({
                     <q-btn
                         class="btn-blogs"
                         label="Ver el Post"
-                        to="post/{{ post?.id }}"
+                        :to="'psicologia/' + post?._id"
                     />
                 </q-card-section>
             </q-card>

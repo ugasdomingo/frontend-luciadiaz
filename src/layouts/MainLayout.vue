@@ -93,7 +93,7 @@ const logout = async () => {
     position: absolute;
     top: 0;
     z-index: -100;
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 @media screen and (max-width: 760px) {

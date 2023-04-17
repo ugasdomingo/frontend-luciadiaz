@@ -189,10 +189,10 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
         <q-spinner-pie color="primary" size="5em" v-if="loadding" />
         <q-form v-else @submit.prevent="handleSubmit">
             <!-- USERS DATA -->
-            <div v-if="!userStore.token">
+            <div v-if="!userStore.token" class="question">
                 <q-input
                     v-model="name"
-                    dark
+                    label-color="white"
                     type="text"
                     label="Nombre Completo"
                     :rules="[
@@ -203,7 +203,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     v-model="email"
                     label="Email"
                     type="text"
-                    dark
+                    label-color="white"
                     :rules="[
                         (val) =>
                             (val && /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/.test(val)) ||
@@ -213,7 +213,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="phone"
                     type="text"
-                    dark
+                    label-color="white"
                     label="Teléfono"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -223,7 +223,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     v-model="password"
                     label="Contraseña"
                     type="password"
-                    dark
+                    label-color="white"
                     :rules="[
                         (val) =>
                             (val && val.length > 5) ||
@@ -237,196 +237,964 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
             </div>
             <!-- TESTS QUESTIONS -->
             <div class="question">
-                <q-radio v-model="r1" val="a" :label="temperQuestions[0].a" />
-                <q-radio v-model="r1" val="b" :label="temperQuestions[0].b" />
-                <q-radio v-model="r1" val="c" :label="temperQuestions[0].c" />
-                <q-radio v-model="r1" val="d" :label="temperQuestions[0].d" />
+                <q-radio
+                    v-model="r1"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[0].a"
+                />
+                <q-radio
+                    v-model="r1"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[0].b"
+                />
+                <q-radio
+                    v-model="r1"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[0].c"
+                />
+                <q-radio
+                    v-model="r1"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[0].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r2" val="a" :label="temperQuestions[1].a" />
-                <q-radio v-model="r2" val="b" :label="temperQuestions[1].b" />
-                <q-radio v-model="r2" val="c" :label="temperQuestions[1].c" />
-                <q-radio v-model="r2" val="d" :label="temperQuestions[1].d" />
+                <q-radio
+                    v-model="r2"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[1].a"
+                />
+                <q-radio
+                    v-model="r2"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[1].b"
+                />
+                <q-radio
+                    v-model="r2"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[1].c"
+                />
+                <q-radio
+                    v-model="r2"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[1].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r3" val="a" :label="temperQuestions[2].a" />
-                <q-radio v-model="r3" val="b" :label="temperQuestions[2].b" />
-                <q-radio v-model="r3" val="c" :label="temperQuestions[2].c" />
-                <q-radio v-model="r3" val="d" :label="temperQuestions[2].d" />
+                <q-radio
+                    v-model="r3"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[2].a"
+                />
+                <q-radio
+                    v-model="r3"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[2].b"
+                />
+                <q-radio
+                    v-model="r3"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[2].c"
+                />
+                <q-radio
+                    v-model="r3"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[2].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r4" val="a" :label="temperQuestions[3].a" />
-                <q-radio v-model="r4" val="b" :label="temperQuestions[3].b" />
-                <q-radio v-model="r4" val="c" :label="temperQuestions[3].c" />
-                <q-radio v-model="r4" val="d" :label="temperQuestions[3].d" />
+                <q-radio
+                    v-model="r4"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[3].a"
+                />
+                <q-radio
+                    v-model="r4"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[3].b"
+                />
+                <q-radio
+                    v-model="r4"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[3].c"
+                />
+                <q-radio
+                    v-model="r4"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[3].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r5" val="a" :label="temperQuestions[4].a" />
-                <q-radio v-model="r5" val="b" :label="temperQuestions[4].b" />
-                <q-radio v-model="r5" val="c" :label="temperQuestions[4].c" />
-                <q-radio v-model="r5" val="d" :label="temperQuestions[4].d" />
+                <q-radio
+                    v-model="r5"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[4].a"
+                />
+                <q-radio
+                    v-model="r5"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[4].b"
+                />
+                <q-radio
+                    v-model="r5"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[4].c"
+                />
+                <q-radio
+                    v-model="r5"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[4].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r6" val="a" :label="temperQuestions[5].a" />
-                <q-radio v-model="r6" val="b" :label="temperQuestions[5].b" />
-                <q-radio v-model="r6" val="c" :label="temperQuestions[5].c" />
-                <q-radio v-model="r6" val="d" :label="temperQuestions[5].d" />
+                <q-radio
+                    v-model="r6"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[5].a"
+                />
+                <q-radio
+                    v-model="r6"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[5].b"
+                />
+                <q-radio
+                    v-model="r6"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[5].c"
+                />
+                <q-radio
+                    v-model="r6"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[5].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r7" val="a" :label="temperQuestions[6].a" />
-                <q-radio v-model="r7" val="b" :label="temperQuestions[6].b" />
-                <q-radio v-model="r7" val="c" :label="temperQuestions[6].c" />
-                <q-radio v-model="r7" val="d" :label="temperQuestions[6].d" />
+                <q-radio
+                    v-model="r7"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[6].a"
+                />
+                <q-radio
+                    v-model="r7"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[6].b"
+                />
+                <q-radio
+                    v-model="r7"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[6].c"
+                />
+                <q-radio
+                    v-model="r7"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[6].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r8" val="a" :label="temperQuestions[7].a" />
-                <q-radio v-model="r8" val="b" :label="temperQuestions[7].b" />
-                <q-radio v-model="r8" val="c" :label="temperQuestions[7].c" />
-                <q-radio v-model="r8" val="d" :label="temperQuestions[7].d" />
+                <q-radio
+                    v-model="r8"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[7].a"
+                />
+                <q-radio
+                    v-model="r8"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[7].b"
+                />
+                <q-radio
+                    v-model="r8"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[7].c"
+                />
+                <q-radio
+                    v-model="r8"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[7].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r9" val="a" :label="temperQuestions[8].a" />
-                <q-radio v-model="r9" val="b" :label="temperQuestions[8].b" />
-                <q-radio v-model="r9" val="c" :label="temperQuestions[8].c" />
-                <q-radio v-model="r9" val="d" :label="temperQuestions[8].d" />
+                <q-radio
+                    v-model="r9"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[8].a"
+                />
+                <q-radio
+                    v-model="r9"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[8].b"
+                />
+                <q-radio
+                    v-model="r9"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[8].c"
+                />
+                <q-radio
+                    v-model="r9"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[8].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r10" val="a" :label="temperQuestions[9].a" />
-                <q-radio v-model="r10" val="b" :label="temperQuestions[9].b" />
-                <q-radio v-model="r10" val="c" :label="temperQuestions[9].c" />
-                <q-radio v-model="r10" val="d" :label="temperQuestions[9].d" />
+                <q-radio
+                    v-model="r10"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[9].a"
+                />
+                <q-radio
+                    v-model="r10"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[9].b"
+                />
+                <q-radio
+                    v-model="r10"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[9].c"
+                />
+                <q-radio
+                    v-model="r10"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[9].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r11" val="a" :label="temperQuestions[10].a" />
-                <q-radio v-model="r11" val="b" :label="temperQuestions[10].b" />
-                <q-radio v-model="r11" val="c" :label="temperQuestions[10].c" />
-                <q-radio v-model="r11" val="d" :label="temperQuestions[10].d" />
+                <q-radio
+                    v-model="r11"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[10].a"
+                />
+                <q-radio
+                    v-model="r11"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[10].b"
+                />
+                <q-radio
+                    v-model="r11"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[10].c"
+                />
+                <q-radio
+                    v-model="r11"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[10].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r12" val="a" :label="temperQuestions[11].a" />
-                <q-radio v-model="r12" val="b" :label="temperQuestions[11].b" />
-                <q-radio v-model="r12" val="c" :label="temperQuestions[11].c" />
-                <q-radio v-model="r12" val="d" :label="temperQuestions[11].d" />
+                <q-radio
+                    v-model="r12"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[11].a"
+                />
+                <q-radio
+                    v-model="r12"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[11].b"
+                />
+                <q-radio
+                    v-model="r12"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[11].c"
+                />
+                <q-radio
+                    v-model="r12"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[11].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r13" val="a" :label="temperQuestions[12].a" />
-                <q-radio v-model="r13" val="b" :label="temperQuestions[12].b" />
-                <q-radio v-model="r13" val="c" :label="temperQuestions[12].c" />
-                <q-radio v-model="r13" val="d" :label="temperQuestions[12].d" />
+                <q-radio
+                    v-model="r13"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[12].a"
+                />
+                <q-radio
+                    v-model="r13"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[12].b"
+                />
+                <q-radio
+                    v-model="r13"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[12].c"
+                />
+                <q-radio
+                    v-model="r13"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[12].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r14" val="a" :label="temperQuestions[13].a" />
-                <q-radio v-model="r14" val="b" :label="temperQuestions[13].b" />
-                <q-radio v-model="r14" val="c" :label="temperQuestions[13].c" />
-                <q-radio v-model="r14" val="d" :label="temperQuestions[13].d" />
+                <q-radio
+                    v-model="r14"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[13].a"
+                />
+                <q-radio
+                    v-model="r14"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[13].b"
+                />
+                <q-radio
+                    v-model="r14"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[13].c"
+                />
+                <q-radio
+                    v-model="r14"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[13].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r15" val="a" :label="temperQuestions[14].a" />
-                <q-radio v-model="r15" val="b" :label="temperQuestions[14].b" />
-                <q-radio v-model="r15" val="c" :label="temperQuestions[14].c" />
-                <q-radio v-model="r15" val="d" :label="temperQuestions[14].d" />
+                <q-radio
+                    v-model="r15"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[14].a"
+                />
+                <q-radio
+                    v-model="r15"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[14].b"
+                />
+                <q-radio
+                    v-model="r15"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[14].c"
+                />
+                <q-radio
+                    v-model="r15"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[14].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r16" val="a" :label="temperQuestions[15].a" />
-                <q-radio v-model="r16" val="b" :label="temperQuestions[15].b" />
-                <q-radio v-model="r16" val="c" :label="temperQuestions[15].c" />
-                <q-radio v-model="r16" val="d" :label="temperQuestions[15].d" />
+                <q-radio
+                    v-model="r16"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[15].a"
+                />
+                <q-radio
+                    v-model="r16"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[15].b"
+                />
+                <q-radio
+                    v-model="r16"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[15].c"
+                />
+                <q-radio
+                    v-model="r16"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[15].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r17" val="a" :label="temperQuestions[16].a" />
-                <q-radio v-model="r17" val="b" :label="temperQuestions[16].b" />
-                <q-radio v-model="r17" val="c" :label="temperQuestions[16].c" />
-                <q-radio v-model="r17" val="d" :label="temperQuestions[16].d" />
+                <q-radio
+                    v-model="r17"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[16].a"
+                />
+                <q-radio
+                    v-model="r17"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[16].b"
+                />
+                <q-radio
+                    v-model="r17"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[16].c"
+                />
+                <q-radio
+                    v-model="r17"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[16].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r18" val="a" :label="temperQuestions[17].a" />
-                <q-radio v-model="r18" val="b" :label="temperQuestions[17].b" />
-                <q-radio v-model="r18" val="c" :label="temperQuestions[17].c" />
-                <q-radio v-model="r18" val="d" :label="temperQuestions[17].d" />
+                <q-radio
+                    v-model="r18"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[17].a"
+                />
+                <q-radio
+                    v-model="r18"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[17].b"
+                />
+                <q-radio
+                    v-model="r18"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[17].c"
+                />
+                <q-radio
+                    v-model="r18"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[17].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r19" val="a" :label="temperQuestions[18].a" />
-                <q-radio v-model="r19" val="b" :label="temperQuestions[18].b" />
-                <q-radio v-model="r19" val="c" :label="temperQuestions[18].c" />
-                <q-radio v-model="r19" val="d" :label="temperQuestions[18].d" />
+                <q-radio
+                    v-model="r19"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[18].a"
+                />
+                <q-radio
+                    v-model="r19"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[18].b"
+                />
+                <q-radio
+                    v-model="r19"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[18].c"
+                />
+                <q-radio
+                    v-model="r19"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[18].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r20" val="a" :label="temperQuestions[19].a" />
-                <q-radio v-model="r20" val="b" :label="temperQuestions[19].b" />
-                <q-radio v-model="r20" val="c" :label="temperQuestions[19].c" />
-                <q-radio v-model="r20" val="d" :label="temperQuestions[19].d" />
+                <q-radio
+                    v-model="r20"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[19].a"
+                />
+                <q-radio
+                    v-model="r20"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[19].b"
+                />
+                <q-radio
+                    v-model="r20"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[19].c"
+                />
+                <q-radio
+                    v-model="r20"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[19].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r21" val="a" :label="temperQuestions[20].a" />
-                <q-radio v-model="r21" val="b" :label="temperQuestions[20].b" />
-                <q-radio v-model="r21" val="c" :label="temperQuestions[20].c" />
-                <q-radio v-model="r21" val="d" :label="temperQuestions[20].d" />
+                <q-radio
+                    v-model="r21"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[20].a"
+                />
+                <q-radio
+                    v-model="r21"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[20].b"
+                />
+                <q-radio
+                    v-model="r21"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[20].c"
+                />
+                <q-radio
+                    v-model="r21"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[20].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r22" val="a" :label="temperQuestions[21].a" />
-                <q-radio v-model="r22" val="b" :label="temperQuestions[21].b" />
-                <q-radio v-model="r22" val="c" :label="temperQuestions[21].c" />
-                <q-radio v-model="r22" val="d" :label="temperQuestions[21].d" />
+                <q-radio
+                    v-model="r22"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[21].a"
+                />
+                <q-radio
+                    v-model="r22"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[21].b"
+                />
+                <q-radio
+                    v-model="r22"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[21].c"
+                />
+                <q-radio
+                    v-model="r22"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[21].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r23" val="a" :label="temperQuestions[22].a" />
-                <q-radio v-model="r23" val="b" :label="temperQuestions[22].b" />
-                <q-radio v-model="r23" val="c" :label="temperQuestions[22].c" />
-                <q-radio v-model="r23" val="d" :label="temperQuestions[22].d" />
+                <q-radio
+                    v-model="r23"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[22].a"
+                />
+                <q-radio
+                    v-model="r23"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[22].b"
+                />
+                <q-radio
+                    v-model="r23"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[22].c"
+                />
+                <q-radio
+                    v-model="r23"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[22].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r24" val="a" :label="temperQuestions[23].a" />
-                <q-radio v-model="r24" val="b" :label="temperQuestions[23].b" />
-                <q-radio v-model="r24" val="c" :label="temperQuestions[23].c" />
-                <q-radio v-model="r24" val="d" :label="temperQuestions[23].d" />
+                <q-radio
+                    v-model="r24"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[23].a"
+                />
+                <q-radio
+                    v-model="r24"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[23].b"
+                />
+                <q-radio
+                    v-model="r24"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[23].c"
+                />
+                <q-radio
+                    v-model="r24"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[23].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r25" val="a" :label="temperQuestions[24].a" />
-                <q-radio v-model="r25" val="b" :label="temperQuestions[24].b" />
-                <q-radio v-model="r25" val="c" :label="temperQuestions[24].c" />
-                <q-radio v-model="r25" val="d" :label="temperQuestions[24].d" />
+                <q-radio
+                    v-model="r25"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[24].a"
+                />
+                <q-radio
+                    v-model="r25"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[24].b"
+                />
+                <q-radio
+                    v-model="r25"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[24].c"
+                />
+                <q-radio
+                    v-model="r25"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[24].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r26" val="a" :label="temperQuestions[25].a" />
-                <q-radio v-model="r26" val="b" :label="temperQuestions[25].b" />
-                <q-radio v-model="r26" val="c" :label="temperQuestions[25].c" />
-                <q-radio v-model="r26" val="d" :label="temperQuestions[25].d" />
+                <q-radio
+                    v-model="r26"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[25].a"
+                />
+                <q-radio
+                    v-model="r26"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[25].b"
+                />
+                <q-radio
+                    v-model="r26"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[25].c"
+                />
+                <q-radio
+                    v-model="r26"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[25].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r27" val="a" :label="temperQuestions[26].a" />
-                <q-radio v-model="r27" val="b" :label="temperQuestions[26].b" />
-                <q-radio v-model="r27" val="c" :label="temperQuestions[26].c" />
-                <q-radio v-model="r27" val="d" :label="temperQuestions[26].d" />
+                <q-radio
+                    v-model="r27"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[26].a"
+                />
+                <q-radio
+                    v-model="r27"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[26].b"
+                />
+                <q-radio
+                    v-model="r27"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[26].c"
+                />
+                <q-radio
+                    v-model="r27"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[26].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r28" val="a" :label="temperQuestions[27].a" />
-                <q-radio v-model="r28" val="b" :label="temperQuestions[27].b" />
-                <q-radio v-model="r28" val="c" :label="temperQuestions[27].c" />
-                <q-radio v-model="r28" val="d" :label="temperQuestions[27].d" />
+                <q-radio
+                    v-model="r28"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[27].a"
+                />
+                <q-radio
+                    v-model="r28"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[27].b"
+                />
+                <q-radio
+                    v-model="r28"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[27].c"
+                />
+                <q-radio
+                    v-model="r28"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[27].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r29" val="a" :label="temperQuestions[28].a" />
-                <q-radio v-model="r29" val="b" :label="temperQuestions[28].b" />
-                <q-radio v-model="r29" val="c" :label="temperQuestions[28].c" />
-                <q-radio v-model="r29" val="d" :label="temperQuestions[28].d" />
+                <q-radio
+                    v-model="r29"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[28].a"
+                />
+                <q-radio
+                    v-model="r29"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[28].b"
+                />
+                <q-radio
+                    v-model="r29"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[28].c"
+                />
+                <q-radio
+                    v-model="r29"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[28].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r30" val="a" :label="temperQuestions[29].a" />
-                <q-radio v-model="r30" val="b" :label="temperQuestions[29].b" />
-                <q-radio v-model="r30" val="c" :label="temperQuestions[29].c" />
-                <q-radio v-model="r30" val="d" :label="temperQuestions[29].d" />
+                <q-radio
+                    v-model="r30"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[29].a"
+                />
+                <q-radio
+                    v-model="r30"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[29].b"
+                />
+                <q-radio
+                    v-model="r30"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[29].c"
+                />
+                <q-radio
+                    v-model="r30"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[29].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r31" val="a" :label="temperQuestions[30].a" />
-                <q-radio v-model="r31" val="b" :label="temperQuestions[30].b" />
-                <q-radio v-model="r31" val="c" :label="temperQuestions[30].c" />
-                <q-radio v-model="r31" val="d" :label="temperQuestions[30].d" />
+                <q-radio
+                    v-model="r31"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[30].a"
+                />
+                <q-radio
+                    v-model="r31"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[30].b"
+                />
+                <q-radio
+                    v-model="r31"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[30].c"
+                />
+                <q-radio
+                    v-model="r31"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[30].d"
+                />
             </div>
             <div class="question">
-                <q-radio v-model="r32" val="a" :label="temperQuestions[31].a" />
-                <q-radio v-model="r32" val="b" :label="temperQuestions[31].b" />
-                <q-radio v-model="r32" val="c" :label="temperQuestions[31].c" />
-                <q-radio v-model="r32" val="d" :label="temperQuestions[31].d" />
+                <q-radio
+                    v-model="r32"
+                    keep-color
+                    color="white"
+                    val="a"
+                    :label="temperQuestions[31].a"
+                />
+                <q-radio
+                    v-model="r32"
+                    keep-color
+                    color="white"
+                    val="b"
+                    :label="temperQuestions[31].b"
+                />
+                <q-radio
+                    v-model="r32"
+                    keep-color
+                    color="white"
+                    val="c"
+                    :label="temperQuestions[31].c"
+                />
+                <q-radio
+                    v-model="r32"
+                    keep-color
+                    color="white"
+                    val="d"
+                    :label="temperQuestions[31].d"
+                />
             </div>
             <q-checkbox
                 v-model="politiquesAccepted"
@@ -441,16 +1209,18 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
     </q-page>
 </template>
 
-<style lang="sass" scoped>
-.question
-    padding: 16px
-    margin-bottom: 16px
-    display: grid
-    background: $positive
-    border-radius: 24px
-    border: 1px solid #2e2c6d
-    color: white
+<style lang="scss" scoped>
+.question {
+    padding: 16px;
+    margin-bottom: 16px;
+    display: grid;
+    background: rgba(9, 31, 141, 0.9);
+    border-radius: 24px;
+    border: 1px solid #2e2c6d;
+    color: white;
+}
 
-.question p
-    font-weight: 500
+.question p {
+    font-weight: 500;
+}
 </style>
