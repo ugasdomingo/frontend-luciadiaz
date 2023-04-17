@@ -25,7 +25,6 @@ export const useBestDadStore = defineStore('bestDad', () => {
             });
 
             bestDad.value = res.data.arte;
-            console.log(bestDad.value);
         } catch (error: any) {
             throw error.response?.data || error;
         }

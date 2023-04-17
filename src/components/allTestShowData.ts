@@ -1,0 +1,47 @@
+export const allTestShowData = [
+    {
+        title: 'Personalidad',
+        link: '/personalidad',
+        img: 'img/portada-archetype.png',
+        class: 'portadas-home',
+        type: [
+            'visitante',
+            'paciente',
+            'paciente-niños',
+            'paciente-regitro',
+            'paciente-todos',
+            'Admin',
+            null,
+        ],
+    },
+    {
+        title: 'Temperamento',
+        link: '/temperamento',
+        img: 'img/portada-temper.png',
+        class: 'portadas-home',
+        type: [
+            'visitante',
+            'paciente',
+            'paciente-niños',
+            'paciente-regitro',
+            'paciente-todos',
+            'Admin',
+            null,
+        ],
+    },
+    {
+        title: 'Alcanzar-metas',
+        link: '/alcanzar-metas',
+        img: 'img/portada-goals.png',
+        class: 'portadas-home',
+        type: [
+            'visitante',
+            'paciente',
+            'paciente-niños',
+            'paciente-regitro',
+            'paciente-todos',
+            'Admin',
+            null,
+        ],
+    },
+];

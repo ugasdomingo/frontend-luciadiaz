@@ -11,11 +11,17 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('pages/AboutPage.vue'),
             },
             {
+                //Blogs Page
                 path: 'psicologia',
                 component: () => import('pages/PsicologiaPage.vue'),
             },
             {
-                path: 'escritorio',
+                //Single blogs Page
+                path: 'psicologia/:id',
+                component: () => import('pages/SingleBlogPage.vue'),
+            },
+            {
+                path: 'mi-escritorio',
                 component: () => import('pages/private/DeskPage.vue'),
                 meta: {
                     auth: true,
@@ -25,46 +31,7 @@ const routes: RouteRecordRaw[] = [
                 path: 'citas',
                 component: () => import('src/pages/CitasPage.vue'),
             },
-            /* ********PSICOTEST ROUTES******** */
-            {
-                path: 'anamnesis',
-                component: () => import('pages/test/AnamnesisTestPage.vue'),
-            },
-            {
-                path: 'autoregistro',
-                component: () => import('pages/test/AutoregistroPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
-            {
-                path: 'seis-razones',
-                component: () => import('pages/test/SixReasonsTestPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
-            {
-                path: 'arquetipos',
-                component: () => import('pages/test/ArchetypeTestPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
-            {
-                path: 'temperamento',
-                component: () => import('pages/test/TemperTestPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
-            {
-                path: 'pensamientos',
-                component: () => import('pages/test/ThoughtsTestPage.vue'),
-                meta: {
-                    auth: true,
-                },
-            },
+
             /* ********AUTH ROUTES******** */
             {
                 path: 'login',
@@ -74,35 +41,31 @@ const routes: RouteRecordRaw[] = [
                 path: 'signup',
                 component: () => import('pages/auth/RegistroPage.vue'),
             },
-            /* ********Material ROUTES******** */
+            /* ********PSICOTEST ROUTES******** */
             {
-                path: 'best-dad',
-                component: () => import('pages/material/BestDadPage.vue'),
+                path: 'tests',
+                component: () => import('src/pages/psicoTest/AllTestPage.vue'),
             },
             {
-                path: 'best-dad-personalizar',
-                component: () => import('pages/material/BestDadFormPage.vue'),
-            },
-            {
-                path: 'gracias-generic-best-dad',
-                component: () => import('pages/material/BestDadThanksPage.vue'),
-            },
-            /* ********COURSES ROUTES******** */
-            {
-                path: 'crianza-asertiva',
+                path: 'alcanzar-metas',
                 component: () =>
-                    import('pages/courses/CrianzaAsertivaPage.vue'),
+                    import('src/pages/psicoTest/ReasonsTestPage.vue'),
             },
             {
-                path: 'orientacion-padres',
+                path: 'personalidad',
                 component: () =>
-                    import('pages/courses/OrientacionPadresPage.vue'),
+                    import('src/pages/psicoTest/ArchetypeTestPage.vue'),
             },
             {
-                path: 'historia-emocional',
+                path: 'temperamento',
                 component: () =>
-                    import('pages/courses/HistoriaEmocionalPage.vue'),
+                    import('src/pages/psicoTest/TemperTestPage.vue'),
             },
+
+            /* ********BOOKS ROUTES******** */
+
+            /* ********FORMATIONS ROUTES******** */
+
             {
                 path: 'gracias',
                 component: () => import('pages/GraciasPage.vue'),
@@ -120,10 +83,6 @@ const routes: RouteRecordRaw[] = [
                 path: 'politica-privacidad',
                 component: () =>
                     import('pages/legal/PoliticaPrivacidadPage.vue'),
-            },
-            {
-                path: 'pruebas',
-                component: () => import('pages/PruebasPage.vue'),
             },
         ],
     },

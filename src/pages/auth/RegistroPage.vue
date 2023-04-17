@@ -4,5 +4,5 @@
 </template>
 
 <script setup>
-import RegistroViewComponent from 'src/components/auth/RegistroViewComponent.vue';
+import RegistroViewComponent from 'src/components/authComponents/RegistroViewComponent.vue';
 </script>

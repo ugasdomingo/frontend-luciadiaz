@@ -1,119 +1,87 @@
 <template>
-    <q-page style="width: 100%">
+    <q-page>
         <!-- Homepage Hero -->
-        <img src="img/portada5.jpg" alt="portada" class="hero-img" />
-        <div class="row hero-container q-pa-xl">
-            <div class="col-12 col-md-8">
-                <HeroTextComponent />
-            </div>
-            <div class="img-container col-12 col-md-4">
-                <HeroImgComponent />
-            </div>
+        <div class="hero-container">
+            <HeroComponent />
         </div>
-        <!-- Cooming soon (Zero Section) -->
-        <div>
-            <NextCourseComponent />
+        <!-- Homepage Test -->
+        <div class="normal-container">
+            <IndexTestComponent />
         </div>
-        <!-- 6 razones test (First Section) -->
-        <div class="column flex-center" style="width: 100%; min-height: 70vh">
-            <GiftTestComponent />
+        <!-- Homepage Citas -->
+        <div class="action-container">
+            <IndexCitaComponent />
         </div>
-        <!-- Arquetipo and Tempeter test (Second Section) -->
-        <div class="column first-section flex-center bg-principal">
-            <SixReasonsComponent />
+        <!-- Homepage Formations -->
+        <div class="normal-container">
+            <IndexFormationsComponent
+                :formations="formationsStore.allFormations"
+            />
         </div>
-        <!-- Arquetipo and Tempeter test (Third Section) -->
-        <!-- Historia Emocional (Last Section) -->
-        <div>
-            <HistoriaEmocionalComponent />
+        <!-- Homepage Books -->
+        <div class="normal-container">
+            <IndexBookComponent :book="booksStore.allBooks[0]" />
         </div>
-        <div
-            class="row col-12 third-section bg-principal items-center justify-evenly"
-        >
-            <SheduleComponent />
+        <!-- Homepage About Me -->
+        <div class="normal-container">
+            <IndexAboutMeComponent />
         </div>
-        <div class="row col-12 fourth-section items-center justify-evenly">
-            <MotivosComponent />
+        <!-- Homepage Posts -->
+        <div class="normal-container">
+            <IndexBlogComponent :posts="blogsStore.allBlogs" />
         </div>
     </q-page>
 </template>
 
 <script setup lang="ts">
-// Import Hero Components
-import HeroTextComponent from 'src/components/index/HeroTextComponent.vue';
-import HeroImgComponent from 'src/components/index/HeroImgComponent.vue';
+//Import tools
+import { useBooksStore } from 'src/stores/books-store';
+import { useFormationsStore } from 'src/stores/formations-store';
+import { useBlogsStore } from 'src/stores/blog-store';
 
-// Import Courses coming soon / Zero Section
-import NextCourseComponent from 'src/components/index/NextCourseComponent.vue';
+//Import Components
+import HeroComponent from 'src/components/indexComponents/HeroComponent.vue';
+import IndexTestComponent from 'src/components/indexComponents/IndexTestComponent.vue';
+import IndexCitaComponent from 'src/components/indexComponents/IndexCitaComponent.vue';
+import IndexFormationsComponent from 'src/components/indexComponents/IndexFormationsComponent.vue';
+import IndexBookComponent from 'src/components/indexComponents/IndexBookComponent.vue';
+import IndexAboutMeComponent from 'src/components/indexComponents/IndexAboutMeComponent.vue';
+import IndexBlogComponent from 'src/components/indexComponents/IndexBlogComponent.vue';
 
-// Import Historia emocional / last Section
-import HistoriaEmocionalComponent from 'src/components/index/HistoriaEmocionalComponent.vue';
-
-// Import 6 Reasons / First Section
-import SixReasonsComponent from 'src/components/index/SixReasonsComponent.vue';
-
-// Import Gift Test / Second Section
-import GiftTestComponent from 'src/components/index/GiftTestComponent.vue';
-
-// Import Shedule Therapy / Third Section
-import SheduleComponent from 'src/components/index/SheduleComponent.vue';
-
-// Import Motivo de consulta / Fourth Section
-import MotivosComponent from 'src/components/index/MotivosComponent.vue';
+//Activate tools
+const booksStore = useBooksStore();
+const formationsStore = useFormationsStore();
+const blogsStore = useBlogsStore();
+formationsStore.getAllFormations(3);
+booksStore.getAllBooks();
+blogsStore.getAllBlogs(3);
 </script>
 
-<style scoped>
-.hero-img {
+<style lang="scss" scoped>
+.hero-container {
     width: 100%;
-    height: 100%;
-    min-height: 300px;
-    z-index: -1;
-    object-fit: cover;
-    position: fixed;
-    top: 0;
-    opacity: 0.5;
+    height: 100vh;
+    box-sizing: border-box;
 }
-.zero-section {
+.normal-container {
     width: 100%;
-    height: 90vh;
+    height: 500px;
+    box-sizing: border-box;
 }
-.first-section {
+.action-container {
     width: 100%;
-    height: 70vh;
+    height: 300px;
+    box-sizing: border-box;
 }
-.third-section {
-    width: 100%;
-    height: 70vh;
-}
-.fourth-section {
-    width: 100%;
-    height: 70vh;
-}
-
-@media screen and (max-width: 1080px) {
-    .hero-img {
-        background-color: none;
-    }
+@media screen and (max-width: 760px) {
     .hero-container {
-        padding: 0px 4px 16px;
+        height: 70vh;
     }
-    .img-container {
-        padding: 0px;
-        display: none;
+    .normal-container {
+        height: auto;
     }
-    .zero-section {
-        height: 100vh;
-    }
-    .first-section {
-        height: 40vh;
-    }
-    .third-section {
-        height: 50vh;
-        padding: 16px 0;
-    }
-    .fourth-section {
-        height: 60vh;
-        padding: 16px;
+    .action-container {
+        height: auto;
     }
 }
 </style>

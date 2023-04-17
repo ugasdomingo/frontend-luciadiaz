@@ -1,29 +1,23 @@
 <template>
-    <q-page class="column">
-        <h3 class="text-primary text-center">Todos los Registros</h3>
-        <div class="row justify-center">
-            <template v-for="users of userStore.allUsers" :key="users.id">
-                <AutoregistroList :users="users" class="q-ma-lg" />
-            </template>
-        </div>
-        <p>{{ enrollmentStore.anamnesis }}</p>
-        <p>{{ enrollmentStore.enrollements }}</p>
-    </q-page>
+    <div v-if="userStore.userRole === 'Admin'">
+        <AdminDeskComponent />
+    </div>
+    <div v-else>
+        <UsersDeskComponent />
+    </div>
 </template>
 
 <script lang="ts" setup>
+//Import tools
 import { useUserStore } from 'src/stores/user-store';
-import { useEnrollmentStore } from 'src/stores/enrollment-store';
 
-//Component
-import AutoregistroList from 'components/autoregistro/AutoregistroListComponent.vue';
+//Import Components
+import AdminDeskComponent from 'src/components/deskComponents/AdminDeskComponent.vue';
+import UsersDeskComponent from 'src/components/deskComponents/UsersDeskComponent.vue';
 
+//Activate tools
 const userStore = useUserStore();
-const enrollmentStore = useEnrollmentStore();
-
 userStore.getAllUsers();
-enrollmentStore.getAllAnamnesis();
-enrollmentStore.getAllEnrollments();
 </script>
 
 <style scoped></style>

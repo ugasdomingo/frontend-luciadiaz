@@ -1,81 +1,36 @@
 <template>
-    <q-layout view="hHh LpR fFf">
-        <q-header reveal bordered class="bg-secondary text-primary">
+    <q-layout view="hhh lpR fFf">
+        <img src="img/fondo-circles.jpg" alt="Hero" class="hero-img-big" />
+        <q-header class="header transparent column justify-center">
             <q-toolbar>
-                <q-btn dense flat round icon="menu" @click="toggleLeftDrawer" />
-
-                <q-toolbar-title>
-                    <q-avatar>
-                        <img src="img/Logo-lucia.jpg" />
-                    </q-avatar>
-                    <router-link
-                        to="/"
-                        class="text-bold"
-                        style="text-decoration: none"
-                    >
-                        Lucia Diaz
-                    </router-link>
+                <q-toolbar-title class="q-pa-none">
+                    <NavBarComponent class="normal-menu" />
+                    <q-icon name="menu" class="hamburguer-menu">
+                        <q-popup-proxy
+                            transition-show="flip-up"
+                            transition-hide="flip-down"
+                            :breakpoint="50"
+                        >
+                            <NavBarComponent />
+                        </q-popup-proxy>
+                    </q-icon>
                 </q-toolbar-title>
-
-                <q-btn color="primary" to="login" v-if="!userStores.token">
-                    Iniciar Sesión
-                </q-btn>
-                <q-btn color="primary" @click="logout" v-if="userStores.token">
-                    Cerrar Sesión
-                </q-btn>
-                <q-btn
-                    color="accent"
-                    @click="userStores.access"
-                    v-if="role == 'Admin' || role == 'patient'"
-                    to="autoregistro"
-                >
-                    Autoregistro
-                </q-btn>
-            </q-toolbar>
-            <q-dialog v-model="dialog" persistent>
-                <q-card class="my-card bg-primary text-white">
-                    <q-card-section>
-                        <div class="text-h6">Política de Cookies</div>
-                    </q-card-section>
-
-                    <q-card-section>
-                        <p>
-                            Usamos Cookies para mejorar tu experiencia de
-                            usuario
-                        </p>
-                    </q-card-section>
-
-                    <q-separator dark />
-
-                    <q-card-actions>
-                        <q-btn @click="cookies" flat>Aceptar</q-btn>
-                        <q-btn @click="cookies" flat>Rechazar</q-btn>
-                    </q-card-actions>
-                </q-card>
-            </q-dialog>
-        </q-header>
-
-        <q-drawer v-model="leftDrawerOpen" side="left" bordered>
-            <q-lis>
-                <q-item-label header> ¿Que quieres hacer hoy? </q-item-label>
-                <div>
-                    <div v-if="role == 'Admin' || role == 'patient'">
-                        <EssentialLink
-                            v-for="link in patientLinks"
-                            :key="link.title"
-                            v-bind="link"
-                        />
-                    </div>
-                    <div v-else>
-                        <EssentialLink
-                            v-for="link in visitanteLinks"
-                            :key="link.title"
-                            v-bind="link"
-                        />
-                    </div>
+                <div v-if="userStores.token" class="right-toolbar-container">
+                    <h6 class="text-primary q-ma-none">
+                        Hola, {{ userStores.userName }}
+                    </h6>
+                    <q-btn
+                        color="primary"
+                        class="q-mx-md titles logout-btn"
+                        @click="logout"
+                        v-if="userStores.token"
+                        label="Cerrar Sesión"
+                    />
                 </div>
-            </q-lis>
-        </q-drawer>
+                <h3 v-else class="q-py-none logo">Lucia Diaz</h3>
+            </q-toolbar>
+            <DialogCookiesComponent />
+        </q-header>
 
         <q-page-container>
             <router-view />
@@ -85,7 +40,7 @@
                     icon="whatsapp"
                     color="green"
                     target="Blank"
-                    href="https://walink.co/26e016"
+                    href="https://wa.me/34624721896"
                 />
             </q-page-sticky>
         </q-page-container>
@@ -93,43 +48,69 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
+//Import tools
 import { useRouter } from 'vue-router';
 import { useUserStore } from '../stores/user-store';
-import EssentialLink from '../components/EssentialLink.vue';
-import { visitanteLinks, patientLinks } from 'layouts/essentialLinks';
+import { useTestStore } from 'src/stores/test-store';
 
+//Import Componentes
+import NavBarComponent from '/src/components/layoutComponents/NavBarComponent.vue';
+import DialogCookiesComponent from '/src/components/layoutComponents/DialogCookiesComponent.vue';
+
+//Activate tools
 const userStores = useUserStore();
+const testStore = useTestStore();
 const router = useRouter();
-const leftDrawerOpen = ref(false);
-const role = ref();
-const dialog = ref(true);
-const cookies = () => {
-    dialog.value = !dialog.value;
-};
 
-const setRole = () => {
-    role.value = sessionStorage.getItem('user');
-};
-setRole();
-
-function toggleLeftDrawer() {
-    leftDrawerOpen.value = !leftDrawerOpen.value;
-    setRole();
-}
-
+//Logicts Funtions
 const logout = async () => {
     await userStores.logout();
+    testStore.cleanData();
     router.push('/');
-    setRole();
 };
 </script>
 
 <style lang="scss" scoped>
-.buttom {
-    margin: 24px 0 0 16px;
+.logo {
+    color: $azul;
+    font-family: 'nunito';
 }
-.toolbar:hover {
-    background-color: accent;
+.header {
+    height: 5em;
+    padding: 0;
+}
+.hamburguer-menu {
+    display: none;
+    color: $azul;
+}
+.right-toolbar-container {
+    display: flex;
+}
+.hero-img-big {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    z-index: -100;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 760px) {
+    .normal-menu {
+        display: none;
+    }
+    .hamburguer-menu {
+        display: inline;
+    }
+    .right-toolbar-container {
+        flex-direction: column;
+        align-items: end;
+    }
+    .logout-btn {
+        font-size: 10px;
+        width: 100px;
+        padding: 4px;
+    }
 }
 </style>

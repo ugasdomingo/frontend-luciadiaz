@@ -6,8 +6,17 @@ import { ref } from 'vue';
 export const useUserStore = defineStore('user', () => {
     const token = ref(null);
     const expiresIn = ref(0);
-    const allUsers = ref('');
+    const allUsers = ref();
     const selfUid = ref('');
+    const userRole = ref('');
+    const userName = ref('');
+
+    //Global cath auth form
+    const name = ref('');
+    const email = ref('');
+    const phone = ref('');
+    const password = ref('');
+    const politiquesAccepted = ref(false);
 
     const access = async (email: string, password: string) => {
         try {
@@ -17,7 +26,9 @@ export const useUserStore = defineStore('user', () => {
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', res.data.role);
+            userRole.value = res.data.userRole;
+            userName.value = res.data.userName;
+            localStorage.setItem('user', res.data.userRole);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -35,18 +46,22 @@ export const useUserStore = defineStore('user', () => {
         name: string,
         email: string,
         password: string,
+        phone: string,
         politiquesAccepted: boolean
     ) => {
         try {
             const res = await api.post('/register', {
                 name,
                 email,
+                phone,
                 password,
                 politiquesAccepted,
             });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
-            sessionStorage.setItem('user', res.data.role);
+            userRole.value = res.data.userRole;
+            userName.value = res.data.userName;
+            localStorage.setItem('user', res.data.userRole);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -63,11 +78,13 @@ export const useUserStore = defineStore('user', () => {
     const logout = async () => {
         try {
             await api.get('/logout');
+            cleanStoreData();
         } catch (error: any) {
             console.log(error);
         } finally {
             resetStore();
-            sessionStorage.removeItem('user');
+            localStorage.removeItem('user');
+            sessionStorage.removeItem('cookies');
         }
     };
 
@@ -101,6 +118,8 @@ export const useUserStore = defineStore('user', () => {
             const res = await api.get('/refresh');
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
+            userRole.value = res.data.userRole;
+            userName.value = res.data.userName;
             sessionStorage.setItem('userT', 'usuario cualquiera');
             setTime();
         } catch (error: any) {
@@ -171,6 +190,12 @@ export const useUserStore = defineStore('user', () => {
             }
         }
     };
+    const cleanStoreData = () => {
+        allUsers.value = null;
+        selfUid.value = '';
+        userRole.value = '';
+        userName.value = '';
+    };
 
     return {
         token,
@@ -185,5 +210,12 @@ export const useUserStore = defineStore('user', () => {
         allUsers,
         self,
         selfUid,
+        name,
+        email,
+        phone,
+        password,
+        politiquesAccepted,
+        userRole,
+        userName,
     };
 });

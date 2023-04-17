@@ -1,0 +1,38 @@
+export const archetypeResults = [
+    {
+        arquetipo: 'Sabio Rey',
+        quiere: 'Tener razón',
+        p1: 'Su máxima necesidad: la IMPORTANCIA.',
+        p2: 'Es capaz de contemplar pasado, presente y futuro.',
+        p3: 'Toma decisiones según la ÉTICA.',
+        p4: 'Le gusta la precisión, piensa antes de actuar y fundamenta sus decisiones.',
+        clase: 'sabio',
+    },
+    {
+        arquetipo: 'Guerrero',
+        quiere: 'Tener control',
+        p1: 'Su máxima necesidad: el CONTROL.',
+        p2: 'Enfocado en el presente.',
+        p3: 'Toma decisiones según lo PRÁCTICO.',
+        p4: 'Le gusta el control, la rapidez, la efectividad y la impulsividad.',
+        clase: 'guerrero',
+    },
+    {
+        arquetipo: 'Amante',
+        quiere: 'Evitar conflicto',
+        p1: 'Su máxima necesidad: el AMOR.',
+        p2: 'Enfocado en el pasado.',
+        p3: 'Toma decisiones según las RELACIONES.',
+        p4: 'Le gusta compartir, buen negociador, evitar conflictos, es sensible y buen escuchador',
+        clase: 'amante',
+    },
+    {
+        arquetipo: 'Mago',
+        quiere: 'Ser reconocido',
+        p1: 'Su máxima necesidad: la VARIEDAD.',
+        p2: 'Enfocado en el futuro.',
+        p3: 'Toma decisiones según lo EMOCIONAL.',
+        p4: 'Le gusta visualizar oportunidades, vender, soñar, las aventuras y la rapidez',
+        clase: 'mago',
+    },
+];
