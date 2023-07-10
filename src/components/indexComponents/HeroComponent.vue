@@ -20,15 +20,28 @@
                 class="hero-bottom"
             />
         </div>
-        <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube-nocookie.com/embed/lgFFZj33egs?controls=0"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-        ></iframe>
+        <div class="big-video">
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube-nocookie.com/embed/lgFFZj33egs?controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+        </div>
+        <div class="small-video">
+            <iframe
+                width="360"
+                height="202"
+                src="https://www.youtube-nocookie.com/embed/lgFFZj33egs?controls=0"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+            ></iframe>
+        </div>
     </div>
 </template>
 
@@ -41,7 +54,7 @@ h2 {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 70%;
 }
 .text-hero-container {
     display: flex;
@@ -49,11 +62,8 @@ h2 {
     place-content: center;
     width: 50%;
 }
-.img-hero {
-    width: 40%;
-    height: 100%;
-    object-fit: cover;
-    object-position: top;
+.small-video {
+    display: none;
 }
 .hero-bottom {
     border: solid 1px;
@@ -77,9 +87,11 @@ h2 {
         width: 100%;
         height: 40%;
     }
-    .img-hero {
-        width: 100%;
-        height: 60%;
+    .big-video {
+        display: none;
+    }
+    .small-video {
+        display: inherit;
     }
     .hero-bottom {
         width: 100%;
