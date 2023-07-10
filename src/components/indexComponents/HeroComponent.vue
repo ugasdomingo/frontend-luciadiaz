@@ -20,7 +20,15 @@
                 class="hero-bottom"
             />
         </div>
-        <img src="img/foto-brazos.png" alt="Hero" class="img-hero" />
+        <iframe
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/lgFFZj33egs?controls=0"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+        ></iframe>
     </div>
 </template>
 
@@ -31,6 +39,7 @@ h2 {
 .hero-container {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     width: 100%;
     height: 100%;
 }
