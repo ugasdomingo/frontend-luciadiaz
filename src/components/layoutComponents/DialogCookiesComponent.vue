@@ -7,16 +7,16 @@ const dialog = ref();
 
 //Logistics Funtions
 const isCookiesAcepted = () => {
-    sessionStorage.getItem('cookies')
+    localStorage.getItem('cookies')
         ? (dialog.value = false)
         : (dialog.value = true);
 };
 const aceptCookies = (status: boolean) => {
     if (status) {
-        sessionStorage.setItem('cookies', 'acepted');
+        localStorage.setItem('cookies', 'acepted');
         dialog.value = false;
     } else {
-        sessionStorage.setItem('cookies', 'decline');
+        localStorage.setItem('cookies', 'decline');
         dialog.value = false;
     }
 };

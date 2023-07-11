@@ -29,6 +29,7 @@ export const useUserStore = defineStore('user', () => {
             userRole.value = res.data.userRole;
             userName.value = res.data.userName;
             localStorage.setItem('user', res.data.userRole);
+            localStorage.setItem('userT', res.data.refreshToken);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -62,6 +63,7 @@ export const useUserStore = defineStore('user', () => {
             userRole.value = res.data.userRole;
             userName.value = res.data.userName;
             localStorage.setItem('user', res.data.userRole);
+            localStorage.setItem('userT', res.data.refreshToken);
             setTime();
         } catch (error: any) {
             if (error.response) {
@@ -84,7 +86,8 @@ export const useUserStore = defineStore('user', () => {
         } finally {
             resetStore();
             localStorage.removeItem('user');
-            sessionStorage.removeItem('cookies');
+            localStorage.removeItem('cookies');
+            localStorage.removeItem('userT');
         }
     };
 
@@ -114,17 +117,21 @@ export const useUserStore = defineStore('user', () => {
 
     const refreshToken = async () => {
         console.log('RefreshToken');
+        const refreshToken = localStorage.getItem('userT');
+
         try {
-            const res = await api.get('/refresh');
+            const res = await api.get('/refresh', {
+                headers: { Authorization: `Bearer ${refreshToken}` },
+            });
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
             userRole.value = res.data.userRole;
             userName.value = res.data.userName;
-            sessionStorage.setItem('userT', 'usuario cualquiera');
+            localStorage.setItem('userT', res.data.refreshToken);
             setTime();
         } catch (error: any) {
             console.log(error);
-            sessionStorage.removeItem('userT');
+            localStorage.removeItem('userT');
         }
     };
 

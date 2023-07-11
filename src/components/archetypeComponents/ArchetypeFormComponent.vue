@@ -66,7 +66,7 @@ const handleSubmit = async () => {
         const blanksQuestions = setResults('');
 
         if (blanksQuestions > 0) {
-            $q.notify('Upps te quedaron preguntas sin responder');
+            $q.notify('Ups te quedaron preguntas sin responder');
         } else {
             const wise = setResults('a');
             const warrior = setResults('b');
