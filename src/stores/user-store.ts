@@ -46,8 +46,8 @@ export const useUserStore = defineStore('user', () => {
     const register = async (
         name: string,
         email: string,
-        password: string,
         phone: string,
+        password: string,
         politiquesAccepted: boolean
     ) => {
         try {
@@ -58,6 +58,7 @@ export const useUserStore = defineStore('user', () => {
                 password,
                 politiquesAccepted,
             });
+
             token.value = res.data.token;
             expiresIn.value = res.data.expiresIn;
             userRole.value = res.data.userRole;
