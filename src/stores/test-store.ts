@@ -21,6 +21,7 @@ export const useTestStore = defineStore('test', () => {
     const autoregistro = ref([]);
     const metas = ref([]);
     const temperamento = ref([]);
+    const historial = ref([]);
 
     const createTestResults = async (testTitle: string, answers: object) => {
         try {
@@ -71,8 +72,7 @@ export const useTestStore = defineStore('test', () => {
             res.data.testsResults.map((item: any) => {
                 if (item.testTitle == 'Anamnesis') {
                     anamnesis.value.push(item);
-                }
-                if (item.testTitle == 'Arquetipo') {
+                } else if (item.testTitle == 'Arquetipo') {
                     arquetipo.value.push(item);
                     const bigNumber = Object.values(item.answers).sort()[3];
                     const { wise, warrior, wizard, lover } = item.answers;
@@ -85,14 +85,11 @@ export const useTestStore = defineStore('test', () => {
                         : lover == bigNumber
                         ? (userArchetype.value = 'Amante')
                         : (userArchetype.value = '');
-                }
-                if (item.testTitle == 'Autoregistro') {
+                } else if (item.testTitle == 'Autoregistro') {
                     autoregistro.value.push(item);
-                }
-                if (item.testTitle == 'Logro de Metas') {
+                } else if (item.testTitle == 'Logro de Metas') {
                     metas.value.push(item);
-                }
-                if (item.testTitle == 'Temperamento') {
+                } else if (item.testTitle == 'Temperamento') {
                     temperamento.value.push(item);
                     const bigNumber = Object.values(item.answers).sort(
                         (a, b) => a - b
@@ -108,6 +105,8 @@ export const useTestStore = defineStore('test', () => {
                         : phlegmatic == bigNumber
                         ? (userTemper.value = 'Flemático')
                         : (userTemper.value = '');
+                } else {
+                    historial.value.push(item);
                 }
             });
         } catch (error: any) {
@@ -122,6 +121,7 @@ export const useTestStore = defineStore('test', () => {
         metas.value = [];
         autoregistro.value = [];
         arquetipo.value = [];
+        historial.value = [];
         userArchetype.value = '';
         userTemper.value = '';
     };
@@ -138,6 +138,7 @@ export const useTestStore = defineStore('test', () => {
         autoregistro,
         metas,
         temperamento,
+        historial,
         userArchetype,
         userTemper,
         cleanData,

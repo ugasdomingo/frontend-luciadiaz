@@ -1,8 +1,12 @@
 <script setup>
 import { useQuasar } from 'quasar';
 import { useRouter } from 'vue-router';
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useUserStore } from 'stores/user-store';
+
+const props = defineProps({
+    role: String,
+});
 
 const $q = useQuasar();
 const userStore = useUserStore();
@@ -15,6 +19,10 @@ const repassword = ref('');
 const loadding = ref(false);
 const politiquesAccepted = ref(false);
 
+onMounted(() => {
+    const role = ref(props.role);
+});
+
 const handleSubmit = async () => {
     try {
         loadding.value = !loadding.value;
@@ -23,6 +31,7 @@ const handleSubmit = async () => {
             email.value,
             phone.value,
             password.value,
+            role.value,
             politiquesAccepted.value
         );
         router.push('/mi-escritorio');

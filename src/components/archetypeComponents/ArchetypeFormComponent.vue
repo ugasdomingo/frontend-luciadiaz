@@ -83,6 +83,7 @@ const handleSubmit = async () => {
                     email.value,
                     phone.value,
                     password.value,
+                    'visitante',
                     politiquesAccepted.value
                 );
                 await testStore.createTestResults('Arquetipo', finalResponse);

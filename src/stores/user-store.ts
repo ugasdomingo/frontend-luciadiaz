@@ -48,6 +48,7 @@ export const useUserStore = defineStore('user', () => {
         email: string,
         phone: string,
         password: string,
+        role: string,
         politiquesAccepted: boolean
     ) => {
         try {
@@ -56,6 +57,7 @@ export const useUserStore = defineStore('user', () => {
                 email,
                 phone,
                 password,
+                role,
                 politiquesAccepted,
             });
 
@@ -89,6 +91,7 @@ export const useUserStore = defineStore('user', () => {
             localStorage.removeItem('user');
             localStorage.removeItem('cookies');
             localStorage.removeItem('userT');
+            localStorage.removeItem('historial');
         }
     };
 

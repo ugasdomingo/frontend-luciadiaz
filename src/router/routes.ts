@@ -28,6 +28,10 @@ const routes: RouteRecordRaw[] = [
                 },
             },
             {
+                path: 'historial',
+                component: () => import('pages/private/HistoryPage.vue'),
+            },
+            {
                 path: 'citas',
                 component: () => import('src/pages/CitasPage.vue'),
             },

@@ -1,6 +1,6 @@
 <template>
     <!-- components/auth -->
-    <RegistroViewComponent />
+    <RegistroViewComponent :role="'visitante'" />
 </template>
 
 <script setup>

@@ -16,6 +16,10 @@ const toggle = ref(false);
 const initialFuntions = async () => {
     await userStore.self();
     await testStore.getAllUserTestResults(userStore.selfUid);
+    localStorage.setItem(
+        'historial',
+        (testStore.historial.length + 1).toString()
+    );
 };
 
 initialFuntions();
@@ -26,6 +30,12 @@ initialFuntions();
         <h2 class="titles">
             {{ userStore.userName.split(' ')[0] }}, ¿Qué quieres aprender hoy?
         </h2>
+        <q-btn
+            v-if="testStore.historial.length < 13"
+            label="Completa tu historial"
+            class="q-mb-md bg-primary text-white"
+            to="historial"
+        />
         <div class="test-container">
             <UsersTestComponent />
         </div>
@@ -37,8 +47,8 @@ initialFuntions();
                 </q-card-section>
             </q-expansion-item>
         </q-card>
-        <h3 class="titles">Libros Adquiridos</h3>
-        <h3 class="titles">Formaciones</h3>
+        <h3 class="titles">Libros que has Adquirido:</h3>
+        <h3 class="titles">Formaciones que has Realizado:</h3>
     </main>
 </template>
 

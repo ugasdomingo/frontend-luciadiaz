@@ -45,7 +45,9 @@ const findData = async (id: string) => {
     try {
         testStore.cleanData();
         await testStore.getAllUserTestResults(id);
-    } catch (error: any) {}
+    } catch (error: any) {
+        console.log(error);
+    }
 };
 </script>
 
@@ -75,20 +77,25 @@ const findData = async (id: string) => {
                 class="my-card"
                 @click="(toggle = !toggle), findData(user?._id)"
             >
-                <div class="text-subtitle2">
+                <div >
                     <span class="text-subtitle1 q-ml-xl">{{ user?.name }}</span>
                     <q-expansion-item>
                         <q-card-section v-model="toggle">
                             <p>
-                                Arquetipo: {{ testStore.userArchetype }} /
+                                <span class="text-h5">
+                                    Arquetipo: {{ testStore.userArchetype }}
+                                </span>
+                                <br />
                                 Totales: {{ testStore.arquetipo[0]?.answers }}
                             </p>
                             <p>
-                                Temperamento: {{ testStore.userTemper }} /
+                                <span class="text-h5">
+                                    Temperamento: {{ testStore.userTemper }}
+                                </span>
+                                <br />
                                 Totales:
                                 {{ testStore.temperamento[0]?.answers }}
                             </p>
-                            <p>Metas:</p>
                             <ReasonsShowResultComponent
                                 :name="user?.name"
                                 v-if="testStore.metas[0]?.answers"
@@ -101,6 +108,37 @@ const findData = async (id: string) => {
                             <p>
                                 Autoregistro:
                                 {{ testStore.autoregistro[0]?.answers }}
+                            </p>
+                            <!-- INFORMACION GENERAL -->
+                            <p>
+                                <span class="text-h5">
+                                    {{ testStore.historial[0]?.testTitle }}
+                                </span>
+                                <ul>
+                                    <li v-for="(value, key) in testStore.historial[0]?.answers" :key="key">
+                                        {{ key }}: {{ value }}
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                <span class="text-h5">
+                                    {{ testStore.historial[1]?.testTitle }}
+                                </span>
+                                <ul>
+                                    <li v-for="(value, key) in testStore.historial[1]?.answers" :key="key">
+                                        {{ key }}: {{ value }}
+                                    </li>
+                                </ul>
+                            </p>
+                            <p>
+                                <span class="text-h5">
+                                    {{ testStore.historial[2]?.testTitle }}
+                                </span>
+                                <ul>
+                                    <li v-for="(value, key) in testStore.historial[2]?.answers" :key="key">
+                                        {{ key }}: {{ value }}
+                                    </li>
+                                </ul>
                             </p>
                         </q-card-section>
                     </q-expansion-item>
@@ -124,6 +162,9 @@ const findData = async (id: string) => {
 @media (max-width: 900px) {
     .my-card {
         width: 100%;
+    }
+    .my-card-container {
+        width: 90%;
     }
 }
 </style>
