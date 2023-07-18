@@ -12,6 +12,7 @@ const $q = useQuasar();
 const userStore = useUserStore();
 const router = useRouter();
 const name = ref('');
+const role = ref('');
 const email = ref('');
 const phone = ref('');
 const password = ref('');
@@ -20,7 +21,7 @@ const loadding = ref(false);
 const politiquesAccepted = ref(false);
 
 onMounted(() => {
-    const role = ref(props.role);
+    role.value = props.role;
 });
 
 const handleSubmit = async () => {
