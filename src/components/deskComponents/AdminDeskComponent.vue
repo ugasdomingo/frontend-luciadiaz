@@ -9,6 +9,21 @@ import AdminCreateDataComponent from './AdminCreateDataComponent.vue';
 import AnamnesisShowResultComponent from '../anamnesisComponents/AnamnesisShowResultComponent.vue';
 import ReasonsShowResultComponent from '../reasonsComponent/ReasonsShowResultComponent.vue';
 
+//Import answers historial components
+import GeneralInfoAnsComponent from '../historialAnswersComponent/GeneralInfoAnsComponent.vue';
+import MedicalHistAnsComponent from '../historialAnswersComponent/MedicalHistAnsComponent.vue';
+import MarriageInfoAnsComponent from '../historialAnswersComponent/MarriageInfoAnsComponent.vue';
+import ChildrenInfoAnsComponent from '../historialAnswersComponent/ChildrenInfoAnsComponent.vue';
+import FamilyInfoAnsComponent from '../historialAnswersComponent/FamilyInfoAnsComponent.vue';
+import ReligionInfoAnsComponent from '../historialAnswersComponent/ReligionInfoAnsComponent.vue';
+import SocialEnvAnsComponent from '../historialAnswersComponent/SocialEnvAnsComponent.vue';
+import AcademicInfoAnsComponent from '../historialAnswersComponent/AcademicInfoAnsComponent.vue';
+import JobInfoAnsComponent from '../historialAnswersComponent/JobInfoAnsComponent.vue';
+import AffictionAnsComponent from '../historialAnswersComponent/AffictionAnsComponent.vue';
+import SelfDescriptionAnsComponent from '../historialAnswersComponent/SelfDescriptionAnsComponent.vue';
+import ConsultMotivAnsComponent from '../historialAnswersComponent/ConsultMotivAnsComponent.vue';
+import OthersAnsComponent from '../historialAnswersComponent/OthersAnsComponent.vue';
+
 //Activate tools
 const userStore = useUserStore();
 const testStore = useTestStore();
@@ -77,7 +92,7 @@ const findData = async (id: string) => {
                 class="my-card"
                 @click="(toggle = !toggle), findData(user?._id)"
             >
-                <div >
+                <div>
                     <span class="text-subtitle1 q-ml-xl">{{ user?.name }}</span>
                     <q-expansion-item>
                         <q-card-section v-model="toggle">
@@ -109,37 +124,61 @@ const findData = async (id: string) => {
                                 Autoregistro:
                                 {{ testStore.autoregistro[0]?.answers }}
                             </p>
-                            <!-- INFORMACION GENERAL -->
-                            <p>
-                                <span class="text-h5">
-                                    {{ testStore.historial[0]?.testTitle }}
-                                </span>
-                                <ul>
-                                    <li v-for="(value, key) in testStore.historial[0]?.answers" :key="key">
-                                        {{ key }}: {{ value }}
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                <span class="text-h5">
-                                    {{ testStore.historial[1]?.testTitle }}
-                                </span>
-                                <ul>
-                                    <li v-for="(value, key) in testStore.historial[1]?.answers" :key="key">
-                                        {{ key }}: {{ value }}
-                                    </li>
-                                </ul>
-                            </p>
-                            <p>
-                                <span class="text-h5">
-                                    {{ testStore.historial[2]?.testTitle }}
-                                </span>
-                                <ul>
-                                    <li v-for="(value, key) in testStore.historial[2]?.answers" :key="key">
-                                        {{ key }}: {{ value }}
-                                    </li>
-                                </ul>
-                            </p>
+
+                            <!-- HISTORIAL INFORMATION  -->
+
+                            <GeneralInfoAnsComponent
+                                :answers="testStore.historial[0]"
+                                v-if="testStore.historial[0]"
+                            />
+                            <MedicalHistAnsComponent
+                                :answers="testStore.historial[1]"
+                                v-if="testStore.historial[1]"
+                            />
+                            <MarriageInfoAnsComponent
+                                :answers="testStore.historial[2]"
+                                v-if="testStore.historial[2]"
+                            />
+                            <ChildrenInfoAnsComponent
+                                :answers="testStore.historial[3]"
+                                v-if="testStore.historial[3]"
+                            />
+                            <FamilyInfoAnsComponent
+                                :answers="testStore.historial[4]"
+                                v-if="testStore.historial[4]"
+                            />
+                            <ReligionInfoAnsComponent
+                                :answers="testStore.historial[5]"
+                                v-if="testStore.historial[5]"
+                            />
+                            <SocialEnvAnsComponent
+                                :answers="testStore.historial[6]"
+                                v-if="testStore.historial[6]"
+                            />
+                            <AcademicInfoAnsComponent
+                                :answers="testStore.historial[7]"
+                                v-if="testStore.historial[7]"
+                            />
+                            <JobInfoAnsComponent
+                                :answers="testStore.historial[8]"
+                                v-if="testStore.historial[8]"
+                            />
+                            <AffictionAnsComponent
+                                :answers="testStore.historial[9]"
+                                v-if="testStore.historial[9]"
+                            />
+                            <SelfDescriptionAnsComponent
+                                :answers="testStore.historial[10]"
+                                v-if="testStore.historial[10]"
+                            />
+                            <ConsultMotivAnsComponent
+                                :answers="testStore.historial[11]"
+                                v-if="testStore.historial[11]"
+                            />
+                            <OthersAnsComponent
+                                :answers="testStore.historial[12]"
+                                v-if="testStore.historial[12]"
+                            />
                         </q-card-section>
                     </q-expansion-item>
                 </div>

@@ -63,6 +63,7 @@ const handleSubmit = async () => {
     <p>Pasos 2/13</p>
     <h2>Antecedentes Médicos</h2>
     <q-form @submit.prevent="handleSubmit" class="q-mb-md">
+        <p>Deje sin marcar si la respuesta es "NO"</p>
         <!-- ENFEREMEDAD SECTION -->
         <q-toggle
             v-model="enfermedad"
