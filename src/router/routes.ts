@@ -51,6 +51,11 @@ const routes: RouteRecordRaw[] = [
                 component: () => import('src/pages/psicoTest/AllTestPage.vue'),
             },
             {
+                path: 'anamnesis',
+                component: () =>
+                    import('src/pages/psicoTest/AnamnesisPage.vue'),
+            },
+            {
                 path: 'alcanzar-metas',
                 component: () =>
                     import('src/pages/psicoTest/ReasonsTestPage.vue'),

@@ -114,7 +114,7 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
 
 <template>
     <q-page class="row justify-center">
-        <div class="col-12 col-sm-6 col-md-7 q-pl-xs text-white">
+        <div class="col-12 col-sm-6 col-md-7 q-pl-xs text-primary">
             <h3>Formulario Anamnesis</h3>
             <p style="font-size: 1em">
                 Esta información es para recoger la historia de tu peque, la
@@ -122,13 +122,12 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 niño(a) y a partir de ahí poder crear un plan de acción.
             </p>
             <q-spinner-pie color="primary" size="5em" v-if="loadding" />
-            <q-form v-else dark @submit.prevent="handleSubmit">
+            <q-form v-else @submit.prevent="handleSubmit">
                 <!-- USERS DATA -->
                 <div v-if="!userStore.token">
                     <q-input
                         v-model="name"
                         type="text"
-                        dark
                         label="Nombre Completo"
                         :rules="[
                             (val) =>
@@ -139,7 +138,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                         v-model="email"
                         label="Email"
                         type="text"
-                        dark
                         :rules="[
                             (val) =>
                                 (val &&
@@ -150,7 +148,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                     <q-input
                         v-model="phone"
                         type="text"
-                        dark
                         label="Teléfono"
                         :rules="[
                             (val) =>
@@ -161,7 +158,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                         v-model="password"
                         label="Contraseña"
                         type="password"
-                        dark
                         :rules="[
                             (val) =>
                                 (val && val.length > 5) ||
@@ -177,7 +173,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="kidsName"
                     :type="anamnesisQuestions[0].type"
-                    dark
                     :label="anamnesisQuestions[0].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -186,7 +181,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="edad"
                     :type="anamnesisQuestions[1].type"
-                    dark
                     :label="anamnesisQuestions[1].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -195,7 +189,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta1"
                     :type="anamnesisQuestions[2].type"
-                    dark
                     :label="anamnesisQuestions[2].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -204,7 +197,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta2"
                     :type="anamnesisQuestions[3].type"
-                    dark
                     :label="anamnesisQuestions[3].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -213,7 +205,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta3"
                     :type="anamnesisQuestions[4].type"
-                    dark
                     :label="anamnesisQuestions[4].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -222,7 +213,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta4"
                     :type="anamnesisQuestions[5].type"
-                    dark
                     :label="anamnesisQuestions[5].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -231,7 +221,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta5"
                     :type="anamnesisQuestions[6].type"
-                    dark
                     :label="anamnesisQuestions[6].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -240,7 +229,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta6"
                     :type="anamnesisQuestions[7].type"
-                    dark
                     :label="anamnesisQuestions[7].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -249,7 +237,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta7"
                     :type="anamnesisQuestions[8].type"
-                    dark
                     :label="anamnesisQuestions[8].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -258,7 +245,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta8"
                     :type="anamnesisQuestions[9].type"
-                    dark
                     :label="anamnesisQuestions[9].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -267,7 +253,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta9"
                     :type="anamnesisQuestions[10].type"
-                    dark
                     :label="anamnesisQuestions[10].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -276,7 +261,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta10"
                     :type="anamnesisQuestions[11].type"
-                    dark
                     :label="anamnesisQuestions[11].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -285,7 +269,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta11"
                     :type="anamnesisQuestions[12].type"
-                    dark
                     :label="anamnesisQuestions[12].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -294,7 +277,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta12"
                     :type="anamnesisQuestions[13].type"
-                    dark
                     :label="anamnesisQuestions[13].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -303,7 +285,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta13"
                     :type="anamnesisQuestions[14].type"
-                    dark
                     :label="anamnesisQuestions[14].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -312,7 +293,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta14"
                     :type="anamnesisQuestions[15].type"
-                    dark
                     :label="anamnesisQuestions[15].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -321,7 +301,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta15"
                     :type="anamnesisQuestions[16].type"
-                    dark
                     :label="anamnesisQuestions[16].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -330,7 +309,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta16"
                     :type="anamnesisQuestions[17].type"
-                    dark
                     :label="anamnesisQuestions[17].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -339,7 +317,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta17"
                     :type="anamnesisQuestions[18].type"
-                    dark
                     :label="anamnesisQuestions[18].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -348,7 +325,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta18"
                     :type="anamnesisQuestions[19].type"
-                    dark
                     :label="anamnesisQuestions[19].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -357,7 +333,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta19"
                     :type="anamnesisQuestions[20].type"
-                    dark
                     :label="anamnesisQuestions[20].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -366,7 +341,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta20"
                     :type="anamnesisQuestions[21].type"
-                    dark
                     :label="anamnesisQuestions[21].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
@@ -375,7 +349,6 @@ const alertDialogBackend = (message = 'Error en el servidor') => {
                 <q-input
                     v-model="pregunta21"
                     :type="anamnesisQuestions[22].type"
-                    dark
                     :label="anamnesisQuestions[22].label"
                     :rules="[
                         (val) => (val && val.length > 0) || 'Campo Requerido',
